@@ -1,0 +1,146 @@
+<?php
+require_once('../../helpers/database.php');
+require_once('../../helpers/validator.php');
+require_once('../../../models/producto_modal.php');
+
+// Se comprueba si existe una acción a realizar, de lo contrario se finaliza el script con un mensaje de error.
+if (isset($_GET['action'])) {
+    // Se crea una sesión o se reanuda la actual para poder utilizar variables de sesión en el script.
+    session_start();
+    // Se instancia la clase correspondiente.
+    $producto = new producto;
+    // Se declara e inicializa un arreglo para guardar el resultado que retorna la API.
+    $result = array('status' => 0, 'message' => null, 'exception' => null);
+    // Se verifica si existe una sesión iniciada como administrador, de lo contrario se finaliza el script con un mensaje de error.
+    if (isset($_SESSION['idusuario']) OR true) {
+        // Se compara la acción a realizar cuando un administrador ha iniciado sesión.
+        switch ($_GET['action']) {
+            case 'readAll':
+                if ($result['dataset'] = $producto->readAll()) {
+                    $result['status'] = 1;
+                } elseif (Database::getException()) {
+                    $result['exception'] = Database::getException();
+                } else {
+                    $result['exception'] = 'No hay datos registrados';
+                }
+                break;
+            case 'search':
+                $_POST = $producto->validateForm($_POST);
+                if ($_POST['search'] == '') {
+                    $result['exception'] = 'Ingrese un valor para buscar';
+                } elseif ($result['dataset'] = $producto->searchRows($_POST['search'])) {
+                    $result['status'] = 1;
+                    $result['message'] = 'Valor encontrado';
+                } elseif (Database::getException()) {
+                    $result['exception'] = Database::getException();
+                } else {
+                    $result['exception'] = 'No hay coincidencias';
+                }
+                break;
+            case 'create':
+                $_POST = $producto->validateForm($_POST);
+                if (!$producto->setnombre_produc($_POST['nombre'])) {
+                    $result['exception'] = 'Nombre incorrecto';
+                } elseif (!$producto->setdescripcion($_POST['descripcion'])) {
+                    $result['exception'] = 'Descripción incorrecta';
+                } elseif (!$producto->setcategoria($_POST['categoria'])) {
+                    $result['exception'] = 'Precio incorrecto';
+                } elseif (!isset($_POST['categoria'])) {
+                    $result['exception'] = 'Seleccione una categoría';
+                } elseif (!$producto->setprecio_produc($_POST['precio'])) {
+                    $result['exception'] = 'Categoría incorrecta';
+                } elseif (!$producto->setcantidad($_POST['cantidad'])) {
+                    $result['exception'] = 'cantidad incorrecto';
+                } elseif (!$producto->setestado(isset($_POST['estado']) ? 1 : 0)) {
+                    $result['exception'] = 'Estado incorrecto';
+                } elseif (!is_uploaded_file($_FILES['archivo']['tmp_name'])) {
+                    $result['exception'] = 'Seleccione una imagen';
+                } elseif (!$producto->setimg($_FILES['archivo'])) {
+                    $result['exception'] = $producto->getFileError();
+                } elseif ($producto->createRow()) {
+                    $result['status'] = 1;
+                    if ($producto->saveFile($_FILES['archivo'], $producto->getRuta(), $producto->getimg())) {
+                        $result['message'] = 'Producto creado correctamente';
+                    } else {
+                        $result['message'] = 'Producto creado pero no se guardó la imagen';
+                    }
+                } else {
+                    $result['exception'] = Database::getException();;
+                }
+                break;
+                case 'readOne':
+                    if (!$producto->setidproducto($_POST['idproducto'])) {
+                        $result['exception'] = 'Producto incorrecto';
+                    } elseif ($result['dataset'] = $producto->readOne()) {
+                        $result['status'] = 1;
+                    } elseif (Database::getException()) {
+                        $result['exception'] = Database::getException();
+                    } else {
+                        $result['exception'] = 'Producto inexistente';
+                    }
+                    break;
+                case 'update':
+                    $_POST = $producto->validateForm($_POST);
+                    if (!$producto->setidproducto($_POST['idproducto'])) {
+                        $result['exception'] = 'Producto incorrecto';
+                    } elseif (!$data = $producto->readOne()) {
+                        $result['exception'] = 'Producto inexistente';
+                    } elseif (!$producto->setnombre_produc($_POST['nombre'])) {
+                        $result['exception'] = 'Nombre incorrecto';
+                    } elseif (!$producto->setdescripcion($_POST['descripcion'])) {
+                        $result['exception'] = 'Descripción incorrecta';
+                    } elseif (!$producto->setprecio_produc($_POST['precio'])) {
+                        $result['exception'] = 'Precio incorrecto';
+                    } elseif (!$producto->setcantidad($_POST['cantidad'])) {
+                        $result['exception'] = 'cantidad incorrecto';
+                    } elseif (!$producto->setCategoria($_POST['categoria'])) {
+                        $result['exception'] = 'Seleccione una categoría';
+                    } elseif (!$producto->setestado(isset($_POST['estado']) ? 1 : 0)) {
+                        $result['exception'] = 'Estado incorrecto';
+                    } elseif (!is_uploaded_file($_FILES['archivo']['tmp_name'])) {
+                        if ($producto->updateRow($data['imagen_producto'])) {
+                            $result['status'] = 1;
+                            $result['message'] = 'Producto modificado correctamente';
+                        } else {
+                            $result['exception'] = Database::getException();
+                        }
+                    } elseif (!$producto->setimg($_FILES['archivo'])) {
+                        $result['exception'] = $producto->getFileError();
+                    } elseif ($producto->updateRow($data['archivo'])) {
+                        $result['status'] = 1;
+                        if ($producto->saveFile($_FILES['archivo'], $producto->getRuta(), $producto->getimages())) {
+                            $result['message'] = 'Producto modificado correctamente';
+                        } else {
+                            $result['message'] = 'Producto modificado pero no se guardó la imagen';
+                        }
+                    } else {
+                        $result['exception'] = Database::getException();
+                    }
+                    break;
+                case 'delete':
+                    if (!$producto->setidproducto($_POST['idproducto'])) {
+                        $result['exception'] = 'Producto incorrecto';
+                    } elseif (!$data = $producto->readOne()) {
+                        $result['exception'] = 'Producto inexistente';
+                    } elseif ($producto->deleteRow()) {
+                        $result['status'] = 1;
+                        if ($producto->deleteFile($producto->getRuta(), $data['img'])) {
+                            $result['message'] = 'Producto eliminado correctamente';
+                        } else {
+                            $result['message'] = 'Producto eliminado pero no se borró la imagen';
+                        }
+                    } else {
+                        $result['exception'] = Database::getException();
+                    }
+        }
+        // Se indica el tipo de contenido a mostrar y su respectivo conjunto de caracteres.
+        header('content-type: application/json; charset=utf-8');
+        // Se imprime el resultado en formato JSON y se retorna al controlador.
+        print(json_encode($result));
+    } else {
+        print(json_encode('Acceso denegado'));
+    }
+} else {
+    print(json_encode('Recurso no disponible'));
+}
+?>

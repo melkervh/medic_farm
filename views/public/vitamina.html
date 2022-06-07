@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../resources/css/styless_publico.css" rel="stylesheet">
+    <!--Fin-->
+
+    <title>vitaminas</title>
+</head>
+
+<body>
+    <header>
+         <!--Generamos un navbar-->
+         <div class="colores">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <img src="../../resources/img/Logo.png" alt=""  class="d-inline-block align-text-top logo">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="login.html">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">perfil</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    inicio
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="index.html">menu</a></li>
+                                    <li><a class="dropdown-item" href="analgesicos.html">analgesicos</a></li>
+                                    <li><a class="dropdown-item" href="antibioticos.html">antibioticos</a></li>
+                                    <li><a class="dropdown-item" href="anticonceptivo.html">anticonceptivo</a></li>
+                                    <li><a class="dropdown-item" href="antigripales.html">antigripales</a></li>
+                                    <li><a class="dropdown-item" href="relajante_muscular.html">relajante musculares</a></li>
+                                    <li><a class="dropdown-item" href="vitamina.html">vitaminas</a></li>
+                                    <li>
+
+                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">revicion de receta</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="nosotros.html">sobre nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Contactanos.html">contactanos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="termino_condicion.html">terminos</a>
+                            </li>
+                            </li>
+
+                        </ul>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!--Fin de navbar-->
+    </header>
+    <br>
+    <section class="container">
+        <!--Se crea esta clase para ajustar los titulos-->
+        <div class="titulos">
+            <h1>Vitaminas</h1>
+        </div>
+        <div class="descrip">
+            <h4>Son un grupo de sustancias que son necesarias para el funcionamiento celular, el crecimiento y el
+                desarrollo normales.</h4>
+        </div>
+        <!--Fin de titulo-->
+    </section>
+    <br>
+    <main class="container">
+        <form id="vitamina">
+            <!--Se crean las cartas junto con imagnes y sus respectivos botones-->
+            <div class="tarjetas">
+                <div class="row row-cols-1 row-cols-md-2 g-2">
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <img src="../../resources/img/card/vtm1.png" class="card-img-top" alt="Cofal">
+                            <div class="card-body">
+                                <h5 class="card-title">Foskrol X 15 Viales Bebibles</h5>
+                                <h5 class="precio">$16.06</h5>
+                                <!--Agregamos un collapso como boton para que contenga la informacion-->
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample1" aria-expanded="false"
+                                        aria-controls="collapseExample1">
+                                        Descripcion
+                                    </button>
+                                    <!--iniciamos un boton con la etiqueta "a" y con clase button-->
+                                    <a class="btn btn-primary" href="" role="button">enviar al carrito</a>
+                                    <!--Fin de boton-->
+                                </p>
+                                <!--texto de la carta-->
+                                <div class="collapse" id="collapseExample1">
+                                    <div class="card card-body">
+                                        Suplemento vitaminico para estados de decaimiento neurocerebral.
+                                    </div>
+                                </div>
+                                <!--Fin del texto-->
+                            </div>
+                            <!--Fin de collapso-->
+                        </div>
+                    </div>
+                    <!--2da card-->
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <img src="../../resources/img/card/vtm2.png" class="card-img-top" alt="Antigrip Combinado">
+                            <div class="card-body">
+                                <h5 class="card-title">Femivital X 30 Capsula</h5>
+                                <h5 class="precio">$17.96</h5>
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample2" aria-expanded="false"
+                                        aria-controls="collapseExample2">
+                                        Descripcion
+                                    </button>
+                                    <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">enviar al
+                                        carrito</a>
+                                </p>
+                                <div class="collapse" id="collapseExample2">
+                                    <div class="card card-body">
+                                        Suplemento indicado para mujeres embarazadas o en periodo de lactancia, ya que
+                                        contiene vitaminas y minerales que la ayudan durante este proceso delicado.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--3ra card-->
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <img src="../../resources/img/card/vtm3.png" class="card-img-top" alt="Antigrip A">
+                            <div class="card-body">
+                                <h5 class="card-title">Medox ABC Jarabe Infantil Frasco X 120ml</h5>
+                                <h5 class="precio">$8.44</h5>
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample3" aria-expanded="false"
+                                        aria-controls="collapseExample3">
+                                        Descripcion
+                                    </button>
+                                    <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">enviar al
+                                        carrito</a>
+                                </p>
+                                <div class="collapse" id="collapseExample3">
+                                    <div class="card card-body">
+                                        Esta indicado como complemento alimenticio. Cuando exista falta de apetito y
+                                        debilidad general. Convalecencia, después de las operaciones o enfermedad.
+                                        Estados carenciales de vitaminas y minerales. Reconstituyente en la etapa de
+                                        crecimiento.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--4ta card-->
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <img src="../../resources/img/card/vtm4.png" class="card-img-top" alt="Dolocrim">
+                            <div class="card-body">
+                                <h5 class="card-title">Wellkid Baby Infantil Frasco X 150ml</h5>
+                                <h5 class="precio">$12.75</h5>
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample4" aria-expanded="false"
+                                        aria-controls="collapseExample4">
+                                        Descripcion
+                                    </button>
+                                    <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">enviar al
+                                        carrito</a>
+                                </p>
+                                <div class="collapse" id="collapseExample4">
+                                    <div class="card card-body">
+                                        Contiene una completa mezcla de vitaminas y minerales esenciales, que trabajan
+                                        en conjunto para promover una salud, bienestar y crecimiento sobresalientes de
+                                        todo el cuerpo de tu hijo.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--5ta card-->
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <img src="../../resources/img/card/vtm5.png" class="card-img-top" alt="Dolocrim">
+                            <div class="card-body">
+                                <h5 class="card-title">Gumivit Kids C Frasco X 60 Gomitas</h5>
+                                <h5 class="precio">$5.94</h5>
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample5" aria-expanded="false"
+                                        aria-controls="collapseExample5">
+                                        Descripcion
+                                    </button>
+                                    <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">enviar al
+                                        carrito</a>
+                                </p>
+                                <div class="collapse" id="collapseExample5">
+                                    <div class="card card-body">
+                                        Necesaria para mantener un sistema inmune alto. Reduce las incidencias de gripas
+                                        y aumenta las defensas. Protege las defensas de los niños en todas las etapas de
+                                        crecimiento.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--6ta card-->
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <img src="../../resources/img/card/vtm6.png" class="card-img-top" alt="Ambroxol">
+                            <div class="card-body">
+                                <h5 class="card-title">Ipatol Jarabe 480ml</h5>
+                                <h5 class="precio">$9.34</h5>
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample6" aria-expanded="false"
+                                        aria-controls="collapseExample6">
+                                        Descripcion
+                                    </button>
+                                    <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">enviar al
+                                        carrito</a>
+                                </p>
+                                <div class="collapse" id="collapseExample6">
+                                    <div class="card card-body">
+                                        Prevención de los estados carenciales de los componentes de la
+                                        fórmula.Prevención de los estados carenciales de los componentes de la fórmula.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Fin de las cards-->
+                    
+        </form>
+    </main>
+
+    <footer>
+        <h6>Derechos de la pagina reservados por @Medicfarm </h6>
+    </footer>
+    <!--Bootstrap JS-->
+    <script src="../../resources/js/bootstrap.min.js"></script>
+    <!--Fin-->
+</body>
+
+</html>

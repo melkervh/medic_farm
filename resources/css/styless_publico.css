@@ -1,0 +1,342 @@
+html {
+    display: auto;
+    margin: auto;
+}
+
+body {
+    display: flex;
+    vertical-align: middle;
+    background: #263238;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+footer{
+    background: #00e676;
+    margin-top:50px;
+    width:100%;
+    height:40px;
+}
+
+.titulos {
+    color: white;
+    font-size: 12pt;
+    font-family: 'arial';
+    width: 100%;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.colores {
+    background: #00e676;
+}
+
+/*Index*/
+.descrip {
+    color: white;
+    font-size: 12pt;
+    font-family: 'arial';
+    width: 100%;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.mover{
+   align-items: flex-end;
+}
+
+/*Registro_Usuario*/
+.bi{
+    font-size: 80px;
+}
+.form-register a{
+    color: white;
+}
+.form-register{
+    width: 500px;
+    background: #37474f;
+    padding: 40px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+}
+
+.controls{
+    width: 100%;
+    background:white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #263238;
+    font-family: 'calibri';
+    font-size: 17px;
+}
+
+.form-register p {
+    height: 40px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 40px;
+}
+
+.form-register a:hover {
+    color: #00e676;
+    text-decoration: underline;
+}
+
+.form-register .botons{
+    width: 100%;
+    background: #00e676;
+    border: none;
+    padding: 10px;
+    color: white;
+    margin: 16px 0;
+    font-size: 17px; 
+}
+.am{
+    text-align: center;
+}
+/*Terminos y condicion*/
+.tercon {
+    color: white;
+    font-size: 12pt;
+    font-family: 'arial';
+    width: 100%;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding-bottom: 20px;
+    text-align:justify;
+}
+/*Nosotros*/
+.mvv{
+    width: 300px
+}
+.ns{
+    font-size: 29px;
+    color: #000;
+    border: #000;
+}
+.form-register-ga{
+    width: 1000px;
+    background: #37474f;
+    padding:13;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+}
+.nsb{
+    font-size: 15px;
+    color: #fff;
+}
+body.contactanos{
+    height: 100%; 
+    font-family: 'Noto Sans', sans-serif;
+      background-color: #263238; 
+    }
+    
+    
+    .contact_form{
+    width: 460px; 
+      height: auto;
+      margin: 80px auto;
+    border-radius: 10px;  
+    padding-top: 30px;
+    padding-bottom: 20px;  
+      background-color: #37474f ; 
+      padding-left: 30px;
+      padding-right: 40px; 
+    }
+    
+    
+    .input2{
+    background-color: #37474f ; 
+    width: 408px; 
+    height: 40px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #00e676; 
+    margin-top: 10px;  
+    padding-left: 10px;
+      margin-bottom: 20px; 
+    }
+    
+    
+    textarea{
+      background-color: #fbfbfb; 
+    width: 405px; 
+    height: 150px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #00e676; 
+    margin-top: 10px;  
+    padding-left: 10px;
+      margin-bottom: 20px; 
+      padding-top: 15px; 
+    }
+    
+    
+    label{
+      display: block; 
+    float: center; 
+    }
+    
+    
+    .btncoc{
+    height: 45px; 
+    padding-left: 5px;
+    padding-right: 5px; 
+    margin-bottom: 20px; 
+    margin-top: 10px; 
+    text-transform: uppercase;
+    background-color:#00e676; 
+    border-color: #00e676; 
+    border-style: solid; 
+    border-radius: 10px;
+    width: 420px;   
+      cursor: pointer;
+    }
+    
+    
+    button p{
+    color: #fff; 
+    }
+    
+    
+    span{
+    color: #00e676; 
+    }
+    
+    
+    .aviso{
+    font-size: 13px;  
+    color: #0e0e0e;  
+    }
+    
+    
+    h1.text1c{
+    font-size: 39px;  
+    text-align: letf; 
+    padding-bottom: 20px; 
+    color: #00e676;
+    }
+    
+    
+    h3.text2c{
+    font-size: 16px; 
+    padding-bottom: 30px;
+    color: #0e0e0e;   
+    }
+    
+    
+    p.pc1{
+    font-size: 14px; 
+    color: #0e0e0e; 
+    }
+    
+    
+    ::-webkit-input-placeholder {
+     color: #a8a8a8;
+    }
+    
+    
+    ::-webkit-textarea-placeholder {
+     color: #a8a8a8;
+    }
+    img.imagen2{
+      float: right;
+      height: 60px;
+      width: 100px;
+    }
+    img.lista{
+      height: 20px;
+      margin-top: -30px;
+    }
+    .logo{
+      height: 80px;
+      }
+      .ico{
+        font-size: 30px;
+        margin-top: 20px;
+        padding-right: 6%;
+        display: flex;
+        text-align: right;
+      justify-content: right;
+      }
+      .usuariole{
+        display: flex;
+        text-align: right;
+      justify-content: right;
+      }
+
+      .desciption{
+        color: #fff;
+        margin: 15px;
+        margin-bottom: 10px;
+      }
+      .desciption2{
+        color: #fff;
+      margin-left: -10px;
+      }
+
+      .fot{
+        position: relative;
+        margin-top: 60px;
+      }
+
+      .btms{
+        margin: 15px;
+        padding: 5px;
+      }
+
+      .meustra{
+      height: 100%;
+      width: 100%;
+      padding-top: 15%;
+    }
+    .cadt{
+      display: flex;
+      float: right;
+      justify-content: right;
+    }
+    .btn2{
+      color:#5ccb5f;
+      border-radius: 4px;
+
+    }
+
+    .ico2{
+      font-size: 35px;   
+    }
+    .reces{
+      color: #fff;
+      width: 10%;
+    }
+    .iniciar{
+      width: 70%;
+      height: 40px;
+      color: #fff;
+      background: #00e676;
+    }
+    

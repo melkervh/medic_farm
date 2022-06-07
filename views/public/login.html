@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/privado.css" media="screen,projection" />
+    <title>Inició de sesión</title>
+</head>
+
+<body class="loginbody">
+
+    <!-- Nav de la página web -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light navbar-dark">
+            <div class="container-fluid">
+                <img src="../../resources/img/Logo.png" class="logo">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="login.html">login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="loginmai">
+        <div class="main">
+    
+            <div class="signup">
+                <form method="post" id="iniciar">
+                    <label for="chk" aria-hidden="true" class="titulo">login</label>
+                    <input class="input2"  type="email" id="usuario" placeholder="Email" name="usuario" class="validate" required>
+                    <input class="input2"  type="password" id="clave" placeholder="Clave" name="clave" class="validate" required>
+                        <div class=" enlaces" >
+                            <p class="margin medium-small"><a href="">olvidaste tu contraseña!</a></p>
+                        </div>
+                    <button  class="iniciar" type="submit" id="Ingresar">Iniciar</button>
+                    <div class=" enlaces2" >
+                        <p class="margin medium-small"><a href="registro_usuario.html">Registrarse!</a></p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+   
+    <script src="../../resources/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="../../controllers/components.js"></script>
+    <script type="text/javascript" src="../../controllers/public/login.js"></script>
+</body>
+
+</html>

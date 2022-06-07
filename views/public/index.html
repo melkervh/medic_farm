@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../resources/css/styless_publico.css" rel="stylesheet">
+    <!--Fin-->
+
+    <title>Inicio</title>
+</head>
+
+<body>
+    <header>
+       <!--Generamos un navbar-->
+    <div class="colores">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <img src="../../resources/img/Logo.png" alt=""  height="80" class="d-inline-block align-text-top logo">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">perfil</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                inicio
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="index.html">menu</a></li>
+                                <li><a class="dropdown-item" href="analgesicos.html">analgesicos</a></li>
+                                <li><a class="dropdown-item" href="antibioticos.html">antibioticos</a></li>
+                                <li><a class="dropdown-item" href="anticonceptivo.html">anticonceptivo</a></li>
+                                <li><a class="dropdown-item" href="antigripales.html">antigripales</a></li>
+                                <li><a class="dropdown-item" href="relajante_muscular.html">relajante musculares</a></li>
+                                <li><a class="dropdown-item" href="vitamina.html">vitaminas</a></li>
+                                <li>
+
+                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">revicion de receta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nosotros.html">sobre nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contactanos.html">contactanos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="termino_condicion.html">terminos</a>
+                        </li>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--Fin de navbar-->
+    </header>
+    <br>
+    <section class="container">
+        <!--Se crea esta clase para ajustar los titulos-->
+        <div class="titulos">
+            <h1>Bienvenidos a Medicfarm</h1>
+        </div>
+        <!--Fin de titulo-->
+        <!--Creamos un carrusel carrusel-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../../resources/img/carrusel/cr1.png" class="d-block w-100" alt="..." height="350">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../resources/img/carrusel/cr2.png" class="d-block w-100" alt="..." height="350">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../resources/img/carrusel/cr3.png" class="d-block w-100" alt="..." height="350">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Fin de Carrusel-->
+    <br>
+    <main class="container">
+        <form id="tpp">
+            <!--Se crean las cartas junto con imagnes y sus respectivos botones-->
+            <div class="tarjetas">
+                <div class="row row-cols-1 row-cols-md-2 g-2">
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <img src="../../resources/img/card/ca1.png" class="card-img-top" alt="Anticonceptivos">
+                            <div class="card-body">
+                                <h5 class="card-title">Anticonceptivos</h5>
+                                <!--Agregamos un collapso como boton para que contenga la informacion-->
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample1" aria-expanded="false"
+                                        aria-controls="collapseExample1">
+                                        MedicFarm
+                                    </button>
+                                    <!--iniciamos un boton con la etiqueta "a" y con clase button-->
+                                    <a class="btn btn-primary" href="anticonceptivo.html" role="button">Ver mas</a>
+                                    <!--Fin de boton-->
+                                </p>
+                                <div class="collapse" id="collapseExample1">
+                                    <div class="card card-body">
+                                        Variedad de anticonceptivos, diferetes tipos y marcas, no te lo pudes perder
+                                        solo en
+                                        MedicFarm
+                                    </div>
+                                </div>
+                                <!--Fin de collapso-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--2da card-->
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <img src="../../resources/img/card/ca2.png" class="card-img-top" alt="Analgesicos">
+                            <div class="card-body">
+                                <h5 class="card-title">Analgesicos</h5>
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample2" aria-expanded="false"
+                                        aria-controls="collapseExample2">
+                                        MedicFarm
+                                    </button>
+                                    <a class="btn btn-primary" href="analgesicos.html" role="button">Ver mas</a>
+                                </p>
+                                <div class="collapse" id="collapseExample2">
+                                    <div class="card card-body">
+                                        Increible variedad de analgesicos de venta en MedicFarm, puedes ver nuestros
+                                        productos dentro de "ver mas"
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--3ra card-->
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <img src="../../resources/img/card/ca3.png" class="card-img-top" alt="Antibioticos ">
+                            <div class="card-body">
+                                <h5 class="card-title">Antibioticos</h5>
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample3" aria-expanded="false"
+                                        aria-controls="collapseExample3">
+                                        MedicFarm
+                                    </button>
+                                    <a class="btn btn-primary" href="antibioticos.html" role="button">Ver mas</a>
+                                </p>
+                                <div class="collapse" id="collapseExample3">
+                                    <div class="card card-body">
+                                        Buscas Antibioticos, mira la cantiodad que tiene MedicFarm solo en el alcance de
+                                        un
+                                        click
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--4ta card-->
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <img src="../../resources/img/card/ca4.png" class="card-img-top" alt="antigripales">
+                            <div class="card-body">
+                                <h5 class="card-title">Antigripales</h5>
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample4" aria-expanded="false"
+                                        aria-controls="collapseExample4">
+                                        MedicFarm
+                                    </button>
+                                    <a class="btn btn-primary" href="antigripales.html" role="button">Ver mas</a>
+                                </p>
+                                <div class="collapse" id="collapseExample4">
+                                    <div class="card card-body">
+                                        Tienes algun tipo de gripe, no dudes mas, obserba las cantidades de antigripales
+                                        que
+                                        te ofrece nuestra tinda en linea
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--5ta card-->
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <img src="../../resources/img/card/ca5.png" class="card-img-top" alt="Relajante">
+                            <div class="card-body">
+                                <h5 class="card-title">Relajante Musculares</h5>
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample5" aria-expanded="false"
+                                        aria-controls="collapseExample5">
+                                        MedicFarm
+                                    </button>
+                                    <a class="btn btn-primary" href="relajante_muscular.html" role="button">Ver mas</a>
+                                </p>
+                                <div class="collapse" id="collapseExample5">
+                                    <div class="card card-body">
+                                        Sufres de dolores musculares, puedes ver nuestra cantidad de farmacos que te
+                                        ofrece
+                                        MedicFarm
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--6ta card-->
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <img src="../../resources/img/card/ca6.png" class="card-img-top" alt="Relajante">
+                            <div class="card-body">
+                                <h5 class="card-title">Vitaminas</h5>
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample6" aria-expanded="false"
+                                        aria-controls="collapseExample6">
+                                        MedicFarm
+                                    </button>
+                                    <a class="btn btn-primary" href="vitamina.html" role="button">Ver mas</a>
+                                </p>
+                                <div class="collapse" id="collapseExample6">
+                                    <div class="card card-body">
+                                        Nesecitas vitaminas, no busques mas. MedicFarm te diferente variedades de
+                                        vitaminas
+                                        todo a solo un click
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Fin de las cards-->
+        </form>
+    </main>
+    <footer>
+        <h6>Derechos de la pagina reservados por @Medicfarm </h6>
+    </footer>
+    <!--Bootstrap JS-->
+    <script src="../../resources/js/bootstrap.min.js"></script>
+    <!--Fin-->
+
+</body>
+
+</html>
