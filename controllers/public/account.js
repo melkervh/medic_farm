@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Se comprueba si el usuario está autenticado para establecer el encabezado respectivo.
                 if (response.session) {
                     header = `
-                        
                     <div class="colores">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="container-fluid">
@@ -33,9 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="login.html">cerrar sesion</a>
-                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">perfil</a>
                                     </li>
@@ -67,8 +63,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <li class="nav-item">
                                         <a class="nav-link" href="termino_condicion.html">terminos</a>
                                     </li>
+                                    <li class="nav-item">
+                                    <li><a onclick="logOut()" class="nav-link">Cerrar sesión</a></li>
                                     </li>
-            
                                 </ul>
                             </div>
                         </div>
@@ -88,14 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="login.html">Login</a>
-                                    </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            inicio
-                                        </a>
                                     <li class="nav-item">
                                         <a class="nav-link" href="nosotros.html">sobre nosotros</a>
                                     </li>
@@ -105,8 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <li class="nav-item">
                                         <a class="nav-link" href="termino_condicion.html">terminos</a>
                                     </li>
-                                    </li>
-            
                                 </ul>
                             </div>
                         </div>
