@@ -339,4 +339,36 @@ body.contactanos{
       color: #fff;
       background: #00e676;
     }
+    .container-fluid{
+      margin-top: 101px;
+      color:#000 !important;
+  }
+  
+  
+  .social{
+      font-size: 21px; 
+  }
+  
+  
+  .color-text{
+      color:#757575 ;
+  }  
+    footer{
+      color:#00e676;
+   }
+  
+   li{
+       margin-top: 20px ;
+       margin-bottom: 20px ;
+   }
+   
+  
+  .row-1{
+      background-color:#1E242A ;
+  }
+  
+  .row-2{
+      
+      background-color: #28323C ;
+  }
     
