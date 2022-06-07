@@ -90,22 +90,14 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page" href="login.html">Login</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="registrarse.html">registro</a>
+                                    </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             inicio
                                         </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="index.html">menu</a></li>
-                                            <li><a class="dropdown-item" href="analgesicos.html">analgesicos</a></li>
-                                            <li><a class="dropdown-item" href="antibioticos.html">antibioticos</a></li>
-                                            <li><a class="dropdown-item" href="anticonceptivo.html">anticonceptivo</a></li>
-                                            <li><a class="dropdown-item" href="antigripales.html">antigripales</a></li>
-                                            <li><a class="dropdown-item" href="relajante_muscular.html">relajante musculares</a></li>
-                                            <li><a class="dropdown-item" href="vitamina.html">vitaminas</a></li>
-                                            <li>
-            
-                                        </ul>
                                     <li class="nav-item">
                                         <a class="nav-link" href="nosotros.html">sobre nosotros</a>
                                     </li>
