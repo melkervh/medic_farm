@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let options = {
         height: 300
     }
-    // Se inicializa el componente Slider para que funcione el carrusel de imágenes.
-    M.Slider.init(document.querySelectorAll('.slider'), options);
 });
 
 // Función para obtener y mostrar las categorías disponibles.
@@ -30,60 +28,25 @@ function readAllCategorias() {
                     // Se recorre el conjunto de registros devuelto por la API (dataset) fila por fila a través del objeto row.
                     response.dataset.map(function (row) {
                         // Se define una dirección con los datos de cada categoría para mostrar sus productos en otra página web.
-                        url = `articles.html?id=${row.id_categoria}&nombre=${row.nombre_categoria}`;
+                        url = `articles.html?id=${row.idtip}&nombre=${row.nombre_categoria}`;
                         // Se crean y concatenan las tarjetas con los datos de cada categoría.
                         content += `
-                            <div class="col s12 m6 l4">
-                                <div class="card hoverable">
-                                    <div class="card-image waves-effect waves-block waves-light">
-                                        <img src="${SERVER}images/categorias/${row.imagen_categoria}" class="activator">
-                                    </div>
-                                    <div class="card-content">
-                                        <span class="card-title activator grey-text text-darken-4">
-                                            <b>${row.nombre_categoria}</b>
-                                            <i class="material-icons right tooltipped" data-tooltip="Descripción">more_vert</i>
-                                        </span>
-                                        <p class="center">
-                                            <a href="${url}" class="tooltipped" data-tooltip="Ver productos">
-                                                <i class="material-icons">local_cafe</i>
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <div class="card-reveal">
-                                        <span class="card-title grey-text text-darken-4">
-                                            <b>${row.nombre_categoria}</b>
-                                            <i class="material-icons right tooltipped" data-tooltip="Cerrar">close</i>
-                                        </span>
-                                        <p>${row.descripcion_categoria}</p>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="tarjetas">
                             <div class="row row-cols-1 row-cols-md-2 g-2">
                                 <div class="col-lg-4">
                                     <div class="card h-100">
-                                        <img src="${SERVER}../../resources/img/card/${row.imagen_categoria}" class="card-img-top" alt="Anticonceptivos">
+                                        <img src=" ${SERVER}../../resources/img/card/${row.imagen_categoria}" class="card-img-top" alt="Anticonceptivos">
                                         <div class="card-body">
-                                            <h5 class="card-title">${row.nombre_categoria}</h5>
-                                            <!--Agregamos un collapso como boton para que contenga la informacion-->
-                                            <p>
-                                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseExample1" aria-expanded="false"
-                                                    aria-controls="collapseExample1">
-                                                    MedicFarm
-                                                </button>
-                                                <!--iniciamos un boton con la etiqueta "a" y con clase button-->
-                                                <a class="btn btn-primary" href="anticonceptivo.html" role="button">Ver mas</a>
-                                                <!--Fin de boton-->
-                                            </p>
-                                            <div class="collapse" id="collapseExample1">
-                                                <div class="card card-body">
-                                                    Variedad de anticonceptivos, diferetes tipos y marcas, no te lo pudes perder
-                                                    solo en
-                                                    MedicFarm
+                                            <div class="row">
+                                                <div class="col-10">
+                                                    <h5 class="card-title">${row.nombre_categoria}</h5>
+                                                </div>
+                                                <div class="col-2">
                                                 </div>
                                             </div>
+                                            <h6 class="card-subtitle mt-2 mb-2 text-muted">${row.descripcion_categoria}</h6>
+                                           <a href="${url}" class="btn card_button iniciar"> Agregar al carrito</a> 
+                                        </div>
                                             <!--Fin de collapso-->
                                         </div>
                                     </div>

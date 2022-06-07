@@ -16,7 +16,6 @@
 <body>
     <header>
         <!--Generamos un navbar-->
-
         <!--Fin de navbar-->
     </header>
     <br>
@@ -63,11 +62,27 @@
     <main class="container">
         <form id="tpp">
             <!--Se crean las cartas junto con imagnes y sus respectivos botones-->
-            <h4 class="center indigo-text" id="title">Nuestro catálogo</h4>
-            <!-- Fila para mostrar las categorías disponibles -->
-            <div class="row" id="categorias"></div>
-                
-                    <!--Fin de las cards-->
+            <div class="tarjetas">
+                <div class="row row-cols-1 row-cols-md-2 g-2">
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <img src="../../resources/img/card/ca1.png" class="card-img-top" alt="Anticonceptivos">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <h5 class="card-title">Anticonceptivos</h5>
+                                    </div>
+                                    <div class="col-2">
+                                    </div>
+                                </div>
+                                <h6 class="card-subtitle mt-2 mb-2 text-muted">$27.00</h6>
+                               <button type="submit" class="btn card_button iniciar"> Agregar al carrito</button> 
+                            </div>
+                                <!--Fin de collapso-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--2da card-->
         </form>
     </main>
 
@@ -78,8 +93,8 @@
     <script src="../../resources/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript" src="../../controllers/components.js"></script>
-    <script type="text/javascript" src="../../controllers/public/account.js"></script>
     <script type="text/javascript" src="../../controllers/public/index.js"></script>
+    <script type="text/javascript" src="../../controllers/public/account.js"></script>
     <!--Fin-->
 
 </body>
