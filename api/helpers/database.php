@@ -17,7 +17,7 @@ class Database
         // Credenciales para establecer la conexión con la base de datos.
        //Esas son las credenciales del ordenador personal de Miguel
         $server = 'localhost';
-        $database = 'medic';
+        $database = 'medicfarmedition';
         $username = 'postgres';
         $password = '1234';
         // Se crea la conexión mediante la extensión PDO y el controlador para PostgreSQL.
