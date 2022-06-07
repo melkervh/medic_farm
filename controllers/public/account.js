@@ -55,15 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                         <a class="nav-link" href="#">revicion de receta</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="nosotros.html">sobre nosotros</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="Contactanos.html">contactanos</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="termino_condicion.html">terminos</a>
-                                    </li>
-                                    <li class="nav-item">
                                     <li><a onclick="logOut()" class="nav-link">Cerrar sesión</a></li>
                                     </li>
                                 </ul>
@@ -123,20 +114,20 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                         <div class="col-sm-3  my-sm-0 mt-5">
                             <ul class="list-unstyled">
-                                <li class="mt-0">sobre nosotros</li>
-                                <li>contactanos</li>
+                                <li class="mt-0">Mas Sobre Nosotros</li>
+                                <li>Contactanos</li>
                             </ul>
                         </div>
                         <div class="col-sm-3  my-sm-0 mt-5">
                             <ul class="list-unstyled">
-                                <li class="mt-0">Customers</li>
-                                <li>Use Cases</li>
+                                <li class="mt-0">Terminos y Condiciones</li>
+                                <li>HTML</li>
                             </ul>
                         </div>
                         <div class="col-sm-3  my-sm-0 mt-5">
                             <ul class="list-unstyled">
-                                <li class="mt-0">Company</li>
-                                <li>About</li>
+                                <li class="mt-0">JavaScript</li>
+                                <li>Bootstrap</li>
                             </ul>
                         </div>
                     </div>
