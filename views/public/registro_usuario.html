@@ -14,28 +14,7 @@
 </head>
 
 <body>
-    <header>
-        <!--Generamos un navbar-->
-        <div class="colores">
-            <nav class="navbar navbar-expand-lg navbar-light navbar-dark">
-                <div class="container-fluid">
-                    <img src="../../resources/img/Logo.png" class="logo">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="login.html">login</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-        </div>
-        </nav>
-    </header>
+    <header></header>
     <main class="mov">
         <section class="form-register">
             <div class="row">
@@ -47,15 +26,15 @@
                             <h1>Registrar Usuario</h1>
                             <i class="fa-solid fa-user-plus bi"></i>
                         </div>
-                        <input class="controls" type="text" name="Nombre" id="nombrerg"
+                        <input class="controls" type="text" name="Nombre" id="nombrerg" required
                             placeholder="Escribir su Nombre">
-                        <input class="controls" type="text" name="Apellido" id="apellidorg"
+                        <input class="controls" type="text" name="Apellido" id="apellidorg" required
                             placeholder="Escribir su Apellido">
-                        <input class="controls" type="email" name="Correo" id="correorg"
+                        <input class="controls" type="email" name="Correo" id="correorg" required
                             placeholder="Escribir su Correo Electronico">
-                        <input class="controls" type="password" name="Clave" id="claverg"
+                        <input class="controls" type="password" name="Clave" id="clave1" required
                             placeholder="Escribir su Clave">
-                        <input class="controls" type="password" name="Clave" id="conficlaverg"
+                        <input class="controls" type="password" name="Clave" id="clave2" required
                             placeholder="Confirme su Clave">
                         <div class="am"><a href="termino_condicion.html">Terminos y Condiciones</a></div>
                         <div class="form-check form-switch">
@@ -73,13 +52,11 @@
         </section>
 
     </main>
-    <footer>
-        <h6>Derechos de la pagina reservados por @Medicfarm </h6>
-    </footer>
+    <footer></footer>
     <!--Bootstrap JS-->
     <script src="../../resources/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a478d5fd56.js" crossorigin="anonymous"></script>
-    <script src="../js/confijura.js"></script>
+    <script src="../../controllers/public/account.js"></script>
     <!--Fin-->
 </body>
 
