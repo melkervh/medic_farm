@@ -49,11 +49,16 @@ document.addEventListener('DOMContentLoaded', function () {
                                             <li><a class="dropdown-item" href="relajante_muscular.html">relajante musculares</a></li>
                                             <li><a class="dropdown-item" href="vitamina.html">vitaminas</a></li>
                                             <li>
-            
                                         </ul>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="carrito.html">Carrito</a>
+                                         </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">revicion de receta</a>
                                     </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" href="Contactanos.html">Contactanos</a>
+                                </li>
                                     <li class="nav-item">
                                     <li><a onclick="logOut()" class="nav-link">Cerrar sesión</a></li>
                                     </li>
@@ -78,13 +83,19 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item dropdown">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="nosotros.html">sobre nosotros</a>
+                                        <a class="nav-link" href="index.html">Inicio</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="Contactanos.html">contactanos</a>
+                                        <a class="nav-link" href="login.html">Registrate</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="termino_condicion.html">terminos</a>
+                                        <a class="nav-link" href="registro_usuario.html">Nueva Cuenta</a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" href="nosotros.html">Sobre Nosotros</a>
+                                </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="termino_condicion.html">Terminos</a>
                                     </li>
                                 </ul>
                             </div>
