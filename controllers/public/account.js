@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="colores">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="container-fluid">
-                            <img src="../../resources/img/Logo.png" alt=""  height="80" class="d-inline-block align-text-top logo">
+                            <a href="index.html"><img src="../../resources/img/Logo.png"  height="80" class="d-inline-block align-text-top logo"></a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="colores">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="container-fluid">
-                            <img src="../../resources/img/Logo.png" alt=""  height="80" class="d-inline-block align-text-top logo">
+                        <a href="index.html"><img src="../../resources/img/Logo.png"  height="80" class="d-inline-block align-text-top logo"></a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -95,16 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 // Se asigna a la página web el contenido del encabezado.
                 document.querySelector('header').innerHTML = header;
-                // Se define el componente Parallax.
-                let parallax = `
-                    <div class="parallax-container">
-                        <div class="parallax">
-                        </div>
-                    </div>
-                `;
-                // Se asigna el componente Parallax antes de la etiqueta footer.
-                document.querySelector('footer').insertAdjacentHTML('beforebegin', parallax);
-                // Se establece el pie del encabezado.
                 const footer = `
                 <div class="row justify-content-center mb-0 pt-5 pb-0 row-2 px-3">
                 <div class="col-12">
@@ -149,12 +139,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 `;
                 // Se asigna a la página web el contenido del pie.
                 document.querySelector('footer').innerHTML = footer;
-                // Se declara e inicializa un arreglo con los nombres de las imagenes que se pueden utilizar en el efecto parallax.
-                let images = ['img01.jpg', 'img02.jpg', 'img03.jpg', 'img04.jpg', 'img05.jpg'];
-                // Se declara e inicializa una variable para obtener un elemento del arreglo de forma aleatoria.
-                let element = Math.floor(Math.random() * images.length);
-                // Se asigna la imagen a la etiqueta img por medio del atributo src.
-                document.getElementById('parallax').setAttribute('src', '../../resources/img/parallax/' + images[element]);
             });
         } else {
             console.log(request.status + ' ' + request.statusText);
