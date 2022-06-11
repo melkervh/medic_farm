@@ -21,45 +21,82 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Se comprueba si el usuario está autenticado para establecer el encabezado respectivo.
                 if (response.session) {
                     header = `
-                        <div class="navbar-fixed">
-                            <nav class="green">
-                                <div class="nav-wrapper">
-                                    <a href="index.html" class="brand-logo"><img src="${SERVER}/images/logo.png" height="60"></a>
-                                    <a data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                                    <ul class="right hide-on-med-and-down">
-                                        <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
-                                        <li><a href="cart.html"><i class="material-icons left">shopping_cart</i>Carrito</a></li>
-                                        <li><a onclick="logOut()"><i class="material-icons left">close</i>Cerrar sesión</a></li>
-                                    </ul>
-                                </div>
-                            </nav>
+                    <div class="colores">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="container-fluid">
+                            <a href="index.html"><img src="../../resources/img/Logo.png"  height="80" class="d-inline-block align-text-top logo"></a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">perfil</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            inicio
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="index.html">menu</a></li>
+                                            <li><a class="dropdown-item" href="anticonceptivo.html">anticonceptivo</a></li>
+                                            <li>
+                                        </ul>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="carrito.html">Carrito</a>
+                                         </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">revicion de receta</a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" href="Contactanos.html">Contactanos</a>
+                                </li>
+                                    <li class="nav-item">
+                                    <li><a onclick="logOut()" class="nav-link">Cerrar sesión</a></li>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <ul class="sidenav" id="mobile">
-                            <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
-                            <li><a href="cart.html"><i class="material-icons left">shopping_cart</i>Carrito</a></li>
-                            <li><a onclick="logOut()"><i class="material-icons left">close</i>Cerrar sesión</a></li>
-                        </ul>
+                    </nav>
+                </div>
                     `;
                 } else {
                     header = `
-                        <div class="navbar-fixed">
-                            <nav class="green">
-                                <div class="nav-wrapper">
-                                    <a href="index.html" class="brand-logo"><img src="${SERVER}images/logo.png" height="60"></a>
-                                    <a data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                                    <ul class="right hide-on-med-and-down">
-                                        <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
-                                        <li><a href="signup.html"><i class="material-icons left">person</i>Crear cuenta</a></li>
-                                        <li><a href="login.html"><i class="material-icons left">login</i>Iniciar sesión</a></li>
-                                    </ul>
-                                </div>
-                            </nav>
+                    <div class="colores">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="container-fluid">
+                        <a href="index.html"><img src="../../resources/img/Logo.png"  height="80" class="d-inline-block align-text-top logo"></a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item dropdown">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Inicio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="login.html">Registrate</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="registro_usuario.html">Nueva Cuenta</a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" href="nosotros.html">Sobre Nosotros</a>
+                                </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="termino_condicion.html">Terminos</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <ul class="sidenav" id="mobile">
-                            <li><a href="index.html"><i class="material-icons left">view_module</i>Catálogo</a></li>
-                            <li><a href="signup.html"><i class="material-icons left">person</i>Crear cuenta</a></li>
-                            <li><a href="login.html"><i class="material-icons left">login</i>Iniciar sesión</a></li>
-                        </ul>
+                    </nav>
+                </div>
                     `;
                 }
                 // Se asigna a la página web el contenido del encabezado.
@@ -68,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 let parallax = `
                     <div class="parallax-container">
                         <div class="parallax">
-                            <img id="parallax">
                         </div>
                     </div>
                 `;
@@ -76,52 +112,46 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.querySelector('footer').insertAdjacentHTML('beforebegin', parallax);
                 // Se establece el pie del encabezado.
                 const footer = `
-                    <div class="container">
-                        <div class="row">
-                            <div class="col s12 m6 l6">
-                                <h5 class="white-text">Nosotros</h5>
-                                <p>
-                                    <blockquote>
-                                        <a href="#" class="white-text"><b>Misión</b></a>
-                                        <span>|</span>
-                                        <a href="#" class="white-text"><b>Visión</b></a>
-                                        <span>|</span>
-                                        <a href="#" class="white-text"><b>Valores</b></a>
-                                    </blockquote>
-                                    <blockquote>
-                                        <a href="#" class="white-text"><b>Términos y condiciones</b></a>
-                                    </blockquote>
-                                </p>
-                            </div>
-                            <div class="col s12 m6 l6">
-                                <h5 class="white-text">Contáctanos</h5>
-                                <p>
-                                    <blockquote>
-                                        <a href="https://www.facebook.com/" class="white-text" target="_blank"><b>facebook</b></a>
-                                        <span>|</span>
-                                        <a href="https://www.instagram.com/" class="white-text" target="_blank"><b>instagram</b></a>
-                                        <span>|</span>
-                                        <a href="https://www.youtube.com/" class="white-text" target="_blank"><b>youtube</b></a>
-                                    </blockquote>
-                                    <blockquote>
-                                        <a href="mailto:dacasoft@outlook.com" class="white-text"><b>Correo electrónico</b></a>
-                                        <span>|</span>
-                                        <a href="https://api.whatsapp.com/" class="white-text" target="_blank"><b>WhatsApp</b></a>
-                                    </blockquote>
-                                </p>
-                            </div>
+                <div class="row justify-content-center mb-0 pt-5 pb-0 row-2 px-3">
+                <div class="col-12">
+                    <div class="row row-2">
+                        <div class="col-sm-3 text-md-center">
+                            <h5><span> <i class="fa fa-firefox text-light" aria-hidden="true"></i></span><b> MedicFarm</b></h5>
+                        </div>
+                        <div class="col-sm-3  my-sm-0 mt-5">
+                            <ul class="list-unstyled">
+                                <li class="mt-0">Mas Sobre Nosotros</li>
+                                <li>Contactanos</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3  my-sm-0 mt-5">
+                            <ul class="list-unstyled">
+                                <li class="mt-0">Terminos y Condiciones</li>
+                                <li>HTML</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3  my-sm-0 mt-5">
+                            <ul class="list-unstyled">
+                                <li class="mt-0">JavaScript</li>
+                                <li>Bootstrap</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="footer-copyright">
-                        <div class="container">
-                            <span>© 2018-2022 Copyright CoffeeShop. Todos los derechos reservados.</span>
-                            <span class="right">Diseñado con
-                                <a href="http://materializecss.com/" target="_blank">
-                                    <img src="../../resources/img/materialize.png" height="20" style="vertical-align:middle" alt="Materialize">
-                                </a>
-                            </span>
-                        </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-0 pt-0 row-1 mb-0  px-sm-3 px-2">
+                <div class="col-12">
+                    <div class="row my-4 row-1 no-gutters">
+                        <div class="col-sm-3 col-auto text-center"><small>&#9400; MedicFarm</small></div>
+                        <div class="col-md-3 col-auto "></div>
+                        <div class="col-md-3 col-auto"></div>
+                        <div class="col  my-auto text-md-left  text-right "> <small> medicfarm@gmail.com<span><img
+                                        src="https://i.imgur.com/TtB6MDc.png" class="img-fluid " width="25"></span>
+                                <span><img src="https://i.imgur.com/N90KDYM.png" class="img-fluid "
+                                        width="25"></span></small> </div>
                     </div>
+                </div>
+            </div>
                 `;
                 // Se asigna a la página web el contenido del pie.
                 document.querySelector('footer').innerHTML = footer;
