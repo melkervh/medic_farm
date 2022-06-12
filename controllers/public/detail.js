@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Se obtienen los datos localizados por medio de las variables.
     const ID = params.get('id');
     // Se llama a la función que muestra el detalle del producto seleccionado previamente.
+        readAllValoraciones(ID);
     readOneProducto(ID);
     // Se inicializa el componente Tooltip para que funcionen las sugerencias textuales.
 });
@@ -76,9 +77,7 @@ document.getElementById('shopping-form').addEventListener('submit', function (ev
     });
 });
 // Método manejador de eventos que se ejecuta cuando el documento ha cargado.
-document.addEventListener('DOMContentLoaded', function () {
-    readAllValoraciones(ID);
-});
+
 
 // Función para obtener y mostrar las categorías disponibles.
 function readAllValoraciones(id) {
