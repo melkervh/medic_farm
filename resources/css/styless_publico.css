@@ -342,7 +342,9 @@ body.contactanos{
       font-size: 21px; 
   }
   
-  
+  .container-fluid{
+    color:#000 ;
+}
   .color-text{
       color:#757575 ;
   }  
@@ -374,7 +376,10 @@ body.contactanos{
   .lal {
     color: #fff;
   }
-  .alt{padding-top: 3%;}
   
+  .alt{padding-top: 3%;}
+  .xc{
+    padding-top: 5%;
+  }
 
     

@@ -18,6 +18,7 @@ function fillTable(dataset) {
                 <td>${row.idtip}</td>
                 <td>${row.tipo_nombre}</td>
                 <td>${row.descripcion_tipo}</td>
+                <td>${row.imagen_categoria}</td>
                 <td>
                     <a onclick="openUpdate(${row.idtip})" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-pen"></i>

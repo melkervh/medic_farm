@@ -4,6 +4,8 @@ class TipoProducto extends Validator
     private $idtip = null;
     private $tipo_nombre = null;
     private $descripcion_tipo = null;
+    private $img= null;
+    private $ruta = '../images/categoria/';
    
     public function setidtip($value)
     {
@@ -37,6 +39,15 @@ class TipoProducto extends Validator
             return true;
         }
     }
+    public function setimg($file)
+    {
+        if ($this->validateImageFile($file, 500, 500)) {
+            $this->img= $this->getFileName();
+            return true;
+        } else {
+            return false;
+        }
+    }
     public function getidtip()
     {
         return $this->ididtip;
@@ -49,7 +60,14 @@ class TipoProducto extends Validator
     {
         return $this->descripcion_tipo;
     }
-
+    public function getRuta()
+    {
+        return $this->ruta;
+    }
+    public function getimg_produc()
+    {
+        return $this->img;
+    }
     public function searchRows($value)
     {
         $sql = 'SELECT idtip,tipo_nombre, descripcion_tipo
@@ -61,14 +79,14 @@ class TipoProducto extends Validator
     }
     public function createRow()
     {
-        $sql = 'INSERT INTO tipo_produc(tipo_nombre,descripcion_tipo )
-                VALUES(?, ?)';
-        $params = array($this->tipo_nombre,$this->descripcion_tipo );
+        $sql = 'INSERT INTO tipo_produc(tipo_nombre,descripcion_tipo,imagen_categoria )
+                VALUES(?,?,?)';
+        $params = array($this->tipo_nombre,$this->descripcion_tipo,$this->img);
         return Database::executeRow($sql, $params);
     }
     public function readAll()
     {
-        $sql = 'SELECT idtip ,tipo_nombre, descripcion_tipo
+        $sql = 'SELECT idtip ,tipo_nombre, descripcion_tipo,imagen_categoria
         FROM tipo_produc
         ORDER BY idtip';
         $params = null;
@@ -76,7 +94,7 @@ class TipoProducto extends Validator
     }
     public function readOne()
     {
-        $sql = 'SELECT  idtip ,tipo_nombre, descripcion_tipo
+        $sql = 'SELECT  idtip ,tipo_nombre, descripcion_tipo,imagen_categoria
                 FROM tipo_produc
                 WHERE idtip = ?';
         $params = array($this->idtip);
@@ -87,9 +105,9 @@ class TipoProducto extends Validator
     {
 
         $sql = 'UPDATE tipo_produc
-                SET  tipo_nombre = ?, descripcion_tipo = ?
+                SET  tipo_nombre = ?, descripcion_tipo = ?,imagen_categoria= ?
                 WHERE idtip = ?';
-        $params = array( $this->tipo_nombre, $this->descripcion_tipo, $this->idtip);
+        $params = array( $this->tipo_nombre, $this->descripcion_tipo, $this->img,$this->idtip);
         return Database::executeRow($sql, $params);
     }
     public function deleteRow()

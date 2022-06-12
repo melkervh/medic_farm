@@ -9,7 +9,7 @@ class producto extends Validator
     private $estado= null;
     private $categoria = null ;
     private $cantidad = null ;
-    private $ruta = '../api/images/productos/';
+    private $ruta = '../images/productos/';
 
     public function setidproducto($value)
     {
@@ -130,9 +130,9 @@ class producto extends Validator
     public function createRow()
     {
         $sql = 'INSERT INTO producto(
-             img, nombre_produc, descripcion, precio_produc, estado, idusuario, idtip, cantidad)
-            VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)';
-        $params = array($this->img,$this->nombre_produc, $this->descripcion, $this->precio_product, $this->estado , $_SESSION['idusuario'],  $this->categoria, $this-> cantidad);
+             img_producto, nombre_producto, descripcion_producto, precio_produc, estado_producto, idusuario, idtip, cantidad_producto)
+            VALUES ( ?, ?, ?, ?, ?, ?, ?, ?);';
+        $params = array($this->img,$this->nombre_produc, $this->descripcion, $this->precio_produc, $this->estado , $_SESSION['idusuario'],  $this->categoria, $this-> cantidad);
         return Database::executeRow($sql, $params);
     }
     public function searchRows($value)
@@ -146,9 +146,9 @@ class producto extends Validator
     }
     public function readAll()
     {
-        $sql = 'SELECT idproducto, img, nombre_produc, descripcion, precio_produc,tipo_nombre,estado,cantidad
+        $sql = 'SELECT idproducto, img_producto, nombre_producto, descripcion_producto, precio_produc,tipo_nombre,estado_producto,cantidad_producto
         FROM producto INNER JOIN tipo_produc USING(idtip)
-        ORDER BY nombre_produc';
+        ORDER BY nombre_producto';
         $params = null;
         return Database::getRows($sql, $params);
     }

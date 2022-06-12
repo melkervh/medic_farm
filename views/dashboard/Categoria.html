@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <header >
+  <header>
     <nav class="navbar navbar-expand-lg navbar-light navbar-dark">
       <div class="container-fluid">
         <img src="../../resources/img/Logo.png" class="logo">
@@ -36,10 +36,10 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="index.php">inicio</a>
-          </li>
-          <li class="nav-item">
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="../../api/dashboard/actions/logout_action.php">Cerrar Session</a>
-          </li>
+            </li>
             </li>
           </ul>
         </div>
@@ -55,52 +55,60 @@
       <nav class="navbar navbar-light">
         <!--Agrego una clase conteiner par mas el metodo de grid para hacerlo responsi y que tenga 
             una mejor manera en los espacios de la tabla-->
-            <form class="container-lg-4"  id="search-form">
-              <div class="input-group rounded">
-                  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                      aria-describedby="search-addon" id="search" name="search"/>
-                  <span class="input-group-text border-0" id="search-addon">
-                      <button type="submit" class="green" data-bs-toggle="tooltip" data-bs-placement="top" title="Buscar">
-                          <i class="fas fa-search"></i>
-                      </button>
+        <form class="container-lg-4" id="search-form">
+          <div class="input-group rounded">
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+              aria-describedby="search-addon" id="search" name="search" />
+            <span class="input-group-text border-0" id="search-addon">
+              <button type="submit" class="green" data-bs-toggle="tooltip" data-bs-placement="top" title="Buscar">
+                <i class="fas fa-search"></i>
+              </button>
         </form>
-        </nav>
-       
-        <!--modal para agregar categoria -->
-        <i class="fa-solid fa-tag  btn2 ico2 " data-bs-toggle="modal" data-bs-target="#exampleModal"
-          data-bs-whatever="@mdo" id="save-modal" ></i>
-          
-        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
-          <div class="modal-dialog">
-            <div class="modal-content mdt">
-              <div class="modal-header mdt">
-                <h5 class="modal-title mdt" method="post" id="save-modal">Categoria <i class="fa-solid fa-tag isd"></i></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" data-tooltip="Cerrar" ></button>
-              </div>
-              <div class="modal-body mdt">
-                <!--formulario para modificar los usuarios-->
-                <form  method="post" id="save-form">
-                    <input class="hidden" style="visibility:hidden;"  type="number" id="idtip" name="idtip">
-                  <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label"> <i class="fa-solid fa-tag log"></i>ingresar
-                      nueva categoria</label>
-                    <input type="text" class="form-control" name="tipo_nombre" id="tipo_nombre" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label"> <i class="fa-solid fa-tag log"></i>Descripcion</label>
-                    <textarea class="form-control" id="descripcion_tipo" name="descripcion_tipo" rows="3" required></textarea>
-                  </div>
-              
-              </div>
-              <div class="modal-footer mdt">
-                
-                <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" id="save-modal" data-tooltip="Reiniciar" >Reiniciar</button>
-                <button type="submit" class="btn btn-primary"  data-tooltip="Guardar" id="save-modal" >save</button>
+      </nav>
+
+      <!--modal para agregar categoria -->
+      <i class="fa-solid fa-tag  btn2 ico2 " data-bs-toggle="modal" data-bs-target="#exampleModal"
+        data-bs-whatever="@mdo" id="save-modal"></i>
+
+      <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content mdt">
+            <div class="modal-header mdt">
+              <h5 class="modal-title mdt" method="post" id="save-modal">Categoria <i class="fa-solid fa-tag isd"></i>
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                data-tooltip="Cerrar"></button>
+            </div>
+            <div class="modal-body mdt">
+              <!--formulario para modificar los usuarios-->
+              <form method="post" id="save-form">
+                <input class="hidden" style="visibility:hidden;" type="number" id="idtip" name="idtip">
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label"> <i class="fa-solid fa-tag log"></i>ingresar
+                    nueva categoria</label>
+                  <input type="text" class="form-control" name="tipo_nombre" id="tipo_nombre" required>
+                </div>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label"> <i
+                      class="fa-solid fa-tag log"></i>Descripcion</label>
+                  <textarea class="form-control" id="descripcion_tipo" name="descripcion_tipo" rows="3"
+                    required></textarea>
+                </div>
+                <div class="mb-2">
+                  <label for="correo-text" class="col-form-label"> <i class="fa-solid fa-image log"></i>imagen</label>
+                  <input type="file" class="form-control " id="archivo" name="archivo" accept=".jpg, .png" required>
+                </div>
+            </div>
+            <div class="modal-footer mdt">
+
+              <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" id="save-modal"
+                data-tooltip="Reiniciar">Reiniciar</button>
+              <button type="submit" class="btn btn-primary" data-tooltip="Guardar" id="save-modal">save</button>
               </form>
-              </div>  
             </div>
           </div>
         </div>
+      </div>
       </nav>
     </section>
 
@@ -111,6 +119,7 @@
             <th scope="col">ID</th>
             <th scope="col">Nombre</th>
             <th scope="col">Descripcion </th>
+            <th scope="col">imagen</th>
             <th scope="col">acciones </th>
           </tr>
         </thead>

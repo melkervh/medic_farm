@@ -101,15 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 // Se asigna a la página web el contenido del encabezado.
                 document.querySelector('header').innerHTML = header;
-                // Se define el componente Parallax.
-                let parallax = `
-                    <div class="parallax-container">
-                        <div class="parallax">
-                        </div>
-                    </div>
-                `;
-                // Se asigna el componente Parallax antes de la etiqueta footer.
-                document.querySelector('footer').insertAdjacentHTML('beforebegin', parallax);
+    
                 // Se establece el pie del encabezado.
                 const footer = `
                 <div class="row justify-content-center mb-0 pt-5 pb-0 row-2 px-3">
@@ -155,11 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 `;
                 // Se asigna a la página web el contenido del pie.
                 document.querySelector('footer').innerHTML = footer;
-                // Se declara e inicializa un arreglo con los nombres de las imagenes que se pueden utilizar en el efecto parallax.
-                let images = ['img01.jpg', 'img02.jpg', 'img03.jpg', 'img04.jpg', 'img05.jpg'];
-                // Se declara e inicializa una variable para obtener un elemento del arreglo de forma aleatoria.
-                let element = Math.floor(Math.random() * images.length);
-                // Se asigna la imagen a la etiqueta img por medio del atributo src.
+
             });
         } else {
             console.log(request.status + ' ' + request.statusText);
