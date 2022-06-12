@@ -66,15 +66,6 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Ocurrió un problema al remover el producto';
                 }
                 break;
-            case 'readEnca':
-                if ($result['dataset'] = $pedido->readEnca()) {
-                    $result['status'] = 1;
-                } elseif (Database::getException()) {
-                    $result['exception'] = Database::getException();
-                } else {
-                    $result['exception'] = 'Detalle inexistente';
-                }
-                break;
             case 'finishOrder':
                 if ($pedido->finishOrder()) {
                     $result['status'] = 1;
