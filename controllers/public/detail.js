@@ -36,12 +36,7 @@ function readOneProducto(id) {
                     document.getElementById('precio').textContent = response.dataset.precio_produc;
                     // Se asigna el valor del id del producto al campo oculto del formulario.
                     document.getElementById('idproducto').value = response.dataset.idproducto;
-                } else {
-                    // Se presenta un mensaje de error cuando no existen datos para mostrar.
-                    document.getElementById('title').innerHTML = `<i class="material-icons small">cloud_off</i><span class="red-text">${response.exception}</span>`;
-                    // Se limpia el contenido cuando no hay datos para mostrar.
-                    document.getElementById('detalle').innerHTML = '';
-                }
+                } 
             });
         } else {
             console.log(request.status + ' ' + request.statusText);

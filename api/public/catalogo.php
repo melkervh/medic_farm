@@ -1,8 +1,8 @@
 <?php
 require_once('../helpers/database.php');
 require_once('../helpers/validator.php');
-require_once('../../../mmodels/categoria_modal.php');
-require_once('../../../models/producto_modal.php');
+require_once('../../models/categoria_modal.php');
+require_once('../../models/producto_modal.php');
 
 // Se comprueba si existe una acción a realizar, de lo contrario se finaliza el script con un mensaje de error.
 if (isset($_GET['action'])) {
