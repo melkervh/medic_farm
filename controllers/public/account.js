@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <li><a class="dropdown-item" href="index.html">menu</a></li>
-                                            <li><a class="dropdown-item" href="anticonceptivo.html">anticonceptivo</a></li>
+                                            <li><a class="dropdown-item" href="carts.html">anticonceptivo</a></li>
                                             <li>
                                         </ul>
                                         <li class="nav-item">
@@ -160,7 +160,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Se declara e inicializa una variable para obtener un elemento del arreglo de forma aleatoria.
                 let element = Math.floor(Math.random() * images.length);
                 // Se asigna la imagen a la etiqueta img por medio del atributo src.
-                document.getElementById('parallax').setAttribute('src', '../../resources/img/parallax/' + images[element]);
             });
         } else {
             console.log(request.status + ' ' + request.statusText);
