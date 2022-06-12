@@ -21,7 +21,7 @@ if (isset($_GET['action'])) {
                 if (!$pedido->startOrder()) {
                     $result['exception'] = 'Ocurrió un problema al obtener el pedido';
                 } elseif (!$pedido->setProducto($_POST['idproducto'])) {
-                    $result['exception'] = 'Producto incorrecto';
+                    $result['exception'] = 'Producto  inexistente';
                 } elseif (!$pedido->setCantidad($_POST['cantidad'])) {
                     $result['exception'] = 'Cantidad incorrecta';
                 } elseif ($pedido->createDetail()) {

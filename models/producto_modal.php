@@ -154,8 +154,10 @@ class producto extends Validator
     }
     public function readOne()
     {
-        $sql = 'SELECT idproducto, nombre_produc, descripcion, precio_produc, img, idtip, estado,cantidad
-        FROM producto
+        $sql = 'SELECT idproducto, nombre_producto, descripcion_producto, precio_produc, img_producto, tipo_nombre, 
+        estado_producto,cantidad_producto
+              FROM producto
+              inner join tipo_produc on producto.idtip = tipo_produc.idtip
         WHERE idproducto =?';
         $params = array($this->idproducto);
         return Database::getRow($sql, $params);
@@ -178,7 +180,7 @@ class producto extends Validator
         $params = array($this->idproducto);
         return Database::executeRow($sql, $params);
     }
-
+ 
 
 }
 

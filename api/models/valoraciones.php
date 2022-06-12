@@ -2,12 +2,22 @@
 
 class Valoraciones extends Validator
 {
+    private $idproducto = null;
     private $idvaloraciones = null;
     private $iddetalle = null;
     private $calificacion = null;
     private $comentario = null;
     private $fecha_valoracion = null;
-
+ 
+    public function setidproducto($value)
+    {
+        if ($this->validateNaturalNumber($value)) {
+            $this->idproducto = $value;
+            return true;
+        } else {
+            return false;
+        }
+    }
     public function setidvaloraciones($value)
     {
         if ($this->validateNaturalNumber($value)) {
@@ -60,6 +70,10 @@ class Valoraciones extends Validator
 
         }
 
+    }
+    public function getIdproducto()
+    {
+        return $this->idproducto;
     }
     public function getIdvaloracion()
     {

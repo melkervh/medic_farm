@@ -34,6 +34,7 @@ function readOneProducto(id) {
                     // Se colocan los datos en la tarjeta de acuerdo al producto seleccionado previamente.
                     document.getElementById('imagen').setAttribute('src', SERVER + 'images/productos/' + response.dataset.imagen_producto);
                     document.getElementById('nombre').textContent = response.dataset.nombre_producto;
+                    document.getElementById('categoria').textContent = response.dataset.tipo_nombre;
                     document.getElementById('descripcion').textContent = response.dataset.descripcion_producto;
                     document.getElementById('precio').textContent = response.dataset.precio_produc;
                     // Se asigna el valor del id del producto al campo oculto del formulario.

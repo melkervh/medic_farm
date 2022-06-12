@@ -70,7 +70,7 @@ if (isset($_GET['action'])) {
                 break;
                 case 'readOne':
                     if (!$producto->setidproducto($_POST['idproducto'])) {
-                        $result['exception'] = 'Producto incorrecto';
+                        $result['exception'] = 'Prodincorrectoucto ';
                     } elseif ($result['dataset'] = $producto->readOne()) {
                         $result['status'] = 1;
                     } elseif (Database::getException()) {
