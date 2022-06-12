@@ -43,13 +43,12 @@ document.addEventListener('DOMContentLoaded', function () {
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <li><a class="dropdown-item" href="index.html">menu</a></li>
                                             <li><a class="dropdown-item" href="carts.html">anticonceptivo</a></li>
-                                            <li>
                                         </ul>
                                         <li class="nav-item">
                                         <a class="nav-link" href="carrito.html">Carrito</a>
                                          </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">revicion de receta</a>
+                                        <a class="nav-link" href="historial_pedidos.html">Historial de pedidos</a>
                                     </li>
                                     <li class="nav-item">
                                     <a class="nav-link" href="Contactanos.html">Contactanos</a>

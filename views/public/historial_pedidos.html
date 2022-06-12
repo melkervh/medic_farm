@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link type="image/png" rel="icon" href="../../resources/img/Logo.png">
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../resources/css/styless_publico.css" rel="stylesheet">
+    <!--Fin-->
+
+    <title>Historial</title>
+</head>
+
+<body>
+    <!--se llama el header mediante el js-->
+    <header></header>
+
+    <!--comienza el main-->
+    <main>
+        <div class="tabla">
+            <h2 class="encabezado text-center mt-2">Lista de pedidos</h2>
+            <div class="col-12 mb-4">
+                <table class="table border table-bordered">
+                    <thead>
+                        <tr class="text-center">
+                            <th class="tabla">ID pedido</th>
+                            <th class="tabla">Fecha</th>
+                            <th class="tabla">Estado</th>
+                            <th class="tabla">Acciones</th>
+                        </tr>
+                    </thead>
+                    <!-- Cuerpo de la tabla para mostrar un registro por fila -->
+                    <tbody id="tbody-rows" class="tabla"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!--se llama el footer mediante el js-->
+    <footer></footer>
+    <!--Bootstrap JS-->
+    <script src="https://kit.fontawesome.com/a478d5fd56.js" crossorigin="anonymous"></script>
+    <script src="../../resources/js/bootstrap.min.js"></script>
+    <script src="../../controllers/components.js"></script>
+    <script src="../../controllers/public/account.js"></script>
+    <script src="../../controllers/public/historial.js"></script>
+    <!--Fin-->
+
+</body>
+
+</html>
