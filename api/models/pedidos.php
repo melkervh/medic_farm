@@ -182,4 +182,13 @@ class Pedidos extends Validator
         $params = array($this->id_detalle, $_SESSION['id_pedido']);
         return Database::executeRow($sql, $params);
     }
+
+    public function readEnca()
+    {
+        $sql = 'SELECT id_cliente, id_pedido, fecha_pedido, estado_pedido
+                from pedidos
+                where id_cliente = ?';
+         $params = array($_SESSION['id_cliente']);
+        return Database::getRows($sql, $params);
+    }
 }
