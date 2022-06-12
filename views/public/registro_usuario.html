@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-">
                     <!--Form del registro usuario-->
-                    <form action="#" id="regis-usu">
+                    <form action="#" id="regis-usu" method="post">
                         <!--Se crea esta clase para ajustar los titulos-->
                         <div class="titulos">
                             <h1>Registrar Usuario</h1>
@@ -29,13 +29,19 @@
                         <input class="controls" type="text" name="Nombre" id="nombrerg" required
                             placeholder="Escribir su Nombre">
                         <input class="controls" type="text" name="Apellido" id="apellidorg" required
-                            placeholder="Escribir su Apellido">
+                            placeholder="Escribir su Apellitextdo">
+                            <input class="controls" type="text" name="dui" id="dui" required
+                            placeholder="DUI: 00000000-0">
                         <input class="controls" type="email" name="Correo" id="correorg" required
                             placeholder="Escribir su Correo Electronico">
-                        <input class="controls" type="password" name="Clave" id="clave1" required
+                        <input class="controls" type="password" name="Clave1" id="clave1" required
                             placeholder="Escribir su Clave">
-                        <input class="controls" type="password" name="Clave" id="clave2" required
+                        <input class="controls" type="password" name="Clave2" id="clave2" required
                             placeholder="Confirme su Clave">
+                            <input class="controls" type="password" name="Clave2" id="clave2" required
+                            placeholder="Telefono: 0000-0000">
+
+                        <!--Complementaciones-->                
                         <div class="am"><a href="termino_condicion.html">Terminos y Condiciones</a></div>
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="ltercon">
