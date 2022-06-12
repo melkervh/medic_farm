@@ -1,6 +1,7 @@
 // Constante para establecer la ruta y parámetros de comunicación con la API.
 const API_CATALOGO = SERVER + 'public/catalogo.php?action=';
 const API_PEDIDOS = SERVER + 'public/pedidos.php?action=';
+const API_VALORACIONES = SERVER + 'public/valoraciones.php?action=';
 
 // Método manejador de eventos que se ejecuta cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', function () {
@@ -74,3 +75,54 @@ document.getElementById('shopping-form').addEventListener('submit', function (ev
         }
     });
 });
+// Método manejador de eventos que se ejecuta cuando el documento ha cargado.
+document.addEventListener('DOMContentLoaded', function () {
+    readAllValoraciones(ID);
+});
+
+// Función para obtener y mostrar las categorías disponibles.
+function readAllValoraciones(id) {
+    // Se define un objeto con los datos del producto seleccionado.
+    const data = new FormData();
+    data.append('idproducto', id);
+    // Petición para solicitar los datos de las categorías.
+    fetch(API_VALORACIONES+ 'readValoraciones', {
+        method: 'post',
+        body: data
+    }).then(function (request) {
+        // Se verifica si la petición es satisfactoria, de lo contrario se muestra un mensaje en la consola indicando el problema.
+        if (request.ok) {
+            // Se obtiene la respuesta en formato JSON.
+            request.json().then(function (response) {
+                // Se comprueba si la respuesta es correcta, de lo contrario se muestra un mensaje con la excepción.
+                if (response.status) {
+                    let content = '';
+                    let url = '';
+                    // Se recorre el conjunto de registros devuelto por la API (dataset) fila por fila a través del objeto row.
+                    response.dataset.map(function (row) {
+                        // Se define una dirección con los datos de cada categoría para mostrar sus productos en otra página web.
+                        url = `detalle.html?id=${row.idproducto}`;
+                        // Se crean y concatenan las tarjetas con los datos de cada categoría.
+                        content += `
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">${row.nombre_cliente}</h5>
+                                    <p class="card-text">${row.comentario}</p>
+                                    <h6 class="card-subtitle mb-2 text-muted">${row.fecha_valoraciones}</h6>
+                                </div>
+                            </div>     
+                        `;
+                    });
+                    // Se agregan las tarjetas a la etiqueta div mediante su id para mostrar las categorías.
+                    document.getElementById('comentario').innerHTML = content;
+                } else {
+                    // Se asigna al título del contenido un mensaje de error cuando no existen datos para mostrar.
+                    let title = `<span class="red-text">${response.exception}</span>`;
+                    document.getElementById('title').innerHTML = title;
+                }
+            });
+        } else {
+            console.log(request.status + ' ' + request.statusText);
+        }
+    });
+}
