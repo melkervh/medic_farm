@@ -113,5 +113,13 @@ class Valoraciones extends Validator
         ;
         $params = array($this->id);
         return Database::getRows($sql, $params);
-    }						
+    }	
+    public function readAll()
+    {
+        $sql = 'SELECT nombre_cliente, calificacion, comentario, fecha_valoracion
+        FROM valoracion INNER JOIN cliente  USING (id_cliente) 
+        ORDER BY nombre_cliente';
+        $params = null;
+        return Database::getRows($sql, $params);
+    }					
 }

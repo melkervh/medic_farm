@@ -116,10 +116,8 @@ function readAllValoraciones(id) {
                     });
                     // Se agregan las tarjetas a la etiqueta div mediante su id para mostrar las categorías.
                     document.getElementById('comentario').innerHTML = content;
-                } else {
-                    // Se asigna al título del contenido un mensaje de error cuando no existen datos para mostrar.
-                    document.getElementById('title').innerHTML = title;
-                }
+                } 
+                
             });
         } else {
             console.log(request.status + ' ' + request.statusText);
