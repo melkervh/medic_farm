@@ -5,7 +5,7 @@ class TipoProducto extends Validator
     private $tipo_nombre = null;
     private $descripcion_tipo = null;
     private $img= null;
-    private $ruta = '../images/categoria/';
+    private $ruta = '../../images/categoria/';
    
     public function setidtip($value)
     {
@@ -64,7 +64,7 @@ class TipoProducto extends Validator
     {
         return $this->ruta;
     }
-    public function getimg_produc()
+    public function getimg()
     {
         return $this->img;
     }

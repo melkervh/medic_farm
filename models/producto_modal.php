@@ -9,7 +9,7 @@ class producto extends Validator
     private $estado= null;
     private $categoria = null ;
     private $cantidad = null ;
-    private $ruta = '../images/productos/';
+    private $ruta = '../../images/productos/';
 
     public function setidproducto($value)
     {

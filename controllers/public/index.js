@@ -1,5 +1,5 @@
 // Constante para establecer la ruta y parámetros de comunicación con la API.
-const API_CATALOGO = SERVER +'public/catalogo.php?action=';
+const API_CATALOGO = SERVER + 'public/catalogo.php?action=';
 
 // Método manejador de eventos que se ejecuta cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', function () {
@@ -32,23 +32,22 @@ function readAllCategorias() {
                         url = `carts.html?id=${row.idtip}&nombre=${row.tipo_nombre}`;
                         // Se crean y concatenan las tarjetas con los datos de cada categoría.
                         content += `
-                        <div class="tarjetas">
-                       <div class="row row-cols-1 row-cols-md-2 g-2">
-                    <div class="col-lg-4">
-                        <div class="card h-100">
-                            <img src="${SERVER}images/categoria/${row.imagen_categoria}" class="card-img-top" alt="Anticonceptivos">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-10">
-                                        <h5 class="card-title"${row.tipo_nombre}</h5>
-                                    </div>
-                                    <div class="col-2">
+        
+                            <div class="col-lg-4">
+                                <div class="card h-100">
+                                    <img src="${SERVER}images/categoria/${row.imagen_categoria}" class="card-img-top"
+                                        alt="Anticonceptivos">
+                                    <div class="card-body">
+                                            <div class="col-10">
+                                                <h5 class="card-title" ${row.tipo_nombre}</h5>
+                                            </div>
+                                          <p class="card-text">${row.descripcion_tipo}</p>
+                                        </div>
+                                        <a href="${url}" class="btn iniciar">agregar al carrito</a>
                                     </div>
                                 </div>
-                                <p class="card-text">${row.descripcion_tipo}</p>
-                                <a href="${url}"  class="btn iniciar">agregar al carrito</a>
                             </div>
-            
+                              
                         `;
                     });
                     // Se agregan las tarjetas a la etiqueta div mediante su id para mostrar las categorías.
