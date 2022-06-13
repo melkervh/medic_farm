@@ -8,7 +8,7 @@ require_once('../../models/producto_modal.php');
 if (isset($_GET['action'])) {
     // Se instancian las clases correspondientes.
     $TipoProducto= new TipoProducto;
-    $producto = new Producto;
+    $producto = new producto;
     // Se declara e inicializa un arreglo para guardar el resultado que retorna la API.
     $result = array('status' => 0, 'message' => null, 'exception' => null);
     // Se compara la acción a realizar según la petición del controlador.
@@ -25,7 +25,7 @@ if (isset($_GET['action'])) {
         case 'readProductosCategoria':
             if (!$producto->setidproducto($_POST['idtip'])) {
                 $result['exception'] = 'Categoría incorrecta';
-            } elseif ($result['dataset'] = $Producto->readProductosCategoria()) {
+            } elseif ($result['dataset'] = $producto->readProductosCategoria()) {
                 $result['status'] = 1;
             } elseif (Database::getException()) {
                 $result['exception'] = Database::getException();

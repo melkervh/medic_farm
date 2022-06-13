@@ -8,7 +8,7 @@ if (isset($_GET['action'])) {
     // Se crea una sesión o se reanuda la actual para poder utilizar variables de sesión en el script.
     session_start();
     // Se instancia la clase correspondiente.
-    $pedido = new pedidos;
+    $pedido = new Pedidos;
     // Se declara e inicializa un arreglo para guardar el resultado que retorna la API.
     $result = array('status' => 0, 'session' => 0, 'message' => null, 'exception' => null);
     // Se verifica si existe una sesión iniciada como cliente para realizar las acciones correspondientes.
@@ -81,18 +81,6 @@ if (isset($_GET['action'])) {
                     $result['message'] = 'Pedido finalizado correctamente';
                 } else {
                     $result['exception'] = 'Ocurrió un problema al finalizar el pedido';
-                }
-                break;
-            //caso readAlld para mostrar el detalle del registro
-            case 'readAlld':
-                if (!$pedido->setidPedido($_POST['id'])) {
-                    $result['exception'] = 'Pedido incorrecto';
-                } elseif ($result['dataset'] = $pedido->readAlld()) {
-                    $result['status'] = 1;
-                } elseif (Database::getException()) {
-                    $result['exception'] = Database::getException();
-                } else {
-                    $result['exception'] = 'Pedido inexistente';
                 }
                 break;
             default:

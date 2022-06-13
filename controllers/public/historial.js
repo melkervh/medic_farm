@@ -81,6 +81,11 @@ function openDetalle(id) {
                                 <td class="text-center">${row.precio_producto}</td>
                                 <td class="text-center">${row.cantidad_producto}</td>
                                 <td class="text-center">${(row.cantidad_producto * row.precio_producto).toFixed(2)}</td>
+                                <td class="d-flex justify-content-center">
+                                    <a onclick="openCreateValo(${row.id_detalle_pedido})" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#save-modal">
+                                        <i class="fa-solid fa-circle-info cart_nav1"></i>
+                                    </a>
+                                </td>
                             </tr>
                         `;
                     });

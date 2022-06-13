@@ -33,20 +33,25 @@ function readProductosCategoria(id, categoria) {
                     response.dataset.map(function (row) {
                         // Se crean y concatenan las tarjetas con los datos de cada producto.
                         content += `
-                            <div class="col s12 m6 l4">
-                                <div class="card hoverable">
-                                    <div class="card-image">
-                                        <img src="${SERVER}images/productos/${row.imagen_producto}" class="materialboxed">
-                                        <a href="detail.html?id=${row.id_producto}" class="btn-floating halfway-fab waves-effect waves-light red tooltipped" data-tooltip="Ver detalle">
-                                            <i class="material-icons">more_horiz</i>
-                                        </a>
-                                    </div>
-                                    <div class="card-content">
-                                        <span class="card-title">${row.nombre_producto}</span>
-                                        <p>Precio(US$) ${row.precio_producto}</p>
+                            <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+                            <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+                                <div class="col">
+                                    <div class="card h-100 shadow-sm"> 
+                                    <img src="${SERVER}images/productos/${row.img_producto}"
+                                            class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <div class="clearfix mb-3"> <span
+                                                    class="float-start badge rounded-pill bg-success">${row.precio_produc}</</span> <span
+                                                    class="float-end"></span> </div>
+                                            <h2 class="card-title">${row.nombre_producto}</h2>
+                                            <h2 class="card-title">${row.descripcion_producto}</h2>
+                                            <div class="d-grid gap-2 my-4"> <a href="detalle_producto.html?id=${row.idproducto}" class="btn btn-warning">Añadir al carrito</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         `;
                     });
                     // Se asigna como título la categoría de los productos.

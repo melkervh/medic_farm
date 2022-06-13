@@ -131,8 +131,8 @@ class producto extends Validator
     {
         $sql = 'INSERT INTO producto(
              img_producto, nombre_producto, descripcion_producto, precio_produc, estado_producto, idusuario, idtip, cantidad_producto)
-            VALUES ( ?, ?, ?, ?, ?, ?, ?, ?);';
-        $params = array($this->img,$this->nombre_produc, $this->descripcion, $this->precio_produc, $this->estado , $_SESSION['idusuario'],  $this->categoria, $this-> cantidad);
+            VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)';
+        $params = array($this->img,$this->nombre_produc, $this->descripcion, $this->precio_produc, $this->estado , $_SESSION['idusuario'], $this->categoria, $this->cantidad);
         return Database::executeRow($sql, $params);
     }
     public function searchRows($value)
@@ -179,6 +179,15 @@ class producto extends Validator
                 WHERE idproducto = ?';
         $params = array($this->idproducto);
         return Database::executeRow($sql, $params);
+    }
+    public function readProductosCategoria()
+    {
+        $sql = 'SELECT idproducto, img_producto, nombre_producto, descripcion_producto, precio_produc
+        FROM producto INNER JOIN tipo_produc USING(idtip)
+        WHERE idtip = ? AND estado_producto = true
+        ORDER BY nombre_producto';
+        $params = array($this->idproducto);
+        return Database::getRows($sql, $params);
     }
  
 

@@ -32,7 +32,7 @@ function readOneProducto(id) {
                 // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
                 if (response.status) {
                     // Se colocan los datos en la tarjeta de acuerdo al producto seleccionado previamente.
-                    document.getElementById('imagen').setAttribute('src', SERVER + 'images/productos/' + response.dataset.imagen_producto);
+                    document.getElementById('imagen').setAttribute('src', SERVER + 'images/productos/' + response.dataset.img_producto);
                     document.getElementById('nombre').textContent = response.dataset.nombre_producto;
                     document.getElementById('categoria').textContent = response.dataset.tipo_nombre;
                     document.getElementById('descripcion').textContent = response.dataset.descripcion_producto;
@@ -111,6 +111,7 @@ function readAllValoraciones(id) {
                                     <h6 class="card-subtitle mb-2 text-muted">${row.fecha_valoraciones}</h6>
                                 </div>
                             </div>     
+                            
                         `;
                     });
                     // Se agregan las tarjetas a la etiqueta div mediante su id para mostrar las categorías.

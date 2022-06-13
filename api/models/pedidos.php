@@ -109,18 +109,21 @@ class Pedidos extends Validator
     public function startOrder()
     {
         $this->estado = 0;
-
+        date_default_timezone_set('America/El_Salvador');
+        $fecha_actual = date('Y-m-d h:i:s', time());
         $sql = 'SELECT id_pedido
                 FROM pedidos
                 WHERE estado_pedido = ? AND id_cliente = ?';
+    
         $params = array($this->estado, $_SESSION['id_cliente']);
         if ($data = Database::getRow($sql, $params)) {
             $this->id_pedido = $data['id_pedido'];
             return true;
         } else {
-            $sql = 'INSERT INTO pedidos(estado_pedido, id_cliente)
-                    VALUES(?, ?)';
-            $params = array($this->estado, $_SESSION['id_cliente']);
+            $sql = 'INSERT INTO pedidos(
+                id_cliente, estado_pedido, fecha_pedido)
+               VALUES ( ?, ?, ?);';
+            $params = array($_SESSION['id_cliente'], $this->estado,$fecha_actual);
             // Se obtiene el ultimo valor insertado en la llave primaria de la tabla pedidos.
             if ($this->id_pedido = Database::getLastRow($sql, $params)) {
                 return true;
@@ -134,7 +137,7 @@ class Pedidos extends Validator
     public function createDetail()
     {
         // Se realiza una subconsulta para obtener el precio del producto.
-        $sql = 'INSERT INTO detalle_pedido(idproducto, precio_produc, cantidad_producto, id_pedido)
+        $sql = 'INSERT INTO detalle_pedido(idproducto, precio_producto, cantidad_producto, id_pedido)
                 VALUES(?, (SELECT precio_produc FROM producto WHERE idproducto = ?), ?, ?)';
         $params = array($this->producto, $this->producto, $this->cantidad, $this->id_pedido);
         return Database::executeRow($sql, $params);
@@ -143,8 +146,8 @@ class Pedidos extends Validator
     // Método para obtener los productos que se encuentran en el carrito de compras.
     public function readOrderDetail()
     {
-        $sql = 'SELECT iddetalle, nombre_producto, detalle_pedido.precio_produc, detalle_pedido.cantidad_producto
-                FROM pedidos INNER JOIN detalle_pedido USING(id_pedido) INNER JOIN producto USING(id_producto)
+        $sql = 'SELECT iddetalle, nombre_producto, detalle_pedido.precio_producto, detalle_pedido.cantidad_producto
+        FROM pedidos INNER JOIN detalle_pedido USING(id_pedido) INNER JOIN producto USING(idproducto)
                 WHERE id_pedido = ?';
         $params = array($this->id_pedido);
         return Database::getRows($sql, $params);
@@ -191,15 +194,4 @@ class Pedidos extends Validator
          $params = array($_SESSION['id_cliente']);
         return Database::getRows($sql, $params);
     }
-
-    public function readAlld()
-    {
-        $sql = 'SELECT iddetalle, nombre_producto, descripcion_producto, precio_producto, detalle_pedido.cantidad_producto
-                FROM detalle_pedido 
-                inner join producto on detalle_pedido.idproducto = producto.idproducto
-                where id_pedido = ?';
-        $params = array($this->id_pedido);
-        return Database::getRows($sql, $params);
-    }
-    
 }

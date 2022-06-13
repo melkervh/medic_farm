@@ -9,215 +9,39 @@
     <link type="image/png" rel="icon" href="../../resources/img/Logo.png">
     <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../resources/css/styless_publico.css" rel="stylesheet">
+    <link href="../../resources/img/agregar/cardts.css" rel="stylesheet">
     <!--Fin-->
 
-    <title>Anticonceptivo</title>
+    <title id="categoria"></title>
 </head>
 
 <body>
     <header>
-          <!--Generamos un navbar-->
+        <!--Generamos un navbar-->
         <!--Fin de navbar-->
     </header>
     <br>
     <section class="container">
         <!--Se crea esta clase para ajustar los titulos-->
-        <div class="titulos">
-            <h1>Anticonceptivo</h1>
-        </div>
-        <div class="descrip">
-            <h4>Un anticonceptivo es cualquier metodo, medicamento o dispositivo que se usa para prevenir el embarazo o
-                al menos tener un porcetaje de prevenir uno.
-            </h4>
-        </div>
         <!--Fin de titulo-->
     </section>
     <br>
     <main class="container">
-        <form id="anticonceptivo">
-            <!--Se crean las cartas junto con imagnes y sus respectivos botones-->
-            <div class="tarjetas">
-                <div class="row row-cols-1 row-cols-md-2 g-2">
-                    <div class="col-lg-4">
-                        <div class="card h-100">
-                            <img src="../../resources/img/card/ant1.png" class="card-img-top" alt="Durex">
-                            <div class="card-body">
-                                <h5 class="card-title">Durex Clasico</h5>
-                                <h5 class="precio">$2.35</h5>
-                                <!--Agregamos un collapso como boton para que contenga la informacion-->
-                                <p>
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseExample1" aria-expanded="false"
-                                        aria-controls="collapseExample1">
-                                        Descripcion
-                                    </button>
-                                    <!--iniciamos un boton con la etiqueta "a" y con clase button-->
-                                    <a class="btn btn-primary" href="" role="button">enviar al carrito</a>
-                                    <!--Fin de boton-->
-                                </p>
-                                <!--texto de la carta-->
-                                <div class="collapse" id="collapseExample1">
-                                    <div class="card card-body">
-                                        <p> Manteniendo las cosas simples, nuestros
-                                            condones Clásicos te dan la proteccion que esperas de Durex con forma
-                                            anatomica
-                                            y pre lubricada con lubricante a base de agua para una experiencia natural.
-                                        </p>
+            <h4 class="center indigo-text titulos" id="title"></h4>
+            <!-- Fila para mostrar los productos disponibles -->
+            <div class="row" id="productos"></div>
 
-                                        <p> Recuerda que ningún método anticonceptivo es 100% seguro contra el embarazo,
-                                            VIH
-                                            o enfermedades de transmisión sexual. Siempre es bueno estar informado, así
-                                            que
-                                            lee la información que viene adentro del empaque, en especial si vas a
-                                            utilizar
-                                            los condones para sexo anal o sexo oral.</p>
-                                    </div>
-                                </div>
-                                <!--Fin del texto-->
-                            </div>
-                            <!--Fin de collapso-->
-                        </div>
-                    </div>
-                    <!--2da card-->
-                    <div class="col-lg-4">
-                        <div class="card h-100">
-                            <img src="../../resources/img/card/ant2.png" class="card-img-top" alt="Vermagest">
-                            <div class="card-body">
-                                <h5 class="card-title">Vermagest Tableta</h5>
-                                <h5 class="precio">$11.99</h5>
-                                <p>
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseExample2" aria-expanded="false"
-                                        aria-controls="collapseExample2">
-                                        Descripcion
-                                    </button>
-                                    <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">enviar al
-                                        carrito</a>
-                                </p>
-                                <div class="collapse" id="collapseExample2">
-                                    <div class="card card-body">
-                                        Es un anticonceptivo de emergencia dentro de un período de retardo de 72 horas
-                                        después de un contacto sexual sin protección o en caso de falla de algún método
-                                        anticonceptivo, especialmente ruptura o desgarro de un preservativo.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--3ra card-->
-                    <div class="col-lg-4">
-                        <div class="card h-100">
-                            <img src="../../resources/img/card/ant3.png" class="card-img-top" alt="Cyclofemina">
-                            <div class="card-body">
-                                <h5 class="card-title">Cyclofemina</h5>
-                                <h5 class="precio">$8.40</h5>
-                                <p>
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseExample3" aria-expanded="false"
-                                        aria-controls="collapseExample3">
-                                        Descripcion
-                                    </button>
-                                    <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">enviar al
-                                        carrito</a>
-                                </p>
-                                <div class="collapse" id="collapseExample3">
-                                    <div class="card card-body">
-                                        se trata de un anticonceptivo hormonal inyectado de aplicacion mensual que
-                                        previene el embarazo inhibiendo la ovulación y aumentando la viscosidad del moco
-                                        cervical para que los espermatozoides no puedan avanzar. Su efectividad ha sido
-                                        comprobada por varios estudios de la OMS.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--4ta card-->
-                    <div class="col-lg-4">
-                        <div class="card h-100">
-                            <img src="../../resources/img/card/ant4.png" class="card-img-top" alt="Daniele">
-                            <div class="card-body">
-                                <h5 class="card-title">Daniele</h5>
-                                <h5 class="precio">$9.70</h5>
-                                <p>
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseExample4" aria-expanded="false"
-                                        aria-controls="collapseExample4">
-                                        Descripcion
-                                    </button>
-                                    <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">enviar al
-                                        carrito</a>
-                                </p>
-                                <div class="collapse" id="collapseExample4">
-                                    <div class="card card-body">
-                                        Tratamiento del acné moderado a severo relacionado a sensibilidad a andrógenos o
-                                        a hirsutismo en mujeres en edad reproductiva cuando otras terapias como la
-                                        tópica y la antibioticoterapia han fallado.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--5ta card-->
-                    <div class="col-lg-4">
-                        <div class="card h-100">
-                            <img src="../../resources/img/card/ant5.png" class="card-img-top" alt="Vermagest Inyectable">
-                            <div class="card-body">
-                                <h5 class="card-title">Vermagest Inyectable</h5>
-                                <h5 class="precio">$11.44</h5>
-                                <p>
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseExample5" aria-expanded="false"
-                                        aria-controls="collapseExample5">
-                                        Descripcion
-                                    </button>
-                                    <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">enviar al
-                                        carrito</a>
-                                </p>
-                                <div class="collapse" id="collapseExample5">
-                                    <div class="card card-body">
-                                        Evitar la implantación del óvulo después de un coito desprotegido, cuando la
-                                        paciente no ha usado método anticonceptivo y haya tenido relaciones no
-                                        protegidas alrededor de su día de ovulación.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--6ta card-->
-                    <div class="col-lg-4">
-                        <div class="card h-100">
-                            <img src="../../resources/img/card/ant6.png" class="card-img-top" alt="Mesilar">
-                            <div class="card-body">
-                                <h5 class="card-title">Mesilar</h5>
-                                <h5 class="precio">$4.26</h5>
-                                <p>
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseExample6" aria-expanded="false"
-                                        aria-controls="collapseExample6">
-                                        Descripcion
-                                    </button>
-                                    <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">enviar al
-                                        carrito</a>
-                                </p>
-                                <div class="collapse" id="collapseExample6">
-                                    <div class="card card-body">
-                                        Anticonceptivo hormonal.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Fin de las cards-->
-        </form>
     </main>
     <footer>
-      
+
     </footer>
     <!--Bootstrap JS-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../../resources/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a478d5fd56.js" crossorigin="anonymous"></script>
     <script src="../../controllers/components.js"></script>
     <script src="../../controllers/public/account.js"></script>
+    <script src="../../controllers/public/articulos.js"></script>
     <!--Fin-->
 </body>
 

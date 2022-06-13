@@ -37,7 +37,7 @@ function readOrderDetail() {
                         content += `
                             <tr>
                                 <td>${row.nombre_producto}</td>
-                                <td>${row.precio_produc}</td>
+                                <td>${row.precio_producto}</td>
                                 <td>${row.cantidad_producto}</td>
                                 <td>${subtotal.toFixed(2)}</td>
                                 <td>
@@ -69,12 +69,11 @@ function readOrderDetail() {
 // Función para abrir una caja de dialogo (modal) con el formulario de cambiar cantidad de producto.
 function openUpdateDialog(id, quantity) {
     // Se abre la caja de dialogo (modal) que contiene el formulario.
-    M.Modal.getInstance(document.getElementById('item-modal')).open();
     // Se inicializan los campos del formulario con los datos del registro seleccionado.
-    document.getElementById('id_detalle').value = id;
+    document.getElementById('iddetalle').value = id_detalle;
     document.getElementById('cantidad').value = quantity;
     // Se actualizan los campos para que las etiquetas (labels) no queden sobre los datos.
-    M.updateTextFields();
+
 }
 
 // Método manejador de eventos que se ejecuta cuando se envía el formulario de cambiar cantidad de producto.

@@ -40,16 +40,14 @@ document.addEventListener('DOMContentLoaded', function () {
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             inicio
                                         </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="index.html">menu</a></li>
-                                            <li><a class="dropdown-item" href="carts.html">anticonceptivo</a></li>
-                                            <li>
-                                        </ul>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Menu</a>
+                                         </li>
                                         <li class="nav-item">
                                         <a class="nav-link" href="carrito.html">Carrito</a>
                                          </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">revicion de receta</a>
+                                        <a class="nav-link" href="historial_pedidos.html">historial</a>
                                     </li>
                                     <li class="nav-item">
                                     <a class="nav-link" href="Contactanos.html">Contactanos</a>
