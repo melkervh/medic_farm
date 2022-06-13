@@ -118,7 +118,6 @@ function readAllValoraciones(id) {
                     document.getElementById('comentario').innerHTML = content;
                 } else {
                     // Se asigna al título del contenido un mensaje de error cuando no existen datos para mostrar.
-                    let title = `<span class="red-text">${response.exception}</span>`;
                     document.getElementById('title').innerHTML = title;
                 }
             });

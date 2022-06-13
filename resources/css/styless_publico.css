@@ -341,7 +341,12 @@ body.contactanos{
       color: #fff;
       background: #00e676;
     }
-  
+    .iniciar2{
+      width: 70%;
+      height: 40px;
+      color: #fff;
+      background: #263238;}
+    
   
   .social{
       font-size: 21px; 

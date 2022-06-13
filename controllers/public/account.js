@@ -35,11 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">perfil</a>
                                     </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            inicio
-                                        </a>
                                         <li class="nav-item">
                                         <a class="nav-link" href="index.html">Menu</a>
                                          </li>
