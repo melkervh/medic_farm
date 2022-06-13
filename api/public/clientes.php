@@ -40,25 +40,7 @@ if (isset($_GET['action'])) {
         switch ($_GET['action']) {
             case 'register':
                 $_POST = $cliente->validateForm($_POST);
-                $secretKey = '6LdBzLQUAAAAAL6oP4xpgMao-SmEkmRCpoLBLri-';
-                $ip = $_SERVER['REMOTE_ADDR'];
-
-                $data = array('secret' => $secretKey, 'response' => $_POST['g-recaptcha-response'],'remoteip' => $ip);
-
-                $options = array(
-                    'http' => array('header'  => "Content-type: application/x-www-form-urlencoded\r\n", 'method' => 'POST', 'content' => http_build_query($data)),
-                    'ssl' => array('verify_peer' => false, 'verify_peer_name' => false)
-                );
-
-                $url = 'https://www.google.com/recaptcha/api/siteverify';
-                $context  = stream_context_create($options);
-                $response = file_get_contents($url, false, $context);
-                $captcha = json_decode($response, true);
-
-                if (!$captcha['success']) {
-                    $result['recaptcha'] = 1;
-                    $result['exception'] = 'No eres un humano';
-                } elseif (!$cliente->setNombreCliente($_POST['nombre_cliente'])) {
+                if(!$cliente->setNombreCliente($_POST['nombre_cliente'])) {
                     $result['exception'] = 'Nombres incorrectos';
                 } elseif (!$cliente->setApellidoCliente($_POST['apellido_cliente'])) {
                     $result['exception'] = 'Apellidos incorrectos';
