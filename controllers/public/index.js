@@ -43,8 +43,8 @@ function readAllCategorias() {
                                             </div>
                                           <p class="card-text">${row.descripcion_tipo}</p>
                                         </div>
-                                        <div class="card-footer">
-                                         <a href="${url}" class="btn iniciar">agregar al carrito</a>
+                                        <div class="card-footer d-flex justify-content-center">
+                                         <a href="${url}" class="btn iniciar">Ver productos</a>
                                         </div>
                                     </div>
                                 </div>
