@@ -58,7 +58,7 @@ if (isset($_GET['action'])) {
             }
             break;
             // caso readAll para mostrar los datos de un registro en particular
-            /*case 'readValoraciones':
+           case 'readValoraciones':
                 if (!$valoracion->setIdproducto($_POST['idproducto'])) {
                     $result['exception'] = 'Producto inexistente';
                 } elseif ($result['dataset'] = $valoracion->readAll()) {
@@ -68,7 +68,7 @@ if (isset($_GET['action'])) {
                 } else {
                     $result['exception'] = 'No existen categorías para mostrar';
                 }
-                break;*/
+                break;
         default:
             $result['exception'] = 'Acción no disponible';
     }
