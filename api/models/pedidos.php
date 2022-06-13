@@ -191,4 +191,15 @@ class Pedidos extends Validator
          $params = array($_SESSION['id_cliente']);
         return Database::getRows($sql, $params);
     }
+
+    public function readAlld()
+    {
+        $sql = 'SELECT iddetalle, nombre_producto, descripcion_producto, precio_producto, detalle_pedido.cantidad_producto
+                FROM detalle_pedido 
+                inner join producto on detalle_pedido.idproducto = producto.idproducto
+                where id_pedido = ?';
+        $params = array($this->id_pedido);
+        return Database::getRows($sql, $params);
+    }
+    
 }
