@@ -101,7 +101,7 @@ function readAllValoraciones(id) {
                     // Se recorre el conjunto de registros devuelto por la API (dataset) fila por fila a través del objeto row.
                     response.dataset.map(function (row) {
                         // Se define una dirección con los datos de cada categoría para mostrar sus productos en otra página web.
-                        url = `detalle.html?id=${row.idproducto}`;
+                        url = `carrito.html?id=${row.idproducto}`;
                         // Se crean y concatenan las tarjetas con los datos de cada categoría.
                         content += `
                             <div class="card">
