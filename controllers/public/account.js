@@ -47,13 +47,13 @@ document.addEventListener('DOMContentLoaded', function () {
                                         <a class="nav-link" href="carrito.html">Carrito</a>
                                          </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="historial_pedidos.html">historial</a>
+                                        <a class="nav-link" href="historial_pedidos.html">Historial</a>
                                     </li>
                                     <li class="nav-item">
-                                    <a class="nav-link" href="Contactanos.html">Contactanos</a>
-                                </li>
+                                        <a class="nav-link" href="Contactanos.html">Contactanos</a>
+                                    </li>
                                     <li class="nav-item">
-                                    <li><a onclick="logOut()" class="nav-link">Cerrar sesión</a></li>
+                                        <a onclick="logOut()" class="nav-link">Cerrar sesión</a>
                                     </li>
                                 </ul>
                             </div>

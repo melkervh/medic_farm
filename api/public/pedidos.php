@@ -83,6 +83,18 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Ocurrió un problema al finalizar el pedido';
                 }
                 break;
+            //caso readAlld para mostrar el detalle del registro
+            case 'readAlld':
+                if (!$pedido->setidPedido($_POST['id'])) {
+                    $result['exception'] = 'Pedido incorrecto';
+                } elseif ($result['dataset'] = $pedido->readAlld()) {
+                    $result['status'] = 1;
+                } elseif (Database::getException()) {
+                    $result['exception'] = Database::getException();
+                } else {
+                    $result['exception'] = 'Pedido inexistente';
+                }
+                break;
             default:
                 $result['exception'] = 'Acción no disponible dentro de la sesión';
         }
