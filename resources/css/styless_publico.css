@@ -37,7 +37,9 @@ footer{
   color: white;
   text-align: center;
 }
-
+.bt{
+  background: #00e676;
+}
 .colores {
     background: #00e676;
 }
@@ -336,10 +338,16 @@ body.contactanos{
       width: 10%;
     }
     .iniciar{
-      width: 70%;
+      width: 80%;
       height: 40px;
       color: #fff;
-      background: #00e676;
+     background: #00e676;
+    }
+    .iniciar3{
+      width: 100%;
+      height: 40px;
+      color: #fff;
+     background: #00e676;
     }
     .iniciar2{
       width: 70%;

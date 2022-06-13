@@ -66,7 +66,7 @@ if (isset($_GET['action'])) {
                 } elseif (Database::getException()) {
                     $result['exception'] = Database::getException();
                 } else {
-                    $result['exception'] = 'No existen categorías para mostrar';
+                    $result['exception'] = 'No existen comentarios para mostrar';
                 }
                 break;
         default:

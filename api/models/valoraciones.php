@@ -116,10 +116,14 @@ class Valoraciones extends Validator
     }	
     public function readAll()
     {
-        $sql = 'SELECT nombre_cliente, calificacion, comentario, fecha_valoracion
-        FROM valoracion INNER JOIN cliente  USING (id_cliente) 
-        ORDER BY nombre_cliente';
-        $params = null;
+        $sql = 'SELECT nombre_cliente, calificacion, comentario, fecha_valoracion, estado_valoracion
+                FROM valoracion 
+		        INNER JOIN detalle_pedido USING (iddetalle)
+		        INNER JOIN pedidos USING (id_pedido)
+		        INNER JOIN cliente on pedidos.id_cliente = cliente.id_cliente
+		        where iddetalle = ? and estado_valoracion = true
+                ORDER BY fecha_valoracion';
+        $params = array($this->idproducto);
         return Database::getRows($sql, $params);
     }					
 }

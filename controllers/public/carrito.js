@@ -70,7 +70,7 @@ function readOrderDetail() {
 function openUpdateDialog(id, quantity) {
     // Se abre la caja de dialogo (modal) que contiene el formulario.
     // Se inicializan los campos del formulario con los datos del registro seleccionado.
-    document.getElementById('iddetalle').value = id_detalle;
+    document.getElementById('iddetalle').value = iddetalle;
     document.getElementById('cantidad').value = quantity;
     // Se actualizan los campos para que las etiquetas (labels) no queden sobre los datos.
 

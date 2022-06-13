@@ -38,7 +38,7 @@ function readProductosCategoria(id, categoria) {
                             <img src="${SERVER}images/productos/${row.img_producto}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <div class="clearfix mb-3"> <span
-                                        class="float-start badge rounded-pill bg-success">${row.precio_produc}</< /span>
+                                        class="float-start badge rounded-pill bg-success">$ ${row.precio_produc}</< /span>
                                         <span class="float-end"></span> </div>
                                 <h2 class="card-title">${row.nombre_producto}</h2>
                                 <h2 class="card-title">${row.descripcion_producto}</h2>

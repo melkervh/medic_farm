@@ -45,9 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                         <a class="nav-link" href="historial_pedidos.html">Historial</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="Contactanos.html">Contactanos</a>
-                                    </li>
-                                    <li class="nav-item">
                                         <a onclick="logOut()" class="nav-link">Cerrar sesión</a>
                                     </li>
                                 </ul>
@@ -74,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         <a class="nav-link" href="index.html">Inicio</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="login.html">Registrate</a>
+                                        <a class="nav-link" href="login.html">Login</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="registro_usuario.html">Nueva Cuenta</a>
