@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     readOneProducto(ID);
     // Se inicializa el componente Tooltip para que funcionen las sugerencias textuales.
 });
-
+ var cantidad;
 // Función para obtener y mostrar los datos del producto seleccionado.
 function readOneProducto(id) {
     // Se define un objeto con los datos del producto seleccionado.
@@ -31,6 +31,7 @@ function readOneProducto(id) {
             request.json().then(function (response) {
                 // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
                 if (response.status) {
+                    cantidad = response.dataset.cantidad_producto;
                     // Se colocan los datos en la tarjeta de acuerdo al producto seleccionado previamente.
                     document.getElementById('imagen').setAttribute('src', SERVER + 'images/productos/' + response.dataset.img_producto);
                     document.getElementById('nombre').textContent = response.dataset.nombre_producto;
@@ -49,7 +50,9 @@ function readOneProducto(id) {
 
 // Método manejador de eventos que se ejecuta cuando se envía el formulario de agregar un producto al carrito.
 document.getElementById('shopping-form').addEventListener('submit', function (event) {
-    // Se evita recargar la página web después de enviar el formulario.
+    valor = document.getElementById('cantidad').value;
+    if(valor <= cantidad){
+        // Se evita recargar la página web después de enviar el formulario.
     event.preventDefault();
     // Petición para agregar un producto al pedido.
     fetch(API_PEDIDOS + 'createDetail', {
@@ -76,6 +79,10 @@ document.getElementById('shopping-form').addEventListener('submit', function (ev
             console.log(request.status + ' ' + request.statusText);
         }
     });
+    } else{
+        event.preventDefault();
+        sweetAlert(3,'El numero de existencias es de: ' + cantidad + '. Porfavor ingrese una cantidad menor.');
+    }
 });
 // Método manejador de eventos que se ejecuta cuando el documento ha cargado.
 
