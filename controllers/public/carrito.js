@@ -70,7 +70,7 @@ function readOrderDetail() {
 function openUpdateDialog(id, quantity) {
     // Se abre la caja de dialogo (modal) que contiene el formulario.
     // Se inicializan los campos del formulario con los datos del registro seleccionado.
-    document.getElementById('iddetalle').value = iddetalle;
+    document.getElementById('iddetalle').value = id;
     document.getElementById('cantidad').value = quantity;
     // Se actualizan los campos para que las etiquetas (labels) no queden sobre los datos.
 
@@ -93,8 +93,6 @@ document.getElementById('item-form').addEventListener('submit', function (event)
                 if (response.status) {
                     // Se actualiza la tabla en la vista para mostrar el cambio de la cantidad de producto.
                     readOrderDetail();
-                    // Se cierra la caja de dialogo (modal) del formulario y se muestra un mensaje de éxito.
-                    M.Modal.getInstance(document.getElementById('item-modal')).close();
                     sweetAlert(1, response.message, null);
                 } else {
                     sweetAlert(2, response.exception, null);

@@ -46,27 +46,29 @@
           data-bs-toggle="tooltip" data-bs-placement="bottom" title="regresar al menu"></i></a>
     </div>
 
-    <i class="fa-solid fa-pencil ico btn2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="visibility:hidden;" ></i>
+    <i class="fa-solid fa-pencil ico btn2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+      style="visibility:hidden;"></i>
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <form class="row" method="post" id="item-form"></form>
+          <form class="row" method="post" id="item-form">
           <div class="modal-header">
             <h5 class="modal-title" id="staticBackdropLabel">cambair cantidad</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <input type="hidden" id="idproducto" name="idproducto" style="visibility:hidden;">
+          <input type="hidden" id="iddetalle" name="iddetalle" style="visibility:hidden;">
           <div class="modal-body">
             <label for="recipient-name" class="col-form-label"><i
                 class="fa-brands fa-product-hunt log"></i>cantidad</label>
-            <input type="number" class="form-control" placeholder="" name="cantidad" id="cantidad" aria-label="First name"
-              required>
+            <input type="number" class="form-control" placeholder="" name="cantidad" id="cantidad"
+              aria-label="First name" required>
           </div>
           <div class="modal-footer">
-            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" data-tooltip="Cancelar">Close</button>
-            <button type="submit" class="btn btn-primary" data-tooltip="Guardar">Understood</button>
+            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" id="save-modal"
+              data-tooltip="Reiniciar">Reiniciar</button>
+            <button type="submit" class="btn btn-primary" data-tooltip="Guardar" id="save-modal">save</button>
           </div>
         </div>
         </form>

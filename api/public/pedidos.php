@@ -45,7 +45,7 @@ if (isset($_GET['action'])) {
                 break;
             case 'updateDetail':
                 $_POST = $pedido->validateForm($_POST);
-                if (!$pedido->setIdDetalle($_POST['iddetalle'])) {
+                if (!$pedido->setid_detalle($_POST['iddetalle'])) {
                     $result['exception'] = 'Detalle incorrecto';
                 } elseif (!$pedido->setCantidad($_POST['cantidad'])) {
                     $result['exception'] = 'Cantidad incorrecta';
@@ -57,7 +57,7 @@ if (isset($_GET['action'])) {
                 }
                 break;
             case 'deleteDetail':
-                if (!$pedido->setIdDetalle($_POST['iddetalle'])) {
+                if (!$pedido->setid_detalle($_POST['iddetalle'])) {
                     $result['exception'] = 'Detalle incorrecto';
                 } elseif ($pedido->deleteDetail()) {
                     $result['status'] = 1;

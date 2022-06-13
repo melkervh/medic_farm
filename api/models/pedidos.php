@@ -34,7 +34,7 @@ class Pedidos extends Validator
         }
     }
 
-    public function setIdDetalle($value)
+    public function setid_detalle($value)
     {
         if ($this->validateNaturalNumber($value)) {
             $this->id_detalle = $value;
@@ -100,6 +100,10 @@ class Pedidos extends Validator
     public function getIdPedido()
     {
         return $this->id_pedido;
+    }
+    public function getid_detalle()
+    {
+        return $this->id_detalle;
     }
 
     /*
@@ -172,8 +176,8 @@ class Pedidos extends Validator
     {
         $sql = 'UPDATE detalle_pedido
                 SET cantidad_producto = ?
-                WHERE iddetalle = ? AND id_pedido = ?';
-        $params = array($this->cantidad, $this->id_detalle, $_SESSION['id_pedido']);
+                WHERE iddetalle = ?';
+        $params = array($this->cantidad, $this->id_detalle);
         return Database::executeRow($sql, $params);
     }
 
