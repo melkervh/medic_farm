@@ -175,9 +175,9 @@ class Clientes extends Validator
 
     public function createRow()
     {
-        $sql = 'INSERT INTO cliente(nombre_cliente, apellido_cliente, dui_cliente, correo_cliente, clave_cliente)
-                VALUES(?, ?, ?, ?, ?)';
-        $params = array($this->nombre_cliente, $this->apellido_cliente, $this->dui_cliente, $this->correo_cliente, $this->clave_cliente);
+        $sql = 'INSERT INTO cliente(nombre_cliente, apellido_cliente, dui_cliente, correo_cliente, clave_cliente, estado_cliente)
+                VALUES(?, ?, ?, ?, ?, ?)';
+        $params = array($this->nombre_cliente, $this->apellido_cliente, $this->dui_cliente, $this->correo_cliente, $this->clave_cliente, $this->estado_cliente);
         return Database::executeRow($sql, $params);
     }
 }

@@ -52,7 +52,9 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Claves diferentes';
                 } elseif (!$cliente->setClaveCliente($_POST['clave1'])) {
                     $result['exception'] = $cliente->getPasswordError();
-                } elseif ($cliente->createRow()) {
+                }elseif (!$cliente->setEstadoCliente(TRUE)) {
+                    $result['exception'] = 'Estado incorrecto';
+                }elseif ($cliente->createRow()) {
                     $result['status'] = 1;
                     $result['message'] = 'Cliente registrado correctamente';
                 } else {

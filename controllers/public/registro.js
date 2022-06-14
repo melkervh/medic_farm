@@ -1,5 +1,8 @@
 // Constante para establecer la ruta y parámetros de comunicación con la API.
 const API_CLIENTES = SERVER + 'public/clientes.php?action=';
+document.addEventListener('DOMContentLoaded', function () {
+   
+});
 
 
 // Método manejador de eventos que se ejecuta cuando se envía el formulario de registrar cliente.
@@ -24,8 +27,6 @@ document.getElementById('regis-usu').addEventListener('submit', function (event)
                         sweetAlert(2, response.exception, 'index.html');
                     } else {
                         sweetAlert(2, response.exception, null);
-                        // Se genera un nuevo token.
-                        reCAPTCHA();
                     }
                 }
             });

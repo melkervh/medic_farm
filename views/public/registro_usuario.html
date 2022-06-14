@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12">
                     <!--Form del registro usuario-->
-                    <form action="#" id="regis-usu" method="post">
+                    <form id="regis-usu">
                         <!--Se crea esta clase para ajustar los titulos-->
                         <div class="titulos">
                             <h1>Registrar Usuario</h1>
@@ -37,7 +37,7 @@
                             placeholder="Escribir su Clave">
                         <input class="controls" type="password" name="clave2" id="clave2" required
                             placeholder="Confirme su Clave">
-                        <button class="iniciar" type="submit" id="Regis">Registrar</button>
+                        <button type="submit" class="iniciar" id="Regis">Registrar</button>
                     </form>
                 </div>
             </div>
@@ -49,9 +49,9 @@
     <script src="../../resources/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a478d5fd56.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script type="text/javascript" src="../../controllers/components.js"></script>
-    <script type="text/javascript" src="../../controllers/public/account.js"></script>
-    <script type="text/javascrip" src="../../controllers/public/registro.js"></script>
+    <script src="../../controllers/components.js"></script>
+    <script src="../../controllers/public/account.js"></script>
+    <script src="../../controllers/public/registro.js"></script>
     <!--Fin-->
 
 </body>
