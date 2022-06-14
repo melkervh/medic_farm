@@ -42,9 +42,11 @@ function readProductosCategoria(id, categoria) {
                                         <span class="float-end"></span> </div>
                                 <h2 class="card-title">${row.nombre_producto}</h2>
                                 <h2 class="card-title">${row.descripcion_producto}</h2>
-                                <div class="d-grid gap-2 my-4"> <a href="detalle_producto.html?id=${row.idproducto}"
-                                        class="btn btn-warning">Añadir al carrito</a>
                                 </div>
+                                <div class="card-footer d-flex justify-content-center">
+                                     <div class="d-grid gap-2 my-4"> <a href="detalle_producto.html?id=${row.idproducto}"
+                                        class="btn btn-warning">Añadir al carrito</a>
+                                    </div>
                             </div>
                         </div>
                     </div>
