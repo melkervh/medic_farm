@@ -137,7 +137,7 @@ class producto extends Validator
     }
     public function searchRows($value)
     {
-        $sql = 'SELECT idproducto,img_producto , nombre__producto , descripcion_producto , precio_produc,tipo_nombre, estado_producto ,cantidad_producto 
+        $sql = 'SELECT idproducto,img_producto , nombre_producto , descripcion_producto , precio_produc,tipo_nombre, estado_producto ,cantidad_producto 
         FROM producto INNER JOIN tipo_produc USING(idtip)
         WHERE nombre_producto ILIKE ? OR descripcion_producto ILIKE ?
         ORDER BY nombre_producto';
