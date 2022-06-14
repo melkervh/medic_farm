@@ -140,10 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div class="col-sm-3 col-auto text-center"><small>&#9400; MedicFarm</small></div>
                         <div class="col-md-3 col-auto "></div>
                         <div class="col-md-3 col-auto"></div>
-                        <div class="col  my-auto text-md-left  text-right "> <small> medicfarm@gmail.com<span><img
-                                        src="https://i.imgur.com/TtB6MDc.png" class="img-fluid " width="25"></span>
-                                <span><img src="https://i.imgur.com/N90KDYM.png" class="img-fluid "
-                                        width="25"></span></small> </div>
+                        <div class="col  my-auto text-md-left  text-right "> <small> medicfarm@gmail.com<span> </div>
                     </div>
                 </div>
             </div>

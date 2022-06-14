@@ -40,17 +40,17 @@ if (isset($_GET['action'])) {
         switch ($_GET['action']) {
             case 'register':
                 $_POST = $cliente->validateForm($_POST);
-                if(!$cliente->setNombreCliente($_POST['nombre_cliente'])) {
+                if(!$cliente->setNombreCliente($_POST['nombre'])) {
                     $result['exception'] = 'Nombres incorrectos';
-                } elseif (!$cliente->setApellidoCliente($_POST['apellido_cliente'])) {
+                } elseif (!$cliente->setApellidoCliente($_POST['apellido'])) {
                     $result['exception'] = 'Apellidos incorrectos';
-                }  elseif (!$cliente->setDUICliente($_POST['dui_cliente'])) {
+                }  elseif (!$cliente->setDUICliente($_POST['dui'])) {
                     $result['exception'] = 'DUI incorrecto';
-                } elseif (!$cliente->setCorreoCliente($_POST['correo_cliente'])) {
+                } elseif (!$cliente->setCorreoCliente($_POST['correo'])) {
                     $result['exception'] = 'Correo incorrecto';
-                } elseif ($_POST['clave'] != $_POST['confirmar_clave']) {
+                } elseif ($_POST['clave1'] != $_POST['clave2']) {
                     $result['exception'] = 'Claves diferentes';
-                } elseif (!$cliente->setClaveCliente($_POST['clave_cliente'])) {
+                } elseif (!$cliente->setClaveCliente($_POST['clave1'])) {
                     $result['exception'] = $cliente->getPasswordError();
                 } elseif ($cliente->createRow()) {
                     $result['status'] = 1;

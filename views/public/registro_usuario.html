@@ -18,7 +18,7 @@
     <main class="mov">
         <section class="form-register">
             <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-">
+                <div class="col-sm-12 col-md-12 col-lg-12">
                     <!--Form del registro usuario-->
                     <form action="#" id="regis-usu" method="post">
                         <!--Se crea esta clase para ajustar los titulos-->
@@ -26,29 +26,18 @@
                             <h1>Registrar Usuario</h1>
                             <i class="fa-solid fa-user-plus bi"></i>
                         </div>
-                        <input class="controls" type="text" name="Nombre" id="nombrerg" required
+                        <input class="controls" type="text" name="nombre" id="nombrerg" required
                             placeholder="Escribir su Nombre">
-                        <input class="controls" type="text" name="Apellido" id="apellidorg" required
-                            placeholder="Escribir su Apellitextdo">
-                            <input class="controls" type="text" name="dui" id="dui" required
-                            placeholder="DUI: 00000000-0">
-                        <input class="controls" type="email" name="Correo" id="correorg" required
+                        <input class="controls" type="text" name="apellido" id="apellidorg" required
+                            placeholder="Escribir su Apellido">
+                        <input class="controls" type="text" name="dui" id="dui" required placeholder="DUI: 00000000-0">
+                        <input class="controls" type="email" name="correo" id="correorg" required
                             placeholder="Escribir su Correo Electronico">
-                        <input class="controls" type="password" name="Clave1" id="clave1" required
+                        <input class="controls" type="password" name="clave1" id="clave1" required
                             placeholder="Escribir su Clave">
-                        <input class="controls" type="password" name="Clave2" id="clave2" required
+                        <input class="controls" type="password" name="clave2" id="clave2" required
                             placeholder="Confirme su Clave">
-                        <!--Complementaciones-->                
-                        <div class="am"><a href="termino_condicion.html">Terminos y Condiciones</a></div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="ltercon">
-                            <label class="form-check-label" for="ltercon">Ya lei los terminos y condiciones</label>
-                        </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="atercon">
-                            <label class="form-check-label" for="atercon">Acepto los terminos y condiciones</label>
-                        </div>
-                        <input class="botons" type="submit" value="Registrar">
+                        <button class="iniciar" type="submit" id="Regis">Registrar</button>
                     </form>
                 </div>
             </div>
@@ -61,9 +50,10 @@
     <script src="https://kit.fontawesome.com/a478d5fd56.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript" src="../../controllers/components.js"></script>
-    <script type="text/javascrip" src="../../controllers/public/registro.js"></script>
     <script type="text/javascript" src="../../controllers/public/account.js"></script>
+    <script type="text/javascrip" src="../../controllers/public/registro.js"></script>
     <!--Fin-->
+
 </body>
 
 </html>
