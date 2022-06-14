@@ -27,11 +27,20 @@
     </section>
     <br>
     <main class="container">
-        <h4 class="center indigo-text titulos" id="title"></h4>
+        <h2 class="center indigo-text titulos" id="title"></h2>
+        <nav class="navbar navbar-light-light">
+            <div class="container-fluid">
+                <form class="d-flex" id="search-form">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search"
+                        name="search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
         <!-- Fila para mostrar los productos disponibles -->
         <div class="row">
             <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
-                <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3"  id="productos">
+                <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3" id="productos">
                 </div>
             </div>
         </div>

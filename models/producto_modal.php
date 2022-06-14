@@ -137,10 +137,10 @@ class producto extends Validator
     }
     public function searchRows($value)
     {
-        $sql = 'SELECT idproducto,img, nombre_produc, descripcion, precio_produc,tipo_nombre, estado,cantidad
+        $sql = 'SELECT idproducto,img_producto , nombre__producto , descripcion_producto , precio_produc,tipo_nombre, estado_producto ,cantidad_producto 
         FROM producto INNER JOIN tipo_produc USING(idtip)
-        WHERE nombre_produc ILIKE ? OR descripcion ILIKE ?
-        ORDER BY nombre_produc';
+        WHERE nombre_producto ILIKE ? OR descripcion_producto ILIKE ?
+        ORDER BY nombre_producto';
         $params = array("%$value%", "%$value%");
         return Database::getRows($sql, $params);
     }

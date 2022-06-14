@@ -58,7 +58,7 @@ if (isset($_GET['action'])) {
                 break;
             case 'deleteDetail':
                 if (!$pedido->setid_detalle($_POST['iddetalle'])) {
-                    $result['exception'] = 'Detalle incorrecto';
+                    $result['exception'] = 'Erro al eliminar';
                 } elseif ($pedido->deleteDetail()) {
                     $result['status'] = 1;
                     $result['message'] = 'Producto removido correctamente';

@@ -35,7 +35,7 @@ function readProductosCategoria(id, categoria) {
                         content += `
                         <div class="col">
                         <div class="card h-100 shadow-sm">
-                            <img src="${SERVER}images/productos/${row.img_producto}" class="card-img-top" alt="...">
+                            <img src="${SERVER}images/productos/${row.img_producto} " class="card-img-top imgcard" alt="..." >
                             <div class="card-body">
                                 <div class="clearfix mb-3"> <span
                                         class="float-start badge rounded-pill bg-success">$ ${row.precio_produc}</< /span>
@@ -62,3 +62,9 @@ function readProductosCategoria(id, categoria) {
         }
     });
 }
+document.getElementById('search-form').addEventListener('submit', function (event) {
+    // Se evita recargar la página web después de enviar el formulario.
+    event.preventDefault();
+    // Se llama a la función que realiza la búsqueda. Se encuentra en el archivo components.js
+    searchRows(API_CATALOGO, 'search-form');
+});

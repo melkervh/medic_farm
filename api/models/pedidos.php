@@ -179,15 +179,25 @@ class Pedidos extends Validator
                 WHERE iddetalle = ?';
         $params = array($this->cantidad, $this->id_detalle);
         return Database::executeRow($sql, $params);
+    } 
+    // metodo para buscar los productos
+    public function searchRows($value)
+    {
+        $sql = 'SELECT idtip,tipo_nombre, descripcion_tipo
+                FROM tipo_pruct
+                WHERE tipo_nombre ILIKE ? OR descripcion_tipo ILIKE ?
+                ORDER BY tipo_nombre';
+        $params = array("%$value%", "%$value%");
+        return Database::getRows($sql, $params);
     }
 
     // Método para eliminar un producto que se encuentra en el carrito de compras.
     public function deleteDetail()
     {
         $sql = 'DELETE FROM detalle_pedido
-                WHERE iddetalle = ? AND id_pedido = ?';
+        WHERE iddetalle = ? AND id_pedido = ?';
         $params = array($this->id_detalle, $_SESSION['id_pedido']);
-        return Database::executeRow($sql, $params);
+       return Database::executeRow($sql, $params);
     }
 
     public function readEnca()

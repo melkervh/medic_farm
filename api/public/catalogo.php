@@ -44,6 +44,19 @@ if (isset($_GET['action'])) {
                 $result['exception'] = 'Producto inexistente';
             }
             break;
+            case 'search':
+                $_POST = $producto->validateForm($_POST);
+                if ($_POST['search'] == '') {
+                    $result['exception'] = 'Ingrese un valor para buscar';
+                } elseif ($result['dataset'] = $producto->searchRows($_POST['search'])) {
+                    $result['status'] = 1;
+                    $result['message'] = 'Valor encontrado';
+                } elseif (Database::getException()) {
+                    $result['exception'] = Database::getException();
+                } else {
+                    $result['exception'] = 'No hay coincidencias';
+                }
+                break;
         default:
             $result['exception'] = 'Acción no disponible';
     }

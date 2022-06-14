@@ -354,8 +354,10 @@ body.contactanos{
       height: 40px;
       color: #fff;
       background: #263238;}
-    
-  
+.imgcard{
+  width: 600px;
+  height: 400px;
+}
   .social{
       font-size: 21px; 
   }
@@ -399,5 +401,7 @@ body.contactanos{
   .xc{
     padding-top: 5%;
   }
+  
+  
 
     

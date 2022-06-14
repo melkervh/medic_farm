@@ -44,7 +44,7 @@ function readOrderDetail() {
                                     <a onclick="openUpdateDialog(${row.iddetalle}, ${row.cantidad_producto})"data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                     <i class="fa-solid fa-pen"></i>
                                     </a>
-                                    <a onclick="openDeleteDialog(${row.iddetalle})>
+                                    <a onclick="openDeleteDialog(${row.iddetalle})">
                                     <i class="fa-solid fa-trash-can"></i>
                                     </a>
                                 </td>
@@ -154,7 +154,7 @@ function openDeleteDialog(id) {
         if (value) {
             // Se define un objeto con los datos del producto seleccionado.
             const data = new FormData();
-            data.append('id_detalle', id);
+            data.append('iddetalle', id);
             // Petición para remover un producto del pedido.
             fetch(API_PEDIDOS + 'deleteDetail', {
                 method: 'post',
