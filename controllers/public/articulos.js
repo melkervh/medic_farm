@@ -76,7 +76,7 @@ function readProductosCategoria(id, categoria) {
                         let content = '';
                         // Se recorre el conjunto de registros devuelto por la API (dataset) fila por fila a través del objeto row.
                         response.dataset.map(function (row) {
-                            // Se crean y concatenan las tarjetas con los datos de cada producto.
+                            // se muestran las tarjetas indicadas en el buscador 
                             content += `
                             <div class="col">
                             <div class="card h-100 shadow-sm">

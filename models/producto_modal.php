@@ -135,6 +135,7 @@ class producto extends Validator
         $params = array($this->img,$this->nombre_produc, $this->descripcion, $this->precio_produc, $this->estado , $_SESSION['idusuario'], $this->categoria, $this->cantidad);
         return Database::executeRow($sql, $params);
     }
+    //consulta para el buscador de productos
     public function searchRows($value)
     {
         $sql = 'SELECT idproducto,img_producto , nombre_producto , descripcion_producto , precio_produc,tipo_nombre, estado_producto ,cantidad_producto 
@@ -180,6 +181,7 @@ class producto extends Validator
         $params = array($this->idproducto);
         return Database::executeRow($sql, $params);
     }
+       // se crea el metodo con la cual se crearan las carts
     public function readProductosCategoria()
     {
         $sql = 'SELECT idproducto, img_producto, nombre_producto, descripcion_producto, precio_produc

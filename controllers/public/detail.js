@@ -109,7 +109,7 @@ function readAllValoraciones(id) {
                     response.dataset.map(function (row) {
                         // Se define una dirección con los datos de cada categoría para mostrar sus productos en otra página web.
                         url = `carrito.html?id=${row.idproducto}`;
-                        // Se crean y concatenan las tarjetas con los datos de cada categoría.
+                        // Se crean y se muestran los comentarios en su respectivo puesto
                         content += `
                             <div class="card">
                                 <div class="card-body">
@@ -121,7 +121,7 @@ function readAllValoraciones(id) {
                             
                         `;
                     });
-                    // Se agregan las tarjetas a la etiqueta div mediante su id para mostrar las categorías.
+                    // se crea los comentarios.
                     document.getElementById('comentario').innerHTML = content;
                 } 
                 
