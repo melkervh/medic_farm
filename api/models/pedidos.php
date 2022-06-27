@@ -209,7 +209,7 @@ class Pedidos extends Validator
         return Database::getRows($sql, $params);
     }
 
-    public function readAlld()
+    public function detalle()
     {
         $sql = 'SELECT iddetalle, nombre_producto, descripcion_producto, precio_producto, detalle_pedido.cantidad_producto
                 FROM detalle_pedido 
