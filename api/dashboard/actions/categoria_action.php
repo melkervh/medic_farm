@@ -45,12 +45,19 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Nombre incorrecto';
                 } elseif (!$tipo_product->setdescripcion_tipo($_POST['descripcion_tipo'])) {
                     $result['exception'] = 'Descripción incorrecta';
-                }
-                elseif ($tipo_product->createRow()) {  
+                } elseif (!is_uploaded_file($_FILES['archivo']['tmp_name'])) {
+                    $result['exception'] = 'Seleccione una imagen';
+                } elseif (!$tipo_product->setimg($_FILES['archivo'])) {
+                    $result['exception'] = $tipo_product->getFileError();
+                } elseif ($tipo_product->createRow()) {
                     $result['status'] = 1;
-                 }
-                else {
-                    $result['exception'] = Database::getException();
+                    if ($tipo_product->saveFile($_FILES['archivo'], $tipo_product->getRuta(), $tipo_product->getimg())) {
+                        $result['message'] = 'categoria creado correctamente';
+                    } else {
+                        $result['message'] = 'categoria  creado pero no se guardó la imagen';
+                    }
+                } else {
+                    $result['exception'] = Database::getException();;
                 }
                 break;
             case 'readOne':
@@ -82,18 +89,22 @@ if (isset($_GET['action'])) {
                 }
                 
                 break;
-            case 'delete':
-                if (!$tipo_product->setidtip($_POST['idtip'])) {
-                    $result['exception'] = 'Categoría incorrecta';
-                } elseif (!$data = $tipo_product->readOne()) {
-                    $result['exception'] = 'Categoría inexistente';
-                }elseif ($tipo_product->deleteRow()) {
-                    $result['status'] = 1;
-                } 
-                else {
-                    $result['exception'] = Database::getException();
-                }
-                break;
+                case 'delete':
+                    if (!$tipo_product->setidtip($_POST['idtip'])) {
+                        $result['exception'] = 'Categoría incorrecta';
+                    } elseif (!$data = $tipo_product->readOne()) {
+                        $result['exception'] = 'Categoría inexistente';
+                    } elseif ($tipo_product->deleteRow()) {
+                        $result['status'] = 1;
+                        if ($tipo_product->deleteFile($tipo_product->getRuta(), $data['imagen_categoria'])) {
+                            $result['message'] = 'Categoría eliminada correctamente';
+                        } else {
+                            $result['message'] = 'Categoría eliminada pero no se borró la imagen';
+                        }
+                    } else {
+                        $result['exception'] = Database::getException();
+                    }
+                    break;
             default:
             $result['exception'] = 'Acción no disponible dentro de la sesión';
         }        

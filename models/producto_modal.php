@@ -9,7 +9,7 @@ class producto extends Validator
     private $estado= null;
     private $categoria = null ;
     private $cantidad = null ;
-    private $ruta = '../api/images/productos/';
+    private $ruta = '../../images/productos/';
 
     public function setidproducto($value)
     {
@@ -130,32 +130,35 @@ class producto extends Validator
     public function createRow()
     {
         $sql = 'INSERT INTO producto(
-             img, nombre_produc, descripcion, precio_produc, estado, idusuario, idtip, cantidad)
+             img_producto, nombre_producto, descripcion_producto, precio_produc, estado_producto, idusuario, idtip, cantidad_producto)
             VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)';
-        $params = array($this->img,$this->nombre_produc, $this->descripcion, $this->precio_product, $this->estado , $_SESSION['idusuario'],  $this->categoria, $this-> cantidad);
+        $params = array($this->img,$this->nombre_produc, $this->descripcion, $this->precio_produc, $this->estado , $_SESSION['idusuario'], $this->categoria, $this->cantidad);
         return Database::executeRow($sql, $params);
     }
+    //consulta para el buscador de productos
     public function searchRows($value)
     {
-        $sql = 'SELECT idproducto,img, nombre_produc, descripcion, precio_produc,tipo_nombre, estado,cantidad
+        $sql = 'SELECT idproducto,img_producto , nombre_producto , descripcion_producto , precio_produc,tipo_nombre, estado_producto ,cantidad_producto 
         FROM producto INNER JOIN tipo_produc USING(idtip)
-        WHERE nombre_produc ILIKE ? OR descripcion ILIKE ?
-        ORDER BY nombre_produc';
+        WHERE nombre_producto ILIKE ? OR descripcion_producto ILIKE ?
+        ORDER BY nombre_producto';
         $params = array("%$value%", "%$value%");
         return Database::getRows($sql, $params);
     }
     public function readAll()
     {
-        $sql = 'SELECT idproducto, img, nombre_produc, descripcion, precio_produc,tipo_nombre,estado,cantidad
+        $sql = 'SELECT idproducto, img_producto, nombre_producto, descripcion_producto, precio_produc,tipo_nombre,estado_producto,cantidad_producto
         FROM producto INNER JOIN tipo_produc USING(idtip)
-        ORDER BY nombre_produc';
+        ORDER BY nombre_producto';
         $params = null;
         return Database::getRows($sql, $params);
     }
     public function readOne()
     {
-        $sql = 'SELECT idproducto, nombre_produc, descripcion, precio_produc, img, idtip, estado,cantidad
-        FROM producto
+        $sql = 'SELECT idproducto, nombre_producto, descripcion_producto, precio_produc, img_producto, tipo_nombre, 
+        estado_producto,cantidad_producto
+              FROM producto
+              inner join tipo_produc on producto.idtip = tipo_produc.idtip
         WHERE idproducto =?';
         $params = array($this->idproducto);
         return Database::getRow($sql, $params);
@@ -178,7 +181,17 @@ class producto extends Validator
         $params = array($this->idproducto);
         return Database::executeRow($sql, $params);
     }
-
+       // se crea el metodo con la cual se crearan las carts
+    public function readProductosCategoria()
+    {
+        $sql = 'SELECT idproducto, img_producto, nombre_producto, descripcion_producto, precio_produc
+        FROM producto INNER JOIN tipo_produc USING(idtip)
+        WHERE idtip = ? AND estado_producto = true
+        ORDER BY nombre_producto';
+        $params = array($this->idproducto);
+        return Database::getRows($sql, $params);
+    }
+ 
 
 }
 

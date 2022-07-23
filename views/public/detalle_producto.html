@@ -2,102 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Formulario de contacto</title>
-
-
-    <link rel="stylesheet" type="text/css" href="contact-form.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
-    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../resources/css/styless_publico.css" rel="stylesheet">
+   <meta charset="UTF-8">
+   <title>Formulario de contacto</title>
+   <link type="image/png" rel="icon" href="../../resources/img/Logo.png">
+   <link type="image/png" rel="icon" href="../../resources/img/Logo.png">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+   <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+   <link href="../../resources/css/styless_publico.css" rel="stylesheet">
 
 </head>
 
 <body>
-    <header></header>
+   <header>
+      <!--Generamos un navbar-->
+      <!--Fin de navbar-->
+   </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 mt-3">
-                    <div class="text-center" id="img-container">
-                        <img src="../../resources/img/card/anp5.png" class="img-fluid meustra" alt="">
-                    </div>
-                </div>
-                <div class="col-md-7 mt-3">
-                    <h2 class="titulo desciption">Ambroxol 15mg/5ml Jarabe Frasco</h2>
-                    <h1 class="mt-3 precio desciption">$4.04</h1>
-                    <h4 class="desciption">Alivio de la tos con flemas. Sensación refrescante en la garganta.</h4>
-                    <ul class="desciption2">
-                        <h5>Es mucolítico y tiene además propiedades fluidificantes y expectorantes. Actúa sobre la
-                            secreción
-                            y su transporte en las vías respiratorias. Esta actividad está representada por un efecto
-                            del fármaco
-                            sobre la producción de surfactante pulmonar, sobrela calidad del moco y sobre la motilidad
-                            ciliar. está indicado
-                            en las siguientes enfermedades: bronquitis aguda, bronquitis crónica, bronconeumonía,
-                            neumonía, epoc (enfermedad
-                            pulmonar obstructiva crónica), bronquiectasias, traqueobronquitis, asma bronquial cuando
-                            haya retención de secreciones
-                            en el árbol bronquial, bronquitis asmatiforme.</h5>
-                    </ul>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <button type="button" class="btn enviar iniciar" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">
-                            agregar receta
-                        </button>
-                        <div class="col-md-5 cadt">
-                            <button type="button" class="btn enviar iniciar"> añadir al carrito</button>
+   <section class="hero">
+      <div class="container">
+         <div class="row">
+            <form class="row" method="post" id="shopping-form">
+               <input type="hidden" id="idproducto" name="idproducto">
+               <div class="col-md-5 mt-3">
+                  <div class="text-center">
+                     <img src="" id="imagen" name="imagen" class="img-fluid meustra" alt="">
+                  </div>
+               </div>
+               <div class="col-md-7 mt-3">
+                  <h2 class="titulo desciption" id="nombre" name="nombre"></h2>
+                  <h1 class="mt-3 precio desciption" id="precio" name="precio"></h1>
+                  <h4 class="desciption" id="categoria" name="categoria"></h4>
+                  <ul class="desciption2">
+                     <h5 id="descripcion" name="descripcion"></h5>
+                     <div class="row alt">
+                        <div class="col-md-4">
+                           <input type="number" class="form-control rounded" placeholder="cantidad"
+                              aria-label="cantidad del producto" id="cantidad" name="cantidad" value="1" min="1" max="101"/>
+                           <label for="exampleDataList" class="form-label lal">cantidad del producto</label>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        </div>
-        <div class="modal " id="staticBackdrop" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Reseta</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <h4>Imagen de la reseta</h4>
-                            <input class="form-control" type="file" id="formFile">
+                        <div class="col-md-2 cadt">
+                           <button type="submit" class=" btn  iniciar2"><i class="fa-solid fa-cart-shopping btn2 ico2 a" type="submit"
+                                 data-tooltip="Agregar" class="btn enviar iniciar"></i></button>
                         </div>
-                        <h4>DESCRIPCIÓN</h4>
-                        <input class="form-control" type="text" placeholder="Default input"
-                            aria-label="Escriba su descripcion">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Guardar</button>
-                    </div>
-                </div>
+                     </div>
+                  </ul>
+               </div>
+            </form>
+         </div>
+      </div>
+   </section>
+   <section class="row mt-5 container-lg">
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+         <li class="nav-item" role="presentation">
+            <button class=" btn iniciar3" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+               type="submit" role="tab" aria-controls="pills-profile" aria-selected="false">Comentarios</button>
+         </li>
+      </ul>
+      <!-- Tabs -->
+      <div class="tab-content" >
+         <!-- Comentarios -->
+         <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <div class="comentarios">
+               <div class="row">
+                  <div class="col-10 mb-2" id="comentario">
+
+                  </div>
+               </div>
             </div>
-        </div>
-        </div>
+         </div>
+      </div>
+   </section>
 
-    </section>
+   <footer>
 
-
-    <footer class="fot"></footer>
-
-    <script src="https://kit.fontawesome.com/a478d5fd56.js" crossorigin="anonymous"></script>
-    <script src="../../resources/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script type="text/javascript" src="../../controllers/components.js"></script>
-    <script type="text/javascript" src="../../controllers/public/account.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
+   </footer>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   <script src="https://kit.fontawesome.com/a478d5fd56.js" crossorigin="anonymous"></script>
+   <script src="../../controllers/components.js"></script>
+   <script src="../../controllers/public/account.js"></script>
+   <script src="../../controllers/public/detail.js"></script>
 </body>
 
 </html>

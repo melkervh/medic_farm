@@ -17,9 +17,9 @@ class Database
         // Credenciales para establecer la conexión con la base de datos.
        //Esas son las credenciales del ordenador personal de Miguel
         $server = 'localhost';
-        $database = 'medicfarm';
+        $database = 'medicfarmedition';
         $username = 'postgres';
-        $password = 'admin';
+        $password = '1234';
         // Se crea la conexión mediante la extensión PDO y el controlador para PostgreSQL.
         self::$connection = new PDO('pgsql:host=' . $server . ';dbname=' . $database . ';port=5432', $username, $password);
     }
@@ -149,7 +149,7 @@ class Database
                 self::$error = 'Registro ocupado, no se puede eliminar';
                 break;
             default:
-            //    self::$error = 'Ocurrió un problema en la base de datos';
+                self::$error = 'Ocurrió un problema en la base de datos';
         }
     }
 

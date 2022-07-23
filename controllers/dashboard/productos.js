@@ -31,13 +31,13 @@ function fillTable(dataset) {
         content += `
             <tr>
             <td>${row.idproducto}</td>
-                <td><img src="${SERVER}images/productos/${row.img}" class="materialboxed" height="100"></td>
-                <td>${row.nombre_produc}</td>
-                <td>${row.descripcion}</td>
+                <td><img src="${SERVER}images/productos/${row.img_producto}" class="materialboxed" height="100"></td>
+                <td>${row.nombre_producto}</td>
+                <td>${row.descripcion_producto}</td>
                 <td>${row.precio_produc}</td>
-                <td>${row.cantidad}</td>
+                <td>${row.cantidad_producto}</td>
                 <td>${row.tipo_nombre}</td>
-                <td>${row.estado}</td>
+                <td>${row._producto}</td>
                 <td>
                 <a onclick="openUpdate(${row.idproducto})"data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                 id="save-modal" onclick="openCreate()"">

@@ -2,87 +2,89 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Compras</title>
-    <!--CSS bootstrap-->
-    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../resources/css/privado.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras</title>
+  <!--CSS bootstrap-->
+  <link type="image/png" rel="icon" href="../../resources/img/Logo.png">
+  <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../resources/css/privado.css">
 </head>
 
 <body>
-    <header></header>
-    <div class="titulos2">
-        <h1>Carrito de Compras</h1><br><i class="fa-solid fa-cart-plus bz"></i>
+  <header>
+    <!--Generamos un navbar-->
+
+    <!--Fin de navbar-->
+  </header>
+  <div class="titulos2">
+    <h1>Carrito de Compras</h1><br>
+  </div>
+  <br>
+  <main class=".container-fluid">
+    <div class=" table-responsive-lg Listas">
+      <table class=" table1">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Producto(s)</th>
+            <th scope="col">Costo(US$)</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Subtotal</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-rows">
+        </tbody>
+      </table>
     </div>
-    <br>
-    <main class="conteiner">
-        <div class=" table-responsive-lg Listas">
-            <table class=" table1">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">Producto(s)</th>
-                        <th scope="col">Costo(US$)</th>
-                        <th scope="col">Cantidad</th>
-                        <th scope="col">Subtotal</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td scope="row">1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td scope="row"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td scope="row"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td scope="row"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td scope="row"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td scope="row"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class=" totalP">
+      <p>Total a pagar <b id="pago"></b></p>
+      <a><i class="fa-solid fa-bookmark ico6 " onclick="finishOrder()" type="button" class="btn btn-secondary"
+          data-bs-toggle="tooltip" data-bs-placement="bottom" title="terminar pedido"></i></a>
+      <a href="index.html" class="ab"><i class="fa-solid fa-house ico6" type="button" class="btn btn-secondary"
+          data-bs-toggle="tooltip" data-bs-placement="bottom" title="regresar al menu"></i></a>
+    </div>
+
+    <i class="fa-solid fa-pencil ico btn2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+      style="visibility:hidden;"></i>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form class="row" method="post" id="item-form">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">cambair cantidad</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <input type="hidden" id="iddetalle" name="iddetalle" style="visibility:hidden;">
+          <div class="modal-body">
+            <label for="recipient-name" class="col-form-label"><i
+                class="fa-brands fa-product-hunt log"></i>cantidad</label>
+            <input type="number" class="form-control" placeholder="" name="cantidad" id="cantidad"
+              aria-label="First name" required>
+          </div>
+          <div class="modal-footer">
+            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" id="save-modal"
+              data-tooltip="Reiniciar">Reiniciar</button>
+            <button type="submit" class="btn btn-primary" data-tooltip="Guardar" id="save-modal">save</button>
+          </div>
         </div>
-    </main>
-    <footer></footer>
-    <!--JS bootstrap-->
-    <script src="../../resources/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/a478d5fd56.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script type="text/javascript" src="../../controllers/components.js"></script>
-    <script type="text/javascript" src="../../controllers/public/account.js"></script>
+        </form>
+      </div>
+    </div>
+    </div>
+  </main>
+  <footer></footer>
+  <!--JS bootstrap-->
+  <script src="../../resources/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://kit.fontawesome.com/a478d5fd56.js" crossorigin="anonymous"></script>
+  <script src="../../controllers/components.js"></script>
+  <script src="../../controllers/public/account.js"></script>
+  <script type="text/javascript" src="../../controllers/public/carrito.js"></script>
+
 </body>
 
 </html>

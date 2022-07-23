@@ -33,34 +33,19 @@ document.addEventListener('DOMContentLoaded', function () {
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">perfil</a>
+                                        <a class="nav-link" href="#">Perfil</a>
                                     </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            inicio
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="index.html">menu</a></li>
-                                            <li><a class="dropdown-item" href="analgesicos.html">analgesicos</a></li>
-                                            <li><a class="dropdown-item" href="antibioticos.html">antibioticos</a></li>
-                                            <li><a class="dropdown-item" href="anticonceptivo.html">anticonceptivo</a></li>
-                                            <li><a class="dropdown-item" href="antigripales.html">antigripales</a></li>
-                                            <li><a class="dropdown-item" href="relajante_muscular.html">relajante musculares</a></li>
-                                            <li><a class="dropdown-item" href="vitamina.html">vitaminas</a></li>
-                                            <li>
-                                        </ul>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Menu</a>
+                                         </li>
                                         <li class="nav-item">
                                         <a class="nav-link" href="carrito.html">Carrito</a>
                                          </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">revicion de receta</a>
+                                        <a class="nav-link" href="historial_pedidos.html">Historial</a>
                                     </li>
                                     <li class="nav-item">
-                                    <a class="nav-link" href="Contactanos.html">Contactanos</a>
-                                </li>
-                                    <li class="nav-item">
-                                    <li><a onclick="logOut()" class="nav-link">Cerrar sesión</a></li>
+                                        <a onclick="logOut()" class="nav-link">Cerrar sesión</a>
                                     </li>
                                 </ul>
                             </div>
@@ -86,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         <a class="nav-link" href="index.html">Inicio</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="login.html">Registrate</a>
+                                        <a class="nav-link" href="login.html">Login</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="registro_usuario.html">Nueva Cuenta</a>
@@ -106,6 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 // Se asigna a la página web el contenido del encabezado.
                 document.querySelector('header').innerHTML = header;
+    
+                // Se establece el pie del encabezado.
                 const footer = `
                 <div class="row justify-content-center mb-0 pt-5 pb-0 row-2 px-3">
                 <div class="col-12">
@@ -140,13 +127,17 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div class="col-sm-3 col-auto text-center"><small>&#9400; MedicFarm</small></div>
                         <div class="col-md-3 col-auto "></div>
                         <div class="col-md-3 col-auto"></div>
-                        <div class="col  my-auto text-md-left  text-right "> <small> medicfarm@gmail.com<span> </div>
+                        <div class="col  my-auto text-md-left  text-right "> <small> medicfarm@gmail.com<span><img
+                                        src="https://i.imgur.com/TtB6MDc.png" class="img-fluid " width="25"></span>
+                                <span><img src="https://i.imgur.com/N90KDYM.png" class="img-fluid "
+                                        width="25"></span></small> </div>
                     </div>
                 </div>
             </div>
                 `;
                 // Se asigna a la página web el contenido del pie.
                 document.querySelector('footer').innerHTML = footer;
+
             });
         } else {
             console.log(request.status + ' ' + request.statusText);

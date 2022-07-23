@@ -210,7 +210,7 @@ height: 80px;
   font-size: 80px;
 }
 
-
+  
 .social{
   font-size: 21px; 
 }
@@ -237,3 +237,16 @@ li{
   
   background-color: #28323C ;
 }
+.totalP{
+  color: #fff;
+  padding-top: 2%;
+  padding-left: 5%;
+  padding-bottom: 2%;
+}
+.ico6{
+   color:#fff;
+  font-size: 30px;
+  padding-right: 2%;
+}
+
+

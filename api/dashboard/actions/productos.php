@@ -13,6 +13,7 @@ if (isset($_GET['action'])) {
     $result = array('status' => 0, 'message' => null, 'exception' => null);
     // Se verifica si existe una sesión iniciada como administrador, de lo contrario se finaliza el script con un mensaje de error.
     if (isset($_SESSION['idusuario']) OR true) {
+        $result['session'] = 1;
         // Se compara la acción a realizar cuando un administrador ha iniciado sesión.
         switch ($_GET['action']) {
             case 'readAll':
@@ -70,7 +71,7 @@ if (isset($_GET['action'])) {
                 break;
                 case 'readOne':
                     if (!$producto->setidproducto($_POST['idproducto'])) {
-                        $result['exception'] = 'Producto incorrecto';
+                        $result['exception'] = 'Prodincorrectoucto ';
                     } elseif ($result['dataset'] = $producto->readOne()) {
                         $result['status'] = 1;
                     } elseif (Database::getException()) {

@@ -33,6 +33,13 @@ footer{
     text-align: center;
 }
 
+.tabla {
+  color: white;
+  text-align: center;
+}
+.bt{
+  background: #00e676;
+}
 .colores {
     background: #00e676;
 }
@@ -319,35 +326,45 @@ body.contactanos{
       display: flex;
       float: right;
       justify-content: right;
-    }
-    .btn2{
-      color:#5ccb5f;
-      border-radius: 4px;
-
+      padding-top: 2px;
     }
 
     .ico2{
-      font-size: 35px;   
+      font-size: 35px;
+      color:#5ccb5f;  
     }
     .reces{
       color: #fff;
       width: 10%;
     }
     .iniciar{
+      width: 80%;
+      height: 40px;
+      color: #fff;
+     background: #00e676;
+    }
+    .iniciar3{
+      width: 100%;
+      height: 40px;
+      color: #fff;
+     background: #00e676;
+    }
+    .iniciar2{
       width: 70%;
       height: 40px;
       color: #fff;
-      background: #00e676;
-    }
-  footer{
-  
-  }
-  
+      background: #263238;}
+.imgcard{
+  width: 600px;
+  height: 400px;
+}
   .social{
       font-size: 21px; 
   }
   
-  
+  .container-fluid{
+    color:#000 ;
+}
   .color-text{
       color:#757575 ;
   }  
@@ -369,3 +386,22 @@ body.contactanos{
       
       background-color: #28323C ;
   }
+  .cantidadpor{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .a{
+    margin-left: -10px;
+  }
+  .lal {
+    color: #fff;
+  }
+  
+  .alt{padding-top: 3%;}
+  .xc{
+    padding-top: 5%;
+  }
+  
+  
+
+    
