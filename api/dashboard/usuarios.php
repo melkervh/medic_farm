@@ -193,9 +193,9 @@ if (isset($_GET['action'])) {
                 break;
                 case 'logIn':
                     $_POST = $usuario->validateForm($_POST);
-                    if (!$usuario->checkUser($_POST['correoa'])) {
+                    if (!$usuario->checkUser($_POST['email'])) {
                         $result['exception'] = 'correo incorrecto';
-                    } elseif ($usuario->checkPassword($_POST['clavea'])) {
+                    } elseif ($usuario->checkPassword($_POST['pswd'])) {
                         $result['status'] = 1;
                         $result['message'] = 'Autenticación correcta';
                         $_SESSION['id_usuario'] = $usuario->getIdUsuario();
