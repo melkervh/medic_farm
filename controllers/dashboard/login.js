@@ -1,10 +1,10 @@
-const API = '../../api/dashboard/actions/login_action.php';
+const API_LOGIN = SERVER + 'dashboard/actions/usuarios.php?action=';
 // Método manejador de eventos que se ejecuta cuando se envía el formulario de iniciar sesión.
 document.getElementById('session-form').addEventListener('submit', function (event) {
     // Se evita recargar la página web después de enviar el formulario.
     event.preventDefault();
     // Petición para revisar si el administrador se encuentra registrado.
-    fetch(API, {
+    fetch(API_LOGIN,'logIn',{
         method: 'post',
         body: new FormData(document.getElementById('session-form'))
     }).then(function (request) {
