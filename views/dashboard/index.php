@@ -62,12 +62,24 @@
             </div>
         </nav>
     </header>
-    <main>
-
+    <main class="container">
+    <div class="row">
+            <div class="col s12 m6">
+                <!-- Se muestra un gráfico de barra con la cantidad de productos por categoría -->
+                <canvas id="chart1"></canvas>
+            </div>
+            <div class="col s12 m6">
+                <!-- Se muestra un gráfico de pastel con el porcentaje de productos por categoría -->
+                <canvas id="chart2"></canvas>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
     </main>
 
     <script src="../../resources/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../controllers/components.js"></script>
+    <script src="../../controllers/dashboard/main.js"></script>
     
 </body>
 
