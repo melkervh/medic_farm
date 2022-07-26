@@ -1,7 +1,7 @@
 <?php
 class usuario
 {
-    private $idusuario= null;
+    private $id_usuario= null;
     private $nombre = null;
     private $apellido = null;
     private $correo = null;
@@ -9,7 +9,7 @@ class usuario
 
     public function setIdUsuario($value)
     {
-        $this->idusuario = $value;
+        $this->id_usuario = $value;
     }
 
     public function setNombre($value)
