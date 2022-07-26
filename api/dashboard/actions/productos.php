@@ -133,6 +133,23 @@ if (isset($_GET['action'])) {
                     } else {
                         $result['exception'] = Database::getException();
                     }
+                    break;
+                    case 'cantidadProductosCategoria':
+                        if ($result['dataset'] = $producto->cantidadProductosCategoria()) {
+                            $result['status'] = 1;
+                        } else {
+                            $result['exception'] = 'No hay datos disponibles';
+                        }
+                        break;
+                    case 'porcentajeProductosCategoria':
+                        if ($result['dataset'] = $producto->porcentajeProductosCategoria()) {
+                            $result['status'] = 1;
+                        } else {
+                            $result['exception'] = 'No hay datos disponibles';
+                        }
+                        break;
+                    default:
+                    $result['exception'] = 'Acción no disponible dentro de la sesión';
         }
         // Se indica el tipo de contenido a mostrar y su respectivo conjunto de caracteres.
         header('content-type: application/json; charset=utf-8');

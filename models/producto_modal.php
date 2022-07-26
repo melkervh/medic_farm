@@ -191,7 +191,23 @@ class producto extends Validator
         $params = array($this->idproducto);
         return Database::getRows($sql, $params);
     }
- 
+    public function cantidadProductosCategoria()
+    {
+        $sql = 'SELECT nombre_categoria, COUNT(id_producto) cantidad
+                FROM productos INNER JOIN categorias USING(id_categoria)
+                GROUP BY nombre_categoria ORDER BY cantidad DESC';
+        $params = null;
+        return Database::getRows($sql, $params);
+    }
+
+    public function porcentajeProductosCategoria()
+    {
+        $sql = 'SELECT nombre_categoria, ROUND((COUNT(id_producto) * 100.0 / (SELECT COUNT(id_producto) FROM productos)), 2) porcentaje
+                FROM productos INNER JOIN categorias USING(id_categoria)
+                GROUP BY nombre_categoria ORDER BY porcentaje DESC';
+        $params = null;
+        return Database::getRows($sql, $params);
+    }
 
 }
 
