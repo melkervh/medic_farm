@@ -9,7 +9,7 @@ class producto extends Validator
     private $estado= null;
     private $categoria = null ;
     private $cantidad = null ;
-    private $ruta = '../../images/productos/';
+    private $ruta = '../images/productos/';
 
     public function setidproducto($value)
     {
@@ -90,38 +90,6 @@ class producto extends Validator
             return false;
         }
     }
-    public function getidproducto()
-    {
-        return $this->idproducto;
-    }
-    public function getimg_produc()
-    {
-        return $this->img;
-    }
-    public function getnombre_producto()
-    {
-        return $this->nombre_producto;
-    }
-    public function getdescripcion()
-    {
-        return $this->descripcion;
-    }
-    public function getprecio_produc()
-    {
-        return $this->precio_produc;
-    }
-    public function getestado_produc()
-    {
-        return $this->estado_producto;
-    }
-    public function getCategoria()
-    {
-        return $this->Categoria;
-    }
-    public function getcantidad()
-    {
-        return $this->cantidad;
-    }
     public function getRuta()
     {
         return $this->ruta;
@@ -131,8 +99,8 @@ class producto extends Validator
     {
         $sql = 'INSERT INTO public.producto(
             img_producto, nombre_producto, descripcion_producto, precio_produc, estado_producto, idusuario, idtip, cantidad_producto)
-           VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)';
-        $params = array($this->img,$this->nombre_produc, $this->descripcion, $this->precio_produc, $this->estado , $_SESSION['idusuario'], $this->categoria, $this->cantidad);
+           VALUES ( ?, ?, ?, ?, ?, 1, ?, ?)';
+        $params = array($this->img,$this->nombre_produc, $this->descripcion, $this->precio_produc, $this->estado , $this->categoria, $this->cantidad);
         return Database::executeRow($sql, $params);
     }
     //consulta para el buscador de productos

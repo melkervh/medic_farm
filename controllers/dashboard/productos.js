@@ -1,6 +1,6 @@
 // Constantes para establecer las rutas y parámetros de comunicación con la API.
 const API_PRODUCTOS = SERVER + 'dashboard/actions/productos.php?action=';
-const ENDPOINT_CATEGORIAS = 'http://localhost/medic_farm/api/dashboard/actions/categoria_action.php?action=readAll';
+const ENDPOINT_CATEGORIAS = 'http://localhost/medic_farm9/api/dashboard/actions/categoria_action.php?action=readAll';
 
 // Método manejador de eventos que se ejecuta cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', function () {

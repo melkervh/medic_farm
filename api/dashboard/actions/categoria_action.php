@@ -81,13 +81,25 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Nombre incorrecto';
                 } elseif (!$tipo_product->setdescripcion_tipo($_POST['descripcion_tipo'])) {
                     $result['exception'] = 'Descripción incorrecta';
-                } elseif ($tipo_product->updateRow($data)) {
+                } elseif (!is_uploaded_file($_FILES['archivo']['tmp_name'])) {
+                    if ($tipo_product->updateRow($data['imagen_categoria'])) {
+                        $result['status'] = 1;
+                        $result['message'] = 'Categoría modificada correctamente';
+                    } else {
+                        $result['exception'] = Database::getException();
+                    }
+                } elseif (!$tipo_product->getimg($_FILES['archivo'])) {
+                    $result['exception'] = $tipo_product->getFileError();
+                } elseif ($tipo_product->updateRow($data['imagen_categoria'])) {
                     $result['status'] = 1;
-                } 
-                else {
+                    if ($tipo_product->saveFile($_FILES['archivo'], $tipo_product->getRuta(), $tipo_product->getimg())) {
+                        $result['message'] = 'Categoría modificada correctamente';
+                    } else {
+                        $result['message'] = 'Categoría modificada pero no se guardó la imagen';
+                    }
+                } else {
                     $result['exception'] = Database::getException();
                 }
-                
                 break;
                 case 'delete':
                     if (!$tipo_product->setidtip($_POST['idtip'])) {

@@ -26,7 +26,10 @@ class Validator
         return $this->fileName;
     }
 
-
+    public function getFileError()
+    {
+        return $this->fileError;
+    }
     /*
     *   Método para sanear todos los campos de un formulario (quitar los espacios en blanco al principio y al final).
     *

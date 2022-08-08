@@ -44,8 +44,8 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Nombre incorrecto';
                 } elseif (!$producto->setdescripcion($_POST['descripcion'])) {
                     $result['exception'] = 'Descripción incorrecta';
-                } elseif (!$producto->setcategoria($_POST['categoria'])) {
-                    $result['exception'] = 'Precio incorrecto';
+                } elseif (!$producto->setCategoria($_POST['categoria'])) {
+                    $result['exception'] = 'categoria incorrecto';
                 } elseif (!isset($_POST['categoria'])) {
                     $result['exception'] = 'Seleccione una categoría';
                 } elseif (!$producto->setprecio_produc($_POST['precio'])) {
@@ -60,7 +60,7 @@ if (isset($_GET['action'])) {
                     $result['exception'] = $producto->getFileError();
                 } elseif ($producto->createRow()) {
                     $result['status'] = 1;
-                    if ($producto->saveFile($_FILES['archivo'], $producto->getRuta(), $producto->getimg())) {
+                    if ($producto->saveFile($_FILES['archivo'], $producto->getRuta(), $producto->setimg())) {
                         $result['message'] = 'Producto creado correctamente';
                     } else {
                         $result['message'] = 'Producto creado pero no se guardó la imagen';

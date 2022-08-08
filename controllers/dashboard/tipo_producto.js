@@ -18,7 +18,7 @@ function fillTable(dataset) {
                 <td>${row.idtip}</td>
                 <td>${row.tipo_nombre}</td>
                 <td>${row.descripcion_tipo}</td>
-                <td>${row.imagen_categoria}</td>
+                <td><img src="${SERVER}images/categoria/${row.imagen_categoria}" class="materialboxed" height="100"></td>
                 <td>
                     <a onclick="openUpdate(${row.idtip})" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-pen"></i>
@@ -72,6 +72,7 @@ function openUpdate(idtip) {
                     document.getElementById('idtip').value = response.dataset.idtip;
                     document.getElementById('tipo_nombre').value = response.dataset.tipo_nombre;
                     document.getElementById('descripcion_tipo').value = response.dataset.descripcion_tipo;
+                    document.getElementById('imagen_categoria').value = response.dataset.imagen_categoria;
                     // Se actualizan los campos para que las etiquetas (labels) no queden sobre los datos.
                 
                 } else {
