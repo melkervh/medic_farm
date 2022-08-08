@@ -54,16 +54,16 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'cantidad incorrecto';
                 } elseif (!$producto->setestado(isset($_POST['estado']) ? 1 : 0)) {
                     $result['exception'] = 'Estado incorrecto';
-                } elseif (!is_uploaded_file($_FILES['archivo']['tmp_name'])) {
+                }  elseif (!is_uploaded_file($_FILES['archivo']['tmp_name'])) {
                     $result['exception'] = 'Seleccione una imagen';
                 } elseif (!$producto->setimg($_FILES['archivo'])) {
                     $result['exception'] = $producto->getFileError();
                 } elseif ($producto->createRow()) {
                     $result['status'] = 1;
-                    if ($producto->saveFile($_FILES['archivo'], $producto->getRuta(), $producto->setimg())) {
-                        $result['message'] = 'Producto creado correctamente';
+                    if ($producto->saveFile($_FILES['archivo'], $producto->getRuta(), $producto->getimg())) {
+                        $result['message'] = 'categoria creado correctamente';
                     } else {
-                        $result['message'] = 'Producto creado pero no se guardó la imagen';
+                        $result['message'] = 'categoria  creado pero no se guardó la imagen';
                     }
                 } else {
                     $result['exception'] = Database::getException();;

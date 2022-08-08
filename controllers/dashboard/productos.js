@@ -37,7 +37,7 @@ function fillTable(dataset) {
                 <td>${row.precio_produc}</td>
                 <td>${row.cantidad_producto}</td>
                 <td>${row.tipo_nombre}</td>
-                <td>${row._producto}</td>
+                <td>${row.estado_producto}</td>
                 <td>
                 <a onclick="openUpdate(${row.idproducto})"data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                 id="save-modal" onclick="openCreate()"">
@@ -67,7 +67,7 @@ function openCreate() {
     // Se abre la caja de diálogo (modal) que contiene el formulario.
     // Se asigna el título para la caja de diálogo (modal).
     // Se establece el campo de archivo como obligatorio.
-    document.getElementById('archivo').required = true;
+    document.getElementById('save-form').reset();
     // Se llama a la función que llena el select del formulario. Se encuentra en el archivo components.js
     fillSelect(ENDPOINT_CATEGORIAS, 'categoria', null);
 }

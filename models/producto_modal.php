@@ -94,6 +94,10 @@ class producto extends Validator
     {
         return $this->ruta;
     }
+    public function getimg()
+    {
+        return $this->img;
+    }
     
     public function createRow()
     {
