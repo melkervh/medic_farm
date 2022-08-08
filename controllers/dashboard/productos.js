@@ -25,8 +25,15 @@ function fillTable(dataset) {
     let content = '';
     // Se recorre el conjunto de registros (dataset) fila por fila a través del objeto row.
     dataset.map(function (row) {
+        var estado;
+                        if (row.estado_producto == '1') {
+                            estado = "Disponible";
+                        }
+                        if (row.estado_producto == '0') {
+                            estado = "No disponible";
+                        }
+
         // Se establece un icono para el estado del producto.
-        (row.estado) ? icon = 'visibility' : icon = 'visibility_off';
         // Se crean y concatenan las filas de la tabla con los datos de cada registro.
         content += `
             <tr>
@@ -37,7 +44,7 @@ function fillTable(dataset) {
                 <td>${row.precio_produc}</td>
                 <td>${row.cantidad_producto}</td>
                 <td>${row.tipo_nombre}</td>
-                <td>${row.estado_producto}</td>
+                <td>${estado}</td>
                 <td>
                 <a onclick="openUpdate(${row.idproducto})"data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                 id="save-modal" onclick="openCreate()"">
