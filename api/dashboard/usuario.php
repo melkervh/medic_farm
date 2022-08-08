@@ -43,11 +43,11 @@ if (isset($_GET['action'])) {
                 break;
             case 'editProfile':
                 $_POST = $usuario->validateForm($_POST);
-                if (!$usuario->setNombres($_POST['nombres'])) {
+                if (!$usuario->setNombreUsuario($_POST['nombres'])) {
                     $result['exception'] = 'Nombres incorrectos';
-                } elseif (!$usuario->setApellidos($_POST['apellidos'])) {
+                } elseif (!$usuario->setApellidoUsuario($_POST['apellidos'])) {
                     $result['exception'] = 'Apellidos incorrectos';
-                } elseif (!$usuario->setCorreo($_POST['correo'])) {
+                } elseif (!$usuario->setClaveUsuario($_POST['correo'])) {
                     $result['exception'] = 'Correo incorrecto';
                 } elseif ($usuario->editProfile()) {
                     $result['status'] = 1;
@@ -58,13 +58,13 @@ if (isset($_GET['action'])) {
                 break;
             case 'changePassword':
                 $_POST = $usuario->validateForm($_POST);
-                if (!$usuario->setId($_SESSION['id_usuario'])) {
+                if (!$usuario->setIdUsuario($_SESSION['id_usuario'])) {
                     $result['exception'] = 'Usuario incorrecto';
                 } elseif (!$usuario->checkPassword($_POST['actual'])) {
                     $result['exception'] = 'Clave actual incorrecta';
                 } elseif ($_POST['nueva'] != $_POST['confirmar']) {
                     $result['exception'] = 'Claves nuevas diferentes';
-                } elseif (!$usuario->setClave($_POST['nueva'])) {
+                } elseif (!$usuario->setClaveUsuario($_POST['nueva'])) {
                     $result['exception'] = $usuario->getPasswordError();
                 } elseif ($usuario->changePassword()) {
                     $result['status'] = 1;
