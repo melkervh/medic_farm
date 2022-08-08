@@ -38,8 +38,8 @@ if (isset($_GET['action'])) {
                 } else {
                     $result['exception'] = 'No hay coincidencias';
                 }
-                break;
-            /*case 'readOne':
+               break;
+            case 'readOne':
                 if (!$pedidos->setidtip($_POST['idtip'])) {
                     $result['exception'] = 'Categoría incorrecta';
                 } elseif ($result['dataset'] = $pedidos->readOne()) {
@@ -49,7 +49,7 @@ if (isset($_GET['action'])) {
                 } else {
                     $result['exception'] = 'Categoría inexistente';
                 }
-                break;*/
+                break;
             default:
             $result['exception'] = 'Acción no disponible dentro de la sesión';
         }        
