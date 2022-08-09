@@ -82,7 +82,9 @@
               <div class="modal-body mdt">
                 <!--formulario para modificar los usuarios-->
                 <form method="post" id="save-form">
+                  <input class="hidden" style="visibility:hidden;" type="number" id="id_usuario" name="id_usuario">
                   <div class="mb-3">
+                    
                     <label for="recipient-name" class="col-form-label"> <i
                         class="fa-solid fa-user log"></i>Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre">
@@ -100,7 +102,6 @@
                   <div class="mb-3">
                     <label for="password-text" class="col-form-label"><i class="fa-solid fa-key log"></i>clave</label>
                     <input type="password" class="form-control" id="clave" name="clave">
-                    <input class="hidden" style="visibility:hidden;" type="number" id="idusuario" name="idusuario">
                   </div>
               </div>
             </div>
@@ -124,7 +125,6 @@
             <th scope="col">Nombre</th>
             <th scope="col">Apellido</th>
             <th scope="col">Correo</th>
-            <th scope="col">Clave</th>
             <th scope="col">acciones</th>
           </tr>
         </thead>

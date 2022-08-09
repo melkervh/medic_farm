@@ -12,7 +12,7 @@ if (isset($_GET['action'])) {
     // Se declara e inicializa un arreglo para guardar el resultado que retorna la API.
     $result = array('status' => 0, 'message' => null, 'exception' => null);
     // Se verifica si existe una sesión iniciada como administrador, de lo contrario se finaliza el script con un mensaje de error.
-    if (isset($_SESSION['idusuario']) OR true) {
+    if (isset($_SESSION['id_usuario']) OR true) {
         // Se compara la acción a realizar cuando un administrador ha iniciado sesión.
         switch ($_GET['action']) {
             case 'readAll':
@@ -56,7 +56,7 @@ if (isset($_GET['action'])) {
                     break;
 
                  case 'readOne':
-                    if (!$listauser->setidusuario($_POST['idusuario'])) {
+                    if (!$listauser->setidusuario($_POST['id_usuario'])) {
                         $result['exception'] = ' incorrecta';
                     } elseif ($result['dataset'] = $listauser->readOne()) {
                             $result['status'] = 1;
@@ -68,7 +68,7 @@ if (isset($_GET['action'])) {
                     break;
                 case 'update':
                     $_POST = $listauser->validateForm($_POST);
-                    if (!$listausert->setidusuario($_POST['idusuario'])) {
+                    if (!$listausert->setidusuario($_POST['id_usuario'])) {
                         $result['exception'] = 'usuario incorrecto';
                     } elseif (!$data = $listauser->readOne()) {
                         $result['exception'] = 'usuario inexistente';
@@ -88,7 +88,7 @@ if (isset($_GET['action'])) {
                     }
                     break;
                 case 'delete':
-                    if (!$listauser->setidusuario($_POST['idusuario'])) {
+                    if (!$listauser->setidusuario($_POST['id_usuario'])) {
                         $result['exception'] = 'usuario incorrecta';
                     } elseif (!$data = $listauser->readOne()) {
                         $result['exception'] = 'usuario inexistente';

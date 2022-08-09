@@ -95,18 +95,18 @@ class listauser extends Validator
 
     public function readAll()
     {
-        $sql = 'SELECT idusuario, nombre,apellido, correo, clave
-                FROM usuario
-                ORDER BY nombre';
+        $sql = 'SELECT id_usuario, nombre_usuario, apellido_usuario, correo_usuario
+        FROM usuario
+        ORDER BY nombre_usuario';
         $params = null;
         return Database::getRows($sql, $params);
     }
 
     public function readOne()
     {
-        $sql = 'SELECT idusuario,nombre,apellido, correo, clave 
+        $sql = ' id_usuario, nombre_usuario, apellido_usuario, correo_usuario
                 FROM usuario
-                WHERE idusuario = ?';
+                WHERE id_usuario = ?';
         $params = array($this->idusuario);
         return Database::getRow($sql, $params);
     }

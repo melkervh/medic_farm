@@ -15,16 +15,15 @@ function fillTable(dataset) {
         // Se crean y concatenan las filas de la tabla con los datos de cada registro.
         content += `
             <tr>
-                <td>${row.idusuario}</td>
-                <td>${row.nombre}</td>
-                <td>${row.apellido}</td>
-                <td>${row.correo}</td>
-                <td>${row.clave}</td>
+                <td>${row.id_usuario}</td>
+                <td>${row.nombre_usuario}</td>
+                <td>${row.apellido_usuario}</td>
+                <td>${row.correo_usuario}</td>
                 <td>
-                    <a onclick="openUpdate(${row.idusuario})" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <a onclick="openUpdate(${row.id_usuario})" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-pen"></i>
                     </a>
-                    <a onclick="openDelete(${row.idusuario})">
+                    <a onclick="openDelete(${row.id_usuario})">
                         <i class="fa-solid fa-trash-can"></i>
                     </a>
                 </td>
