@@ -19,12 +19,16 @@ function fillTable(dataset) {
                 <td>${row.tipo_nombre}</td>
                 <td>${row.descripcion_tipo}</td>
                 <td><img src="${SERVER}images/categoria/${row.imagen_categoria}" class="materialboxed" height="100"></td>
-                <td>
+                <>
                     <a onclick="openUpdate(${row.idtip})" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-pen"></i>
                     </a>
                     <a onclick="openDelete(${row.idtip})">
                         <i class="fa-solid fa-trash-can"></i>
+                    </a>
+            
+                    <a onclick="openReport(${row.idtip})">
+                    <i class="fa-solid fa-newspaper"></i>
                     </a>
                 </td>
             </tr>
@@ -43,9 +47,9 @@ document.getElementById('search-form').addEventListener('submit', function (even
 });
 
 // Función para abrir el reporte de productos.
-function reporcate() {
+function openReport(tipo) {
     // Se establece la ruta del reporte en el servidor.
-    let url = SERVER + 'reporte/dashboard/categoria.php';
+    let url = SERVER + 'reports/dashboard/categoria.php?idtipo=' + tipo;
     // Se abre el reporte en una nueva pestaña del navegador web.
     window.open(url);
 }

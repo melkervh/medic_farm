@@ -209,15 +209,13 @@ public function graficoestadoPedidos()
      //*Generamos el reporte*//
      public function productoCate()
      {
-         $sql = 'SELECT nombre_producto
+         $sql = 'SELECT nombre_producto, estado_producto, precio_produc
          FROM producto tp
          INNER JOIN tipo_produc te ON  te.idtip = tp."idtip"
          WHERE tp."idtip" = ?
          ORDER BY nombre_producto';
-         $params = array($this->idtip);
-         return Database::executeRow($sql, $params);
+         $params = array($this->categoria);
+         return Database::getRows($sql, $params);
      }
-
 }
-
 ?>
