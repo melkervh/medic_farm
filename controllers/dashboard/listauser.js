@@ -105,3 +105,11 @@ function openDelete(idusuario) {
     // Se llama a la función que elimina un registro. Se encuentra en el archivo components.js
     confirmDelete(API_USUARIO , data);
 }
+
+    // Función para abrir el reporte de usuario.
+function openReporteUsuario() {
+    // Se establece la ruta del reporte en el servidor.
+    let url = SERVER + 'reports/dashboard/reporte_usuario.php';
+    // Se abre el reporte en una nueva pestaña del navegador web.
+    window.open(url);
+}
