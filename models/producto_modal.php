@@ -217,5 +217,17 @@ public function graficoestadoPedidos()
          $params = array($this->categoria);
          return Database::getRows($sql, $params);
      }
+
+     public function reporteProducto()
+     {
+         $sql = "SELECT idproducto, img_producto, nombre_producto, descripcion_producto, precio_produc,tipo_nombre,cantidad_producto, CASE estado_producto 
+         when estado_producto = true then 'Disponible'
+         when estado_producto = false then 'Agotado'
+         end as estado_producto
+         FROM producto INNER JOIN tipo_produc USING(idtip)
+         ORDER BY nombre_producto";
+         $params = null;
+         return Database::getRows($sql, $params);
+     }
 }
 ?>

@@ -149,3 +149,11 @@ function openDelete(idproducto) {
     // Se llama a la función que elimina un registro. Se encuentra en el archivo components.js
     confirmDelete(API_PRODUCTOS, data);
 }
+
+// Función para abrir el reporte de  productos y estado
+function openReporteestadopro() {
+    // Se establece la ruta del reporte en el servidor.
+    let url = SERVER + 'reports/dashboard/reporte_producto.php';
+    // Se abre el reporte en una nueva pestaña del navegador web.
+    window.open(url);
+}
