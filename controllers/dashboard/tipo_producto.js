@@ -19,16 +19,14 @@ function fillTable(dataset) {
                 <td>${row.tipo_nombre}</td>
                 <td>${row.descripcion_tipo}</td>
                 <td><img src="${SERVER}images/categoria/${row.imagen_categoria}" class="materialboxed" height="100"></td>
-                <>
                     <a onclick="openUpdate(${row.idtip})" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-pen"></i>
                     </a>
                     <a onclick="openDelete(${row.idtip})">
                         <i class="fa-solid fa-trash-can"></i>
                     </a>
-            
-                    <a onclick="openReport(${row.idtip})">
-                    <i class="fa-solid fa-newspaper"></i>
+                     <a onclick="openReport(${row.idtip})">
+                       <i class="fa-solid fa-newspaper"></i>
                     </a>
                 </td>
             </tr>
