@@ -157,7 +157,7 @@ if (isset($_GET['action'])) {
                             break;
                         $result['exception'] = 'Acción no disponible dentro de la sesión';
                     case 'estadoClientes':
-                            if ($result['dataset'] = $producto->estadoClientes()) {
+                            if ($result['dataset'] = $producto->graficoEstadoClientes()) {
                                 $result['status'] = 1;
                             } else {
                                 $result['exception'] = 'No hay datos disponibles';
@@ -165,7 +165,7 @@ if (isset($_GET['action'])) {
                             break;
                         $result['exception'] = 'Acción no disponible dentro de la sesión';
                         case 'porcentajeValoracion':
-                            if ($result['dataset'] = $producto->graficoEstadoClientes()) {
+                            if ($result['dataset'] = $producto->graficoEstadovaloracion()) {
                                 $result['status'] = 1;
                             } else {
                                 $result['exception'] = 'No hay datos disponibles';
