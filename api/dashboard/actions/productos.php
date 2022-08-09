@@ -148,6 +148,29 @@ if (isset($_GET['action'])) {
                             $result['exception'] = 'No hay datos disponibles';
                         }
                         break;
+                        case 'estadoPedidos':
+                            if ($result['dataset'] = $producto->graficoestadoPedidos()) {
+                                $result['status'] = 1;
+                            } else {
+                                $result['exception'] = 'No hay datos disponibles';
+                            }
+                            break;
+                        $result['exception'] = 'Acción no disponible dentro de la sesión';
+                    case 'estadoClientes':
+                            if ($result['dataset'] = $producto->estadoClientes()) {
+                                $result['status'] = 1;
+                            } else {
+                                $result['exception'] = 'No hay datos disponibles';
+                            }
+                            break;
+                        $result['exception'] = 'Acción no disponible dentro de la sesión';
+                        case 'porcentajeValoracion':
+                            if ($result['dataset'] = $producto->graficoEstadoClientes()) {
+                                $result['status'] = 1;
+                            } else {
+                                $result['exception'] = 'No hay datos disponibles';
+                            }
+                            break;
                     default:
                     $result['exception'] = 'Acción no disponible dentro de la sesión';
         }

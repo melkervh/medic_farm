@@ -24,14 +24,6 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Correo de usuario indefinido';
                 }
                 break;
-            case 'logOut':
-                if (session_destroy()) {
-                    $result['status'] = 1;
-                    $result['message'] = 'Sesión eliminada correctamente';
-                } else {
-                    $result['exception'] = 'Ocurrió un problema al cerrar la sesión';
-                }
-                break;
             case 'readProfile':
                 if ($result['dataset'] = $usuario->readProfile()) {
                     $result['status'] = 1;
@@ -118,7 +110,16 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Clave incorrecta';
                 }
                 break;
+                case 'logOut':
+                    if (session_destroy()) {
+                        $result['status'] = 1;
+                        $result['message'] = 'Sesión eliminada correctamente';
+                    } else {
+                        $result['exception'] = 'Ocurrió un problema al cerrar la sesión';
+                    }
+                    break;
             default:
+
                 $result['exception'] = 'Acción no disponible fuera de la sesión';
         }
     }

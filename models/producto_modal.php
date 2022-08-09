@@ -181,6 +181,31 @@ class producto extends Validator
         return Database::getRows($sql, $params);
     }
  
+    public function graficoEstadovaloracion()
+{
+    $sql = 'SELECT idvaloracion, calificacion
+                FROM valoracion 
+                GROUP BY idvaloracion ORDER BY calificacion DESC';
+    $params = null;
+    return Database::getRows($sql, $params);
+}
+public function graficoEstadoClientes()
+{
+    $sql = 'SELECT id_cliente, estado_cliente
+                 FROM cliente 
+                GROUP BY id_cliente ORDER BY estado_cliente DESC';
+    $params = null;
+    return Database::getRows($sql, $params);
+}
+public function graficoestadoPedidos()
+{
+    $sql = 'SELECT id_pedido, estado_pedido
+                FROM pedidos 
+                GROUP BY id_pedido ORDER BY estado_pedido DESC';
+    $params = null;
+    return Database::getRows($sql, $params);
+}
+
      //*Generamos el reporte*//
      public function productoCate()
      {
