@@ -34,3 +34,11 @@ document.getElementById('search-form').addEventListener('submit', function (even
     // Se llama a la función que realiza la búsqueda. Se encuentra en el archivo components.js
     searchRows(API_CLIENTES, 'search-form');
 });
+
+// Función para abrir el reporte de productos venddidos y cuanto ha recaudado.
+function openReporteClientes() {
+    // Se establece la ruta del reporte en el servidor.
+    let url = SERVER + 'reports/dashboard/reporte_clientes.php';
+    // Se abre el reporte en una nueva pestaña del navegador web.
+    window.open(url);
+}

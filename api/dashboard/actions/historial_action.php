@@ -17,8 +17,8 @@ if (isset($_GET['action'])) {
         // Se compara la acción a realizar cuando un administrador ha iniciado sesión.
         switch ($_GET['action'])
         {
-            case 'readAlldetalle':
-                if ($result['dataset'] = $pedidos->detalle()) {
+            case 'readAll':
+                if ($result['dataset'] = $pedidos->readAll()) {
                     $result['status'] = 1;
                 } elseif (Database::getException()) {
                     $result['exception'] = Database::getException();
@@ -48,6 +48,17 @@ if (isset($_GET['action'])) {
                         $result['exception'] = Database::getException();
                 } else {
                     $result['exception'] = 'Categoría inexistente';
+                }
+                break;
+            case 'readDetalle':
+                if (!$pedidos->setidpedido($_POST['id'])) {
+                    $result['exception'] = 'Pedido incorrecto';
+                } elseif ($result['dataset'] = $pedidos->readDetalle()) {
+                    $result['status'] = 1;
+                } elseif (Database::getException()) {
+                    $result['exception'] = Database::getException();
+                } else {
+                    $result['exception'] = 'Pedido inexistente';
                 }
                 break;
             default:

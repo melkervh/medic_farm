@@ -59,12 +59,13 @@
             <nav class="navbar">
                 <!--Agrego una clase conteiner par mas el metodo de grid para hacerlo responsi y que tenga 
             una mejor manera en los espacios de la tabla-->
-                <form class="container-lg-4"  id="search-form">
+                <form class="container-lg-4" id="search-form">
                     <div class="input-group rounded">
                         <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                            aria-describedby="search-addon" id="search" name="search"/>
+                            aria-describedby="search-addon" id="search" name="search" />
                         <span class="input-group-text border-0" id="search-addon">
-                            <button type="submit" class="green" data-bs-toggle="tooltip" data-bs-placement="top" title="Buscar">
+                            <button type="submit" class="green" data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Buscar">
                                 <i class="fas fa-search"></i>
                             </button>
                         </span>
@@ -76,18 +77,47 @@
             <table class=" table1">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">NOMBRE</th>
-                        <th scope="col">APELLIDO </th>
-                        <th scope="col">PRODUCTO</th>
-                        <th scope="col">CANTIDAD</th>
-                        <th scope="col">PRECIO</th>
-                        <th scope="col">TOTAL</th>
+                        <th scope="col">N# PEDIDO</th>
+                        <th scope="col">NOMBRE </th>
+                        <th scope="col">APELLIDO</th>
+                        <th scope="col">CORREO</th>
+                        <th scope="col">FECHA</th>
+                        <th scope="col">ACCIONES</th>
                     </tr>
                 </thead>
                 <tbody id="tbody-rows"></tbody>
             </table>
         </div>
-        </section>
+
+        <!-- Scrollable modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content mdt">
+                    <div class="modal-header mdt">
+                        <h5 class="modal-title mdt" method="post" id="save-modal"> Detalle pedido <i
+                                class="fa-solid fa-user-pen isd"></i></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body mdt">
+                        <div class=" table-responsive-lg Listas">
+                            <table class=" table1">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">NOMBRE </th>
+                                        <th scope="col">DESCRIPCION</th>
+                                        <th scope="col">PRECIO</th>
+                                        <th scope="col">CANTIDAD</th>
+                                        <th scope="col">SUBTOTAL</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-rows-detalle"></tbody>
+                            </table>
+                            <div>Total (US$) <b id="total"></b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!--JS bootstrap-->

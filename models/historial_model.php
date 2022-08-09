@@ -6,36 +6,48 @@ class Historial extends Validator
     private $descripcion = null;
     private $cantidad_producto = null;
     private $precio_productod = null;
+    private $idpedido = null;
+
+    public function setidpedido($value)
+    {
+        if ($this->validateNaturalNumber($value)) {
+            $this->idpedido = $value;
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public function searchRows($value)
     {
-        $sql = 'SELECT iddetalle, nombre, apellido, nombre_produc, cantidad_producto, precio_produc
-                FROM public.detalle_pedido 
-                inner join cliente on detalle_pedido.idcliente = cliente.idcliente
-                inner join producto on detalle_pedido.idproducto = producto.idproducto
-                where nombre ILIKE ? or apellido ILIKE ? or descripcion ILIKE ?
-                order by nombre';
-        $params = array("%$value%", "%$value%",  "%$value%");
+        $sql = "SELECT id_pedido, nombre_cliente, apellido_cliente, correo_cliente, to_char(fecha_pedido, 'DD-MM-yyyy') AS fecha_pedido
+                FROM pedidos
+                INNER JOIN cliente USING(id_cliente)
+                where nombre_cliente ILIKE ? or apellido_cliente ILIKE ?
+                order by nombre_cliente";
+        $params = array("%$value%", "%$value%");
         return Database::getRows($sql, $params);
     }
 
     public function readAll()
     {
-        $sql = 'SELECT iddetalle, nombre, apellido, nombre_produc, cantidad_producto, precio_produc
-                FROM public.detalle_pedido 
-                inner join cliente on detalle_pedido.idcliente = cliente.idcliente
-                inner join producto on detalle_pedido.idproducto = producto.idproducto
-                order by apellido';
+        $sql = "SELECT id_pedido, nombre_cliente, apellido_cliente, correo_cliente, to_char(fecha_pedido, 'DD-MM-yyyy') AS fecha_pedido
+                FROM pedidos
+                INNER JOIN cliente USING(id_cliente)";
         $params = null;
         return Database::getRows($sql, $params);
     }
-    /*public function readOne()
-    {
-        $sql = 'SELECT  idtip ,tipo_nombre, descripcion_tipo
-                FROM tipo_produc
-                WHERE idtip = ?';
-        $params = array($this->idtip);
-        return Database::getRow($sql, $params);
-    }*/
+
+    public function readDetalle()
+    {   
+        $sql = 'SELECT nombre_producto, descripcion_producto, precio_produc, detalle_pedido.cantidad_producto, (precio_produc * detalle_pedido.cantidad_producto) AS subtotal
+                FROM detalle_pedido
+                INNER JOIN producto USING (idproducto)
+                INNER JOIN pedidos USING (id_pedido)
+                WHERE id_pedido = ?';
+        $params = array($this->idpedido);
+        return Database::getRows($sql, $params);
+    }
+
 }
 ?>
