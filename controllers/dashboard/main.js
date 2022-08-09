@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     graficoPastelCategorias();
     graficoclientes();
     graficoEstadoClientes();
-    graficoEstadoPedidos ();
+    graficoEstadoPedidos();
 });
 
 // Función para mostrar la cantidad de productos por categoría en un gráfico de barras.
@@ -139,7 +139,9 @@ function graficoclientes() {
     });
 
 }
-function graficoEstadoPedidos() {
+// Función para mostrar el estado de los clientes en un gráfico de barras
+// Función para mostrar porcentaje de valoraciones en un gráfico de pastel.
+function graficoEstadoClientes() {
     // Petición para obtener los datos del gráfico.
     fetch(API_PRODUCTOS + 'estadoPedidos', {
         method: 'get'
@@ -155,13 +157,15 @@ function graficoEstadoPedidos() {
                     // Se recorre el conjunto de registros devuelto por la API (dataset) fila por fila a través del objeto row.
                     response.dataset.map(function (row) {
                         // Se agregan los datos a los arreglos.
+                    
                         pedidos.push(row.id_pedido);
                         estados.push(row.estado_pedido);
                     });
                     // Se llama a la función que genera y muestra un gráfico de barras. Se encuentra en el archivo components.js
-                    barGraph2('chart4', pedidos, estados, 'Entregado', 'En seguimiento');
+                    pieGraph3('chart5', pedidos, estados, 'Entregado', 'En seguimiento');
+                    
                 } else {
-                    document.getElementById('chart1').remove();
+                    document.getElementById('chart2').remove();
                     console.log(response.exception);
                 }
             });
@@ -170,9 +174,7 @@ function graficoEstadoPedidos() {
         }
     });
 }
-// Función para mostrar el estado de los clientes en un gráfico de barras
-// Función para mostrar porcentaje de valoraciones en un gráfico de pastel.
-function graficoEstadoClientes() {
+function graficoEstadoPedidos() {
     // Petición para obtener los datos del gráfico.
     fetch(API_PRODUCTOS + 'porcentajeValoracion', {
         method: 'get'
@@ -188,11 +190,11 @@ function graficoEstadoClientes() {
                     // Se recorre el conjunto de registros devuelto por la API (dataset) fila por fila a través del objeto row.
                     response.dataset.map(function (row) {
                         // Se agregan los datos a los arreglos.
-                        valoraciones.push(row.nombre_cliente);
-                        porcentaje.push(row.estado_cliente);
+                        valoraciones.push(row.idvaloracion);
+                        porcentaje.push(row.calificacion);
                     });
                     // Se llama a la función que genera y muestra un gráfico de barras. Se encuentra en el archivo components.js
-                    pieGraph3('chart5', valoraciones, porcentaje,'Porcentaje de valoraciones');
+                    lineGraph4('chart4',valoraciones, porcentaje,'valoraciones');
                 } else {
                     document.getElementById('chart2').remove();
                     console.log(response.exception);
