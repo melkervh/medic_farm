@@ -1,11 +1,4 @@
-<?php
-   require_once('../../models/usuario_model.php');
-   session_start();
-    IF(!isset($_SESSION["USER_SESSION"])){
-        header('Location: login.html');
-    }
-    $userData = $_SESSION['USER_SESSION'];
-?>
+
 
 <!doctype html>
 <html lang="es">
@@ -50,9 +43,6 @@
                      <a class="nav-link active" aria-current="page" href="Categoria.html">Categorias</a>
                         </li>
                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html"><?php echo($userData->getNombreUsuario()) ?></a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../../api/dashboard/actions/logout_action.php">Cerrar Session</a>
                         </li>
