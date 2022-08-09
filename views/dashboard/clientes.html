@@ -2,147 +2,155 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clientes</title>
-  <!--CSS bootstrap-->
-  <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../resources/css/privado.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <!--CSS bootstrap-->
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/css/privado.css">
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light navbar-dark">
-      <div class="container-fluid">
-        <img src="../../resources/img/Logo.png" class="logo">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="lista_usuario.html">Lista de usuarios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="agregar_producto.html">Ingresar producto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="historial_ventas.html">Historial</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="clientes.html">Clientes</a>
-              </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="Categoria.html">Categorias</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.php">inicio</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="../../api/dashboard/actions/logout_action.php">Cerrar Session</a>
-          </li>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <div class="titulos2">
-    <h1>Clientes</h1>
-  </div>
-  <main class="buscar">
-  <section class="usuariole">
-    <nav class="navbar">
-        <!--Agrego una clase conteiner par mas el metodo de grid para hacerlo responsi y que tenga 
-    una mejor manera en los espacios de la tabla-->
-        <form class="container-lg-4"  id="search-form">
-            <div class="input-group rounded">
-                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                    aria-describedby="search-addon" id="search" name="search"/>
-                <span class="input-group-text border-0" id="search-addon">
-                    <button type="submit" class="green" data-bs-toggle="tooltip" data-bs-placement="top" title="Buscar">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </span>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light navbar-dark">
+            <div class="container-fluid">
+                <img src="../../resources/img/Logo.png" class="logo">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="lista_usuario.html">Lista de
+                                usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="agregar_producto.html">Ingresar
+                                producto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="historial_ventas.html">Historial</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="clientes.html">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="Categoria.html">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php">inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../api/dashboard/actions/logout_action.php">Cerrar Session</a>
+                        </li>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </form>
-    </nav>
-    <nav>
-         <!-- Scrollable modal -->
-        <i class="fa-solid fa-user-gear  btn2 ico" data-bs-toggle="modal" style="visibility:hidden;"
-          data-bs-target="#exampleModal" data-bs-whatever="@mdo"></i>
-
-        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content mdt">
-              <div class="modal-header mdt">
-                <h5 class="modal-title mdt" method="post" id="save-modal"> usuario <i
-                    class="fa-solid fa-user-pen isd"></i></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body mdt">
-                <!--formulario para modificar los usuarios-->
-                <form method="post" id="save-form">
-                  <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label"> <i
-                        class="fa-solid fa-user log"></i>Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre">
-                  </div>
-                  <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label"> <i
-                        class="fa-solid fa-user log"></i>apellido</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido">
-                  </div>
-                  <div class="mb-3">
-                    <label for="correo-text" class="col-form-label"> <i
-                        class="fa-solid fa-envelope log"></i>Correo</label>
-                    <input type="email" class="form-control" id="correo" name="correo">
-                  </div>
-                  <div class="mb-3">
-                    <label for="password-text" class="col-form-label"><i class="fa-solid fa-key log"></i>clave</label>
-                    <input type="password" class="form-control" id="clave" name="clave">
-                    <input class="hidden" style="visibility:hidden;" type="number" id="idusuario" name="idusuario">
-                  </div>
-              </div>
-            </div>
-            <div class="modal-footer mdt">
-              <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" id="save-modal"
-                data-tooltip="Reiniciar">Reiniciar</button>
-              <button type="submit" class="btn btn-primary" data-tooltip="Guardar" id="save-modal">save</button>
-              </form>
-            </div>
-          </div>
-        </div>
-
-
-      </nav>
-    </section>
-    <div class=" table-responsive-lg Listas">
-      <table class=" table1">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Correo</th>
-            <th scope="col">Clave</th>
-            <th scope="col">acciones</th>
-          </tr>
-        </thead>
-        <tbody id="tbody-rows">
-        </tbody>
-      </table>
+        </nav>
+    </header>
+    <div class="titulos2">
+        <h1>Clientes</h1>
     </div>
-  </main>
+    <main class="buscar">
+        <section class="usuariole">
+            <nav class="navbar">
+                <!--Agrego una clase conteiner par mas el metodo de grid para hacerlo responsi y que tenga 
+                una mejor manera en los espacios de la tabla-->
+                <form class="container-lg-4" id="search-form">
+                    <div class="input-group rounded">
+                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                            aria-describedby="search-addon" id="search" name="search" />
+                        <span class="input-group-text border-0" id="search-addon">
+                            <button type="submit" class="green" data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Buscar">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </nav>
+            <nav>
+                <!-- Scrollable modal -->
+                <i class="fa-solid fa-user-gear  btn2 ico" data-bs-toggle="modal" style="visibility:hidden;"
+                    data-bs-target="#exampleModal" data-bs-whatever="@mdo"></i>
 
-  <!--JS bootstrap-->
-  <script src="../../resources/js/bootstrap.min.js"></script>
-  <script src="https://kit.fontawesome.com/a478d5fd56.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="../../controllers/components.js"></script>
-  <script src="../../controllers/dashboard/listauser.js"></script>
+                <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content mdt">
+                            <div class="modal-header mdt">
+                                <h5 class="modal-title mdt" method="post" id="save-modal"> usuario <i
+                                        class="fa-solid fa-user-pen isd"></i></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body mdt">
+                                <!--formulario para modificar los usuarios-->
+                                <form method="post" id="save-form">
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label"> <i
+                                                class="fa-solid fa-user log"></i>Nombre</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label"> <i
+                                                class="fa-solid fa-user log"></i>apellido</label>
+                                        <input type="text" class="form-control" id="apellido" name="apellido">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="correo-text" class="col-form-label"> <i
+                                                class="fa-solid fa-envelope log"></i>Correo</label>
+                                        <input type="email" class="form-control" id="correo" name="correo">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password-text" class="col-form-label"><i
+                                                class="fa-solid fa-key log"></i>clave</label>
+                                        <input type="password" class="form-control" id="clave" name="clave">
+                                        <input class="hidden" style="visibility:hidden;" type="number" id="idusuario"
+                                            name="idusuario">
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer mdt">
+                            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" id="save-modal"
+                                data-tooltip="Reiniciar">Reiniciar</button>
+                            <button type="submit" class="btn btn-primary" data-tooltip="Guardar"
+                                id="save-modal">save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </nav>
+        </section>
+        <div class=" table-responsive-lg Listas">
+            <table class=" table1">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">DUI</th>
+                        <th scope="col">Correo</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-rows">
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!--JS bootstrap-->
+    <script src="../../resources/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a478d5fd56.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../controllers/components.js"></script>
+    <script src="../../controllers/dashboard/clientes.js"></script>
 </body>
 
 </html>
