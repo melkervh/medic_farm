@@ -140,7 +140,6 @@ function graficoclientes() {
     });
 
 }
-// Función para mostrar el estado de los clientes en un gráfico de barras
 // Función para mostrar porcentaje de valoraciones en un gráfico de pastel.
 function graficoEstadoValoraciones() {
     // Petición para obtener los datos del gráfico.
@@ -163,7 +162,7 @@ function graficoEstadoValoraciones() {
                         estados.push(row.estado_pedido);
                     });
                     // Se llama a la función que genera y muestra un gráfico de barras. Se encuentra en el archivo components.js
-                    pieGraph3('chart5', pedidos, estados, 'Entregado', 'En seguimiento');
+                    pieGraph3('chart5', pedidos, estados, 'cantidad de pedidos entregados por clientes');
                     
                 } else {
                     document.getElementById('chart2').remove();
@@ -195,7 +194,7 @@ function graficoEstadoPedidos() {
                         porcentaje.push(row.calificacion);
                     });
                     // Se llama a la función que genera y muestra un gráfico de barras. Se encuentra en el archivo components.js
-                    lineGraph4('chart4',valoraciones, porcentaje,'valoraciones');
+                    lineGraph4('chart4',valoraciones, porcentaje,'valoraciones','top 10 de productos mejor valorados');
                 } else {
                     document.getElementById('chart2').remove();
                     console.log(response.exception);
@@ -226,7 +225,7 @@ function graficoEstadoClientes() {
                         estado.push(row.estado);
                     });
                     // Se llama a la función que genera y muestra un gráfico de barras. Se encuentra en el archivo components.js
-                     barGraph2('chart6',estado, id_cliente, 'clientes activos');
+                     barGraph2('chart6',estado, id_cliente, 'clientes activos','cantidad de clientes por estado');
                 } else {
                     document.getElementById('chart2').remove();
                     console.log(response.exception);
