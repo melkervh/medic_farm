@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     graficoBarrasCategorias();
     graficoPastelCategorias();
     graficoclientes();
+    graficoEstadoValoraciones();
     graficoEstadoClientes();
     graficoEstadoPedidos();
 });
@@ -141,7 +142,7 @@ function graficoclientes() {
 }
 // Función para mostrar el estado de los clientes en un gráfico de barras
 // Función para mostrar porcentaje de valoraciones en un gráfico de pastel.
-function graficoEstadoClientes() {
+function graficoEstadoValoraciones() {
     // Petición para obtener los datos del gráfico.
     fetch(API_PRODUCTOS + 'estadoPedidos', {
         method: 'get'
@@ -195,6 +196,37 @@ function graficoEstadoPedidos() {
                     });
                     // Se llama a la función que genera y muestra un gráfico de barras. Se encuentra en el archivo components.js
                     lineGraph4('chart4',valoraciones, porcentaje,'valoraciones');
+                } else {
+                    document.getElementById('chart2').remove();
+                    console.log(response.exception);
+                }
+            });
+        } else {
+            console.log(request.status + ' ' + request.statusText);
+        }
+    });
+}
+function graficoEstadoClientes() {
+    // Petición para obtener los datos del gráfico.
+    fetch(API_PRODUCTOS + 'estadoClientes', {
+        method: 'get'
+    }).then(function (request) {
+        // Se verifica si la petición es correcta, de lo contrario se muestra un mensaje en la consola indicando el problema.
+        if (request.ok) {
+            request.json().then(function (response) {
+                // Se comprueba si la respuesta es satisfactoria, de lo contrario se remueve la etiqueta canvas.
+                if (response.status) {
+                    // Se declaran los arreglos para guardar los datos a graficar.
+                    let id_cliente = [];
+                    let estado = [];
+                    // Se recorre el conjunto de registros devuelto por la API (dataset) fila por fila a través del objeto row.
+                    response.dataset.map(function (row) {
+                        // Se agregan los datos a los arreglos.
+                        id_cliente.push(row.cantidad);
+                        estado.push(row.estado);
+                    });
+                    // Se llama a la función que genera y muestra un gráfico de barras. Se encuentra en el archivo components.js
+                     barGraph2('chart6',estado, id_cliente, 'clientes activos');
                 } else {
                     document.getElementById('chart2').remove();
                     console.log(response.exception);

@@ -191,9 +191,13 @@ class producto extends Validator
 }
 public function graficoEstadoClientes()
 {
-    $sql = 'SELECT id_cliente, estado_cliente
-                 FROM cliente 
-                GROUP BY id_cliente ORDER BY estado_cliente DESC';
+    $sql = "SELECT count(id_cliente) as cantidad, CASE estado_cliente 
+    WHEN true THEN 'Activo'
+    WHEN false THEN 'Inactivo'
+    END AS estado
+    FROM cliente 
+    GROUP BY estado_cliente 
+    ORDER BY estado_cliente DESC";
     $params = null;
     return Database::getRows($sql, $params);
 }
