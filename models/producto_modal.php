@@ -183,9 +183,9 @@ class producto extends Validator
  
     public function graficoEstadovaloracion()
 {
-    $sql = 'SELECT idvaloracion, calificacion
-                FROM valoracion 
-                GROUP BY idvaloracion ORDER BY calificacion DESC';
+    $sql = 'SELECT idvaloracion, calificacion,nombre_cliente
+    FROM valoracion  INNER JOIN cliente USING(id_cliente)
+    ORDER BY nombre_cliente ';
     $params = null;
     return Database::getRows($sql, $params);
 }
@@ -199,9 +199,9 @@ public function graficoEstadoClientes()
 }
 public function graficoestadoPedidos()
 {
-    $sql = 'SELECT id_pedido, estado_pedido
-                FROM pedidos 
-                GROUP BY id_pedido ORDER BY estado_pedido DESC';
+    $sql = 'SELECT id_pedido, estado_pedido , nombre_cliente
+    FROM pedidos INNER JOIN cliente USING(id_cliente)
+     ORDER BY nombre_cliente';
     $params = null;
     return Database::getRows($sql, $params);
 }

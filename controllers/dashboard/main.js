@@ -158,7 +158,7 @@ function graficoEstadoClientes() {
                     response.dataset.map(function (row) {
                         // Se agregan los datos a los arreglos.
                     
-                        pedidos.push(row.id_pedido);
+                        pedidos.push(row.nombre_cliente);
                         estados.push(row.estado_pedido);
                     });
                     // Se llama a la función que genera y muestra un gráfico de barras. Se encuentra en el archivo components.js
@@ -190,7 +190,7 @@ function graficoEstadoPedidos() {
                     // Se recorre el conjunto de registros devuelto por la API (dataset) fila por fila a través del objeto row.
                     response.dataset.map(function (row) {
                         // Se agregan los datos a los arreglos.
-                        valoraciones.push(row.idvaloracion);
+                        valoraciones.push(row.nombre_cliente);
                         porcentaje.push(row.calificacion);
                     });
                     // Se llama a la función que genera y muestra un gráfico de barras. Se encuentra en el archivo components.js
