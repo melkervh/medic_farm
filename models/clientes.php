@@ -27,4 +27,15 @@ class Clientes extends Validator
         return Database::getRows($sql, $params);
     }
 
+    public function clientesmes()
+    {
+        $sql = "SELECT COUNT(id_cliente) AS cantidad, to_char(fecha_cliente, 'TMMonth') 
+        AS nombre_mes, to_char(fecha_cliente, 'mm') AS numero_mes
+        FROM cliente
+        WHERE to_char(fecha_cliente,'yy') = to_char(CURRENT_DATE,'yy')
+        GROUP BY nombre_mes, numero_mes
+        ORDER BY numero_mes";
+        $params = null;
+        return Database::getRows($sql, $params);
+    }
 }
