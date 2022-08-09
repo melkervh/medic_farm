@@ -82,3 +82,12 @@ function openDetalle(id) {
         }
     });
 }
+
+
+// Función para abrir el reporte de productos venddidos y cuanto ha recaudado.
+function openReporteHistorial() {
+    // Se establece la ruta del reporte en el servidor.
+    let url = SERVER + 'reports/dashboard/reporte_historial.php';
+    // Se abre el reporte en una nueva pestaña del navegador web.
+    window.open(url);
+}
