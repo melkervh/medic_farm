@@ -4,7 +4,7 @@
 */
 
 // Constante para establecer la ruta y parámetros de comunicación con la API.
-const API = SERVER + 'Actions/usuario.php?action=';
+const API = SERVER + 'dashboard/usuario.php?action=';
 
 // Método manejador de eventos que se ejecuta cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', function () {
@@ -22,8 +22,43 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (response.session) {
                     header = `
                     <nav class="navbar navbar-expand-lg navbar-light navbar-dark">
+            <div class="container-fluid">
+                <img src="../../resources/img/Logo.png" class="logo">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="lista_usuario.html">Lista de
+                                usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="agregar_producto.html">Ingresar
+                                producto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="historial_ventas.html">Historial</a>
+                        </li>
+                        <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="Categoria.html">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a onclick="logOut()" class="nav-link">Cerrar sesión</a>
+                        </li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+                    `;
+                } else {
+                    header = `
+                    <nav class="navbar navbar-expand-lg navbar-light navbar-dark">
                     <div class="container-fluid">
-                        <img src="../resources/img/logo.jpeg" height="80">
+                        <img src="../../resources/img/Logo.png" class="logo">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -32,53 +67,25 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="menu.html">Menu</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                       usuarios
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="listados.html">Usuario</a></li>
-                                        <li><a class="dropdown-item" href="proveedores.html">proveedores</a></li>
-                                    </ul>
+                                    <a class="nav-link active" aria-current="page" href="lista_usuario.html">Lista de
+                                        usuarios</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="historial.html">Historial de
-                                        facturas</a>
+                                    <a class="nav-link active" aria-current="page" href="agregar_producto.html">Ingresar
+                                        producto</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="inventario.html">Inventario </a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Facturas
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="facturan.html">Factura Normal</a></li>
-                                        <li><a class="dropdown-item" href="credito.html">Factura credito</a></li>
-                                    </ul>
+                                    <a class="nav-link active" aria-current="page" href="historial_ventas.html">Historial</a>
                                 </li>
                                 <li class="nav-item">
-                                        <a onclick="logOut()" class="nav-link">Cerrar sesión</a>
-                                    </li>
+                             <a class="nav-link active" aria-current="page" href="Categoria.html">Categorias</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a onclick="logOut()" class="nav-link">Cerrar sesión</a>
+                                </li>
+                                </li>
                             </ul>
                         </div>
-                    </div>
-                </nav>
-                    `;
-                } else {
-                    header = `
-                    <nav class="navbar navbar-expand-lg navbar-light navbar-dark">
-                    <div class="container-fluid">
-                        <img src="../resources/img/logo.jpeg" height="80">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
                     </div>
                 </nav>
                     `;
