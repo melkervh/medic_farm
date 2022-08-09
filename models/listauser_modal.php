@@ -104,7 +104,7 @@ class listauser extends Validator
 
     public function readOne()
     {
-        $sql = ' id_usuario, nombre_usuario, apellido_usuario, correo_usuario
+        $sql = 'SELECT id_usuario, nombre_usuario, apellido_usuario, correo_usuario
                 FROM usuario
                 WHERE id_usuario = ?';
         $params = array($this->idusuario);
@@ -114,8 +114,8 @@ class listauser extends Validator
     public function updateRow()
     { 
         $sql = 'UPDATE usuario
-                SET  nombre = ?, apellido= ?, correo = ?, clave = ?
-                WHERE idusuario = ?';
+                SET  nombre_usuario = ?, apellido_usuario= ?, correo_usuario = ?
+                WHERE id_usuario = ?';
         $params = array( $this->nombre, $this->apellido,$this->correo, $this->clave,  $this->idusuario);
         return Database::executeRow($sql, $params);
     }
@@ -123,7 +123,7 @@ class listauser extends Validator
     public function deleteRow()
     {
         $sql = 'DELETE FROM usuario
-                WHERE idusuario = ?';
+                WHERE id_usuario = ?';
         $params = array($this->idusuario);
         return Database::executeRow($sql, $params);
     }

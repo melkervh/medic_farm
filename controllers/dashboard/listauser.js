@@ -69,11 +69,10 @@ function openUpdate(idusuario) {
                 // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
                 if (response.status) {
                     // Se inicializan los campos del formulario con los datos del registro seleccionado.
-                    document.getElementById('idusuario').value = response.dataset.idusuario;
-                    document.getElementById('nombre').value = response.dataset.nombre;
-                    document.getElementById('apellido').value = response.dataset.apellido;
-                    document.getElementById('correo').value = response.dataset.correo;
-                    document.getElementById('clave').value = response.dataset.calve;
+                    document.getElementById('idusuario').value = response.dataset.id_usuario;
+                    document.getElementById('nombre').value = response.dataset.nombre_usuario;
+                    document.getElementById('apellido').value = response.dataset.apellido_usuario;
+                    document.getElementById('correo').value = response.dataset.correo_usuario;
                     // Se actualizan los campos para que las etiquetas (labels) no queden sobre los datos.
                 
                 } else {
