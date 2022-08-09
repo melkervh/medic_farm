@@ -42,6 +42,14 @@ document.getElementById('search-form').addEventListener('submit', function (even
     searchRows(API_CATEGORIAS, 'search-form');
 });
 
+// Función para abrir el reporte de productos.
+function reporcate() {
+    // Se establece la ruta del reporte en el servidor.
+    let url = SERVER + 'reporte/dashboard/categoria.php';
+    // Se abre el reporte en una nueva pestaña del navegador web.
+    window.open(url);
+}
+
 // Función para preparar el formulario al momento de insertar un registro.
 function openCreate() {
     // Se restauran los elementos del formulario.
@@ -49,7 +57,6 @@ function openCreate() {
     // Se establece el campo de archivo como obligatorio.
     document.getElementById('archivo').required = true;
 }
-
 
 
 // Función para preparar el formulario al momento de modificar un registro.

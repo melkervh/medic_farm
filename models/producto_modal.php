@@ -181,6 +181,17 @@ class producto extends Validator
         return Database::getRows($sql, $params);
     }
  
+     //*Generamos el reporte*//
+     public function productoCate()
+     {
+         $sql = 'SELECT nombre_producto
+         FROM producto tp
+         INNER JOIN tipo_produc te ON  te.idtip = tp."idtip"
+         WHERE tp."idtip" = ?
+         ORDER BY nombre_producto';
+         $params = array($this->idtip);
+         return Database::executeRow($sql, $params);
+     }
 
 }
 

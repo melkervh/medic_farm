@@ -117,5 +117,17 @@ class TipoProducto extends Validator
         $params = array($this->idtip);
         return Database::executeRow($sql, $params);
     }
+    //*Selecionamos la categoria para el reporte*//
+    public function categoriaR()
+    {
+
+        $sql = 'SELECT tc. idtip, tipo_nombre, COUNT(idproducto) as cantidad
+        FROM tipo_produc tc
+        INNER JOIN producto tp ON tp.idtip = tc.idtip
+        GROUP BY tc. idtip, tp. idtip
+        ORDER BY tc. idtip';
+        $params = null;
+        return Database::executeRow($sql, $params);
+    }
 }
 ?>
