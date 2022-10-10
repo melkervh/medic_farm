@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../resources/css/styless_publico.css" rel="stylesheet">
+    <!--Fin-->
+    <title>Reguistro de Usuario</title>
+</head>
+
+<body>
+    <header></header>
+    <main class="mov">
+        <section class="form-register">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <!--Form del registro usuario-->
+                    <form id="regis-usu">
+                        <!--Se crea esta clase para ajustar los titulos-->
+                        <div class="titulos">
+                            <h1>Registrar Usuario</h1>
+                            <i class="fa-solid fa-user-large bi"></i>
+                        </div>
+                        <input class="controls" type="text" name="nombre" id="nombrerg" required
+                            placeholder="Escribir su Nombre">
+                        <input class="controls" type="text" name="apellido" id="apellidorg" required
+                            placeholder="Escribir su Apellido">
+                        <input class="controls" type="text" name="dui" id="dui" required placeholder="DUI: 00000000-0">
+                        <input class="controls" type="email" name="correo" id="correorg" required
+                            placeholder="Escribir su Correo Electronico">
+                        <input class="controls" type="password" name="clave1" id="clave1" required
+                            placeholder="Escribir su Clave">
+                        <input class="controls" type="password" name="clave2" id="clave2" required
+                            placeholder="Confirme su Clave">
+                        <button type="submit" class="iniciar" id="Regis">Registrar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer></footer>
+    <!--Bootstrap JS-->
+    <script src="../../resources/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a478d5fd56.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../controllers/components.js"></script>
+    <script src="../../controllers/public/account.js"></script>
+    <script src="../../controllers/public/registro.js"></script>
+    <!--Fin-->
+
+</body>
+
+</html>

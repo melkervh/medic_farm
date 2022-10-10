@@ -1,0 +1,85 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de contacto</title>
+
+
+    <link rel="stylesheet" type="text/css" href="contact-form.css">
+    <!--Import materialize.css-->
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../resources/css/styless_publico.css" rel="stylesheet">
+
+</head>
+<header></header>
+
+<body class="contactanos">
+
+    <!-- formulario de contacto en html y css -->
+
+    <div class="contact_form">
+
+        <div class="formulario">
+            <h1 class="text1c">Formulario de contacto</h1>
+            <h3 class="text2c">Escríbenos y en breve los pondremos en contacto contigo</h3>
+
+
+            <form action="submeter-formulario.php" method="post">
+
+
+                <p class="pc1">
+                    <label for="nombre" class="colocar_nombre">Nombre
+                        <span class="obligatorio">*</span>
+                    </label>
+                    <input class="input2" type="text" name="introducir_nombre" id="nombre">
+                </p>
+
+                <p class="pc1">
+                    <label for="email" class="colocar_email">Email
+                        <span class="obligatorio">*</span>
+                    </label>
+                    <input class="input2" type="email" name="introducir_email" id="email">
+                </p>
+
+                <p class="pc1">
+                    <label for="telefone" class="colocar_telefono">Teléfono
+                    </label>
+                    <input class="input2" type="tel" name="introducir_telefono" id="telefono">
+                </p>
+
+                <p class="pc1">
+                    <label for="website" class="colocar_website">Sitio web
+                    </label>
+                    <input class="input2" type="url" name="introducir_website" id="website">
+                </p>
+
+                <p class="pc1">
+                    <label for="asunto" class="colocar_asunto">Asunto
+                        <span class="obligatorio">*</span>
+                    </label>
+                    <input class="input2" type="text" name="introducir_asunto" id="assunto">
+                </p>
+
+                <p class="pc1">
+                    <label for="mensaje" class="colocar_mensaje">Mensaje
+                        <span class="obligatorio">*</span>
+                    </label>
+                    <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio"
+                        placeholder="Deja aquí tu comentario..."></textarea>
+                </p>
+
+                <button class=" btncoc " type="submit" name="enviar_formulario" id="enviar">
+                    <p>Enviar</p>
+                </button>
+                <a href="index.html">regresar</a>
+            </form>
+        </div>
+    </div>
+    <footer></footer>
+    <script src="../../resources/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="../../controllers/components.js"></script>
+    <script type="text/javascript" src="../../controllers/public/account.js"></script>
+</body>
+
+</html>
